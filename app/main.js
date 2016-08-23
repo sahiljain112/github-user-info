@@ -1,16 +1,18 @@
+import './assets/styles/bootstrap.min.css!';
 import React, { Component } from 'react';
 import Display from './display';
 import ReactDOM from 'react-dom';
 import { SearchBox } from './search';
 import { user } from './api';
 
-
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      username: '',
-      data: {},
+      data: {
+        value: '',
+        message: '',
+      },
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -20,12 +22,21 @@ class App extends Component {
     then((response) => {
       if (response.ok){
         response.json().then((jsonResponse) => {
-          this.setState({ data: jsonResponse });
+
+          const data = { value: jsonResponse,
+              message: 'Success'
+            };
+
+          this.setState({ data });
           console.log(jsonResponse);
         });
       }
       else {
-        console.log('Error detected');
+        const data = { value: '',
+          message: 'Error'
+        };
+        this.setState({ data }, () => console.log(this.state.data.message));
+        console.log(`Error detected ${data}`);
       }
     }).
     catch((error) => {
