@@ -17,6 +17,7 @@ System.config({
     "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",
     "core-js": "npm:core-js@1.2.7",
+    "css": "github:systemjs/plugin-css@0.1.27",
     "react": "npm:react@15.3.1",
     "react-bootstrap": "npm:react-bootstrap@0.30.3",
     "react-dom": "npm:react-dom@15.3.1",
