@@ -1,0 +1,21 @@
+table, tr, th {
+  border: 2px solid black;
+}
+
+table {
+  text-align: center;
+  align: center;
+  margin: auto;
+}
+
+thead {
+  background-color: #3C8930;
+  color: white;
+  font-size: 1.2em;
+  font-family: sans-serif;
+}
+
+th {
+  padding: 15px;
+  text-align: center;
+}

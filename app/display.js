@@ -1,6 +1,13 @@
+import './main.css!';
 import React, { Component } from 'react';
 
-const defaultValue = 'Not Set';
+const defaultValue = 'Not Set',
+      styles = {
+        container: {
+          textAlign: 'center',
+          fontSize: '1.1em',
+        },
+      };
 
 export default class Display extends Component {
   constructor(props){
@@ -10,11 +17,30 @@ export default class Display extends Component {
     let displayContent = (<p>Search for a GitHub User</p>);
 
     if (this.props.data.message === 'Success') {
-     displayContent = (<ul>
-      <li>Name: {this.props.data.value.name || defaultValue}</li>
-      <li>Username: {this.props.data.value.login || defaultValue}</li>
-      <li>Email: {this.props.data.value.email || defaultValue}</li>
-    </ul>);
+    displayContent = (
+      <table>
+        <thead>
+          <tr>
+            <th> Entity </th>
+            <th> Value </th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th> Name </th>
+          <th> {this.props.data.value.name || defaultValue} </th>
+        </tr>
+        <tr>
+          <th> Username </th>
+          <th> {this.props.data.value.login || defaultValue} </th>
+        </tr>
+        <tr>
+          <th> Email </th>
+          <th> {this.props.data.value.email || defaultValue} </th>
+        </tr>
+        </tbody>
+      </table>
+    )
     }
     if (this.props.data.message === 'Error') {
       console.log(`This is the message: ${this.props.data.message}`);
@@ -22,9 +48,15 @@ export default class Display extends Component {
     }
 
     return (
-      <div className = "container">
+      <div style = {styles.container} >
         { displayContent }
        </div>
     );
   }
 }
+
+// displayContent = (<ul>
+//  <li>Name: {this.props.data.value.name || defaultValue}</li>
+//  <li>Username: {this.props.data.value.login || defaultValue}</li>
+//  <li>Email: {this.props.data.value.email || defaultValue}</li>
+// </ul>);

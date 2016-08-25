@@ -4,12 +4,16 @@ import React, { Component } from 'react';
 const styles = {
   container: {
     padding: '10px',
-    borderRadius: '2px'
+    borderRadius: '2px',
+    textAlign: 'center',
   },
   input: {
     padding: '12px',
     marginRight: '5px',
   },
+  button: {
+    marginLeft: '5px',
+  }
 };
 
 export class SearchBox extends React.Component {
@@ -34,8 +38,8 @@ export class SearchBox extends React.Component {
   render() {
      return (
        <div style = {styles.container}>
-         <input style = {styles.input} type="text" value={this.state.username} onChange={(e) => this.updateValue(e)} onKeyPress={(e) => this.onKeyPressed(e)}/>
-         <Button bsStyle="primary" bsSize="large" onClick={() => this.props.handleChange(this.state.username)}>Search</Button>
+         <input style = {styles.input} type="text" placeholder="Search for GitHub User" value={this.state.username} onChange={(e) => this.updateValue(e)} onKeyPress={(e) => this.onKeyPressed(e)}/>
+         <Button style = {styles.button} bsStyle="primary" bsSize="lg" onClick={() => this.props.handleChange(this.state.username)}>Search</Button>
        </div>
   );
   }
