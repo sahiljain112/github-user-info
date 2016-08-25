@@ -1,5 +1,6 @@
 import './assets/styles/bootstrap.min.css!';
 import React, { Component } from 'react';
+import { ProgressBar } from 'react-bootstrap';
 import Display from './display';
 import ReactDOM from 'react-dom';
 import { SearchBox } from './search';
@@ -12,11 +13,13 @@ class App extends Component {
       data: {
         value: '',
         message: '',
+        progress: '',
       },
     };
     this.handleChange = this.handleChange.bind(this);
   }
   handleChange(username) {
+  this.setState({ progress: true });
   console.log(`Target value: ${username}`);
   user(username).
     then((response) => {
@@ -27,7 +30,10 @@ class App extends Component {
               message: 'Success'
             };
 
-          this.setState({ data });
+          this.setState({
+            data,
+            progress: false
+          });
           console.log(jsonResponse);
         });
       }
@@ -35,7 +41,14 @@ class App extends Component {
         const data = { value: '',
           message: 'Error'
         };
-        this.setState({ data }, () => console.log(this.state.data.message));
+
+        this.setState({
+          progress: false,
+          data },
+            () => {
+            console.log(this.state.data.message);
+          }
+        );
         console.log(`Error detected ${data}`);
       }
     }).
@@ -44,11 +57,15 @@ class App extends Component {
     });
   }
   render() {
+    const display = this.state.progress
+                    ? <p style = {{ textAlign: 'center' }}> Loading...</p>
+                    : (<Display data = {this.state.data} />);
+
     return (
       <div>
         <SearchBox handleChange={this.handleChange} />
         <br/>
-        <Display data = {this.state.data} />
+        { display }
       </div>
     );
   }
