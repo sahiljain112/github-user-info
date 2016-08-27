@@ -1,7 +1,7 @@
 import './main.css!';
 import React, { Component } from 'react';
 
-const defaultValue = 'Not Set',
+const defaultValue = 'Private/ Not Set',
       styles = {
         container: {
           textAlign: 'center',

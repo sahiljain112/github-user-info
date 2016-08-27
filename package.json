@@ -5,6 +5,7 @@
   "main": "app/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "jspm bundle app/main --inject",
     "lint": "./node_modules/.bin/eslint ./app --ignore-path .gitignore --ignore-pattern internals/scripts || true"
   },
   "keywords": [
