@@ -31,7 +31,7 @@ System.register('app/display.js', ['npm:babel-runtime@5.8.38/helpers/get.js', 'n
     execute: function () {
       'use strict';
 
-      defaultValue = 'Not Set';
+      defaultValue = 'Private/ Not Set';
       styles = {
         container: {
           textAlign: 'center',
@@ -133,6 +133,38 @@ System.register('app/display.js', ['npm:babel-runtime@5.8.38/helpers/get.js', 'n
                       null,
                       ' ',
                       this.props.data.value.email || defaultValue,
+                      ' '
+                    )
+                  ),
+                  React.createElement(
+                    'tr',
+                    null,
+                    React.createElement(
+                      'th',
+                      null,
+                      ' Location '
+                    ),
+                    React.createElement(
+                      'th',
+                      null,
+                      ' ',
+                      this.props.data.value.location || defaultValue,
+                      ' '
+                    )
+                  ),
+                  React.createElement(
+                    'tr',
+                    null,
+                    React.createElement(
+                      'th',
+                      null,
+                      ' Followers '
+                    ),
+                    React.createElement(
+                      'th',
+                      null,
+                      ' ',
+                      this.props.data.value.followers || '0',
                       ' '
                     )
                   )
@@ -28695,7 +28727,7 @@ System.register("app/api.js", [], function (_export) {
   }
 
   function repositories(user) {
-    return fetch();
+    return fetch(URL_START + "//users/" + user + "/repos");
   }
 
   return {

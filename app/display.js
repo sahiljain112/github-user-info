@@ -38,6 +38,13 @@ export default class Display extends Component {
           <th> Email </th>
           <th> {this.props.data.value.email || defaultValue} </th>
         </tr>
+        <tr>
+          <th> Location </th>
+          <th> {this.props.data.value.location || defaultValue} </th>
+        </tr><tr>
+          <th> Followers </th>
+          <th> {this.props.data.value.followers || '0'} </th>
+        </tr>
         </tbody>
       </table>
     )
