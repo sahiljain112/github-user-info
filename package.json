@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "jspm bundle app/main --inject",
-    "lint": "./node_modules/.bin/eslint ./app --ignore-path .gitignore --ignore-pattern internals/scripts || true"
+    "lint": "./node_modules/.bin/eslint ./app/*.js"
   },
   "keywords": [
     "GitHub",
@@ -28,7 +28,9 @@
   "jspm": {
     "dependencies": {
       "css": "github:systemjs/plugin-css@^0.1.27",
-      "react-bootstrap": "npm:react-bootstrap@^0.30.3"
+      "react": "npm:react@^15.3.1",
+      "react-bootstrap": "npm:react-bootstrap@^0.30.3",
+      "react-dom": "npm:react-dom@^15.3.1"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",
@@ -38,7 +40,6 @@
   },
   "dependencies": {
     "react": "^15.3.1",
-    "react-bootstrap": "^0.30.3",
     "react-dom": "^15.3.1"
   }
 }

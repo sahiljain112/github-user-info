@@ -212,7 +212,7 @@ System.registerDynamic('npm:core-js@1.2.7/library/modules/$.iobject.js', ['npm:c
       global = this || self,
       GLOBAL = global;
   /* */
-  var cof = $__require('./$.cof');
+  var cof = $__require('npm:core-js@1.2.7/library/modules/$.cof.js');
   module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
     return cof(it) == 'String' ? it.split('') : Object(it);
   };
@@ -234,8 +234,8 @@ System.registerDynamic('npm:core-js@1.2.7/library/modules/$.to-iobject.js', ['np
       global = this || self,
       GLOBAL = global;
   /* */
-  var IObject = $__require('./$.iobject'),
-      defined = $__require('./$.defined');
+  var IObject = $__require('npm:core-js@1.2.7/library/modules/$.iobject.js'),
+      defined = $__require('npm:core-js@1.2.7/library/modules/$.defined.js');
   module.exports = function (it) {
     return IObject(defined(it));
   };
@@ -260,9 +260,9 @@ System.registerDynamic('npm:core-js@1.2.7/library/modules/$.object-sap.js', ['np
         global = this || self,
         GLOBAL = global;
     /* */
-    var $export = $__require('./$.export'),
-        core = $__require('./$.core'),
-        fails = $__require('./$.fails');
+    var $export = $__require('npm:core-js@1.2.7/library/modules/$.export.js'),
+        core = $__require('npm:core-js@1.2.7/library/modules/$.core.js'),
+        fails = $__require('npm:core-js@1.2.7/library/modules/$.fails.js');
     module.exports = function (KEY, exec) {
         var fn = (core.Object || {})[KEY] || Object[KEY],
             exp = {};
@@ -278,8 +278,8 @@ System.registerDynamic('npm:core-js@1.2.7/library/modules/es6.object.get-own-pro
       global = this || self,
       GLOBAL = global;
   /* */
-  var toIObject = $__require('./$.to-iobject');
-  $__require('./$.object-sap')('getOwnPropertyDescriptor', function ($getOwnPropertyDescriptor) {
+  var toIObject = $__require('npm:core-js@1.2.7/library/modules/$.to-iobject.js');
+  $__require('npm:core-js@1.2.7/library/modules/$.object-sap.js')('getOwnPropertyDescriptor', function ($getOwnPropertyDescriptor) {
     return function getOwnPropertyDescriptor(it, key) {
       return $getOwnPropertyDescriptor(toIObject(it), key);
     };
@@ -291,8 +291,8 @@ System.registerDynamic('npm:core-js@1.2.7/library/fn/object/get-own-property-des
       global = this || self,
       GLOBAL = global;
   /* */
-  var $ = $__require('../../modules/$');
-  $__require('../../modules/es6.object.get-own-property-descriptor');
+  var $ = $__require('npm:core-js@1.2.7/library/modules/$.js');
+  $__require('npm:core-js@1.2.7/library/modules/es6.object.get-own-property-descriptor.js');
   module.exports = function getOwnPropertyDescriptor(it, key) {
     return $.getDesc(it, key);
   };
@@ -303,7 +303,7 @@ System.registerDynamic("npm:babel-runtime@5.8.38/core-js/object/get-own-property
       global = this || self,
       GLOBAL = global;
   /* */
-  module.exports = { "default": $__require("core-js/library/fn/object/get-own-property-descriptor"), __esModule: true };
+  module.exports = { "default": $__require("npm:core-js@1.2.7/library/fn/object/get-own-property-descriptor.js"), __esModule: true };
   return module.exports;
 });
 System.registerDynamic("npm:babel-runtime@5.8.38/helpers/get.js", ["npm:babel-runtime@5.8.38/core-js/object/get-own-property-descriptor.js"], true, function ($__require, exports, module) {
@@ -313,7 +313,7 @@ System.registerDynamic("npm:babel-runtime@5.8.38/helpers/get.js", ["npm:babel-ru
   var define,
       global = this || self,
       GLOBAL = global;
-  var _Object$getOwnPropertyDescriptor = $__require("../core-js/object/get-own-property-descriptor")["default"];
+  var _Object$getOwnPropertyDescriptor = $__require("npm:babel-runtime@5.8.38/core-js/object/get-own-property-descriptor.js")["default"];
   exports["default"] = function get(_x, _x2, _x3) {
     var _again = true;
     _function: while (_again) {
@@ -354,7 +354,7 @@ System.registerDynamic('npm:core-js@1.2.7/library/fn/object/create.js', ['npm:co
       global = this || self,
       GLOBAL = global;
   /* */
-  var $ = $__require('../../modules/$');
+  var $ = $__require('npm:core-js@1.2.7/library/modules/$.js');
   module.exports = function create(P, D) {
     return $.create(P, D);
   };
@@ -365,7 +365,7 @@ System.registerDynamic("npm:babel-runtime@5.8.38/core-js/object/create.js", ["np
       global = this || self,
       GLOBAL = global;
   /* */
-  module.exports = { "default": $__require("core-js/library/fn/object/create"), __esModule: true };
+  module.exports = { "default": $__require("npm:core-js@1.2.7/library/fn/object/create.js"), __esModule: true };
   return module.exports;
 });
 System.registerDynamic('npm:core-js@1.2.7/library/modules/$.global.js', [], true, function ($__require, exports, module) {
@@ -383,9 +383,9 @@ System.registerDynamic('npm:core-js@1.2.7/library/modules/$.export.js', ['npm:co
       global = this || self,
       GLOBAL = global;
   /* */
-  var global = $__require('./$.global'),
-      core = $__require('./$.core'),
-      ctx = $__require('./$.ctx'),
+  var global = $__require('npm:core-js@1.2.7/library/modules/$.global.js'),
+      core = $__require('npm:core-js@1.2.7/library/modules/$.core.js'),
+      ctx = $__require('npm:core-js@1.2.7/library/modules/$.ctx.js'),
       PROTOTYPE = 'prototype';
   var $export = function (type, name, source) {
     var IS_FORCED = type & $export.F,
@@ -438,7 +438,7 @@ System.registerDynamic('npm:core-js@1.2.7/library/modules/$.an-object.js', ['npm
       global = this || self,
       GLOBAL = global;
   /* */
-  var isObject = $__require('./$.is-object');
+  var isObject = $__require('npm:core-js@1.2.7/library/modules/$.is-object.js');
   module.exports = function (it) {
     if (!isObject(it)) throw TypeError(it + ' is not an object!');
     return it;
@@ -461,7 +461,7 @@ System.registerDynamic('npm:core-js@1.2.7/library/modules/$.ctx.js', ['npm:core-
       global = this || self,
       GLOBAL = global;
   /* */
-  var aFunction = $__require('./$.a-function');
+  var aFunction = $__require('npm:core-js@1.2.7/library/modules/$.a-function.js');
   module.exports = function (fn, that, length) {
     aFunction(fn);
     if (that === undefined) return fn;
@@ -490,9 +490,9 @@ System.registerDynamic('npm:core-js@1.2.7/library/modules/$.set-proto.js', ['npm
       global = this || self,
       GLOBAL = global;
   /* */
-  var getDesc = $__require('./$').getDesc,
-      isObject = $__require('./$.is-object'),
-      anObject = $__require('./$.an-object');
+  var getDesc = $__require('npm:core-js@1.2.7/library/modules/$.js').getDesc,
+      isObject = $__require('npm:core-js@1.2.7/library/modules/$.is-object.js'),
+      anObject = $__require('npm:core-js@1.2.7/library/modules/$.an-object.js');
   var check = function (O, proto) {
     anObject(O);
     if (!isObject(proto) && proto !== null) throw TypeError(proto + ": can't set as prototype!");
@@ -500,7 +500,7 @@ System.registerDynamic('npm:core-js@1.2.7/library/modules/$.set-proto.js', ['npm
   module.exports = {
     set: Object.setPrototypeOf || ('__proto__' in {} ? function (test, buggy, set) {
       try {
-        set = $__require('./$.ctx')(Function.call, getDesc(Object.prototype, '__proto__').set, 2);
+        set = $__require('npm:core-js@1.2.7/library/modules/$.ctx.js')(Function.call, getDesc(Object.prototype, '__proto__').set, 2);
         set(test, []);
         buggy = !(test instanceof Array);
       } catch (e) {
@@ -521,8 +521,8 @@ System.registerDynamic('npm:core-js@1.2.7/library/modules/es6.object.set-prototy
       global = this || self,
       GLOBAL = global;
   /* */
-  var $export = $__require('./$.export');
-  $export($export.S, 'Object', { setPrototypeOf: $__require('./$.set-proto').set });
+  var $export = $__require('npm:core-js@1.2.7/library/modules/$.export.js');
+  $export($export.S, 'Object', { setPrototypeOf: $__require('npm:core-js@1.2.7/library/modules/$.set-proto.js').set });
   return module.exports;
 });
 System.registerDynamic('npm:core-js@1.2.7/library/modules/$.core.js', [], true, function ($__require, exports, module) {
@@ -540,8 +540,8 @@ System.registerDynamic('npm:core-js@1.2.7/library/fn/object/set-prototype-of.js'
       global = this || self,
       GLOBAL = global;
   /* */
-  $__require('../../modules/es6.object.set-prototype-of');
-  module.exports = $__require('../../modules/$.core').Object.setPrototypeOf;
+  $__require('npm:core-js@1.2.7/library/modules/es6.object.set-prototype-of.js');
+  module.exports = $__require('npm:core-js@1.2.7/library/modules/$.core.js').Object.setPrototypeOf;
   return module.exports;
 });
 System.registerDynamic("npm:babel-runtime@5.8.38/core-js/object/set-prototype-of.js", ["npm:core-js@1.2.7/library/fn/object/set-prototype-of.js"], true, function ($__require, exports, module) {
@@ -549,7 +549,7 @@ System.registerDynamic("npm:babel-runtime@5.8.38/core-js/object/set-prototype-of
       global = this || self,
       GLOBAL = global;
   /* */
-  module.exports = { "default": $__require("core-js/library/fn/object/set-prototype-of"), __esModule: true };
+  module.exports = { "default": $__require("npm:core-js@1.2.7/library/fn/object/set-prototype-of.js"), __esModule: true };
   return module.exports;
 });
 System.registerDynamic("npm:babel-runtime@5.8.38/helpers/inherits.js", ["npm:babel-runtime@5.8.38/core-js/object/create.js", "npm:babel-runtime@5.8.38/core-js/object/set-prototype-of.js"], true, function ($__require, exports, module) {
@@ -559,8 +559,8 @@ System.registerDynamic("npm:babel-runtime@5.8.38/helpers/inherits.js", ["npm:bab
   var define,
       global = this || self,
       GLOBAL = global;
-  var _Object$create = $__require("../core-js/object/create")["default"];
-  var _Object$setPrototypeOf = $__require("../core-js/object/set-prototype-of")["default"];
+  var _Object$create = $__require("npm:babel-runtime@5.8.38/core-js/object/create.js")["default"];
+  var _Object$setPrototypeOf = $__require("npm:babel-runtime@5.8.38/core-js/object/set-prototype-of.js")["default"];
   exports["default"] = function (subClass, superClass) {
     if (typeof superClass !== "function" && superClass !== null) {
       throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
@@ -601,7 +601,7 @@ System.registerDynamic('npm:core-js@1.2.7/library/fn/object/define-property.js',
       global = this || self,
       GLOBAL = global;
   /* */
-  var $ = $__require('../../modules/$');
+  var $ = $__require('npm:core-js@1.2.7/library/modules/$.js');
   module.exports = function defineProperty(it, key, desc) {
     return $.setDesc(it, key, desc);
   };
@@ -612,7 +612,7 @@ System.registerDynamic("npm:babel-runtime@5.8.38/core-js/object/define-property.
       global = this || self,
       GLOBAL = global;
   /* */
-  module.exports = { "default": $__require("core-js/library/fn/object/define-property"), __esModule: true };
+  module.exports = { "default": $__require("npm:core-js@1.2.7/library/fn/object/define-property.js"), __esModule: true };
   return module.exports;
 });
 System.registerDynamic("npm:babel-runtime@5.8.38/helpers/create-class.js", ["npm:babel-runtime@5.8.38/core-js/object/define-property.js"], true, function ($__require, exports, module) {
@@ -622,7 +622,7 @@ System.registerDynamic("npm:babel-runtime@5.8.38/helpers/create-class.js", ["npm
   var define,
       global = this || self,
       GLOBAL = global;
-  var _Object$defineProperty = $__require("../core-js/object/define-property")["default"];
+  var _Object$defineProperty = $__require("npm:babel-runtime@5.8.38/core-js/object/define-property.js")["default"];
   exports["default"] = function () {
     function defineProperties(target, props) {
       for (var i = 0; i < props.length; i++) {
@@ -666,17 +666,17 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Accordion.js', ['npm:babe
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _PanelGroup = $__require('./PanelGroup');
+  var _PanelGroup = $__require('npm:react-bootstrap@0.30.3/lib/PanelGroup.js');
   var _PanelGroup2 = _interopRequireDefault(_PanelGroup);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
@@ -704,24 +704,24 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Alert.js', ['npm:babel-ru
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _values = $__require('babel-runtime/core-js/object/values');
+  var _values = $__require('npm:babel-runtime@6.11.6/core-js/object/values.js');
   var _values2 = _interopRequireDefault(_values);
-  var _extends3 = $__require('babel-runtime/helpers/extends');
+  var _extends3 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends4 = _interopRequireDefault(_extends3);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
-  var _StyleConfig = $__require('./utils/StyleConfig');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
+  var _StyleConfig = $__require('npm:react-bootstrap@0.30.3/lib/utils/StyleConfig.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -786,21 +786,21 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Badge.js', ['npm:babel-ru
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -855,23 +855,23 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Breadcrumb.js', ['npm:bab
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _BreadcrumbItem = $__require('./BreadcrumbItem');
+  var _BreadcrumbItem = $__require('npm:react-bootstrap@0.30.3/lib/BreadcrumbItem.js');
   var _BreadcrumbItem2 = _interopRequireDefault(_BreadcrumbItem);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -910,21 +910,21 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/BreadcrumbItem.js', ['npm
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _SafeAnchor = $__require('./SafeAnchor');
+  var _SafeAnchor = $__require('npm:react-bootstrap@0.30.3/lib/SafeAnchor.js');
   var _SafeAnchor2 = _interopRequireDefault(_SafeAnchor);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
@@ -973,23 +973,23 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/ButtonToolbar.js', ['npm:
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _Button = $__require('./Button');
+  var _Button = $__require('npm:react-bootstrap@0.30.3/lib/Button.js');
   var _Button2 = _interopRequireDefault(_Button);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -1026,23 +1026,23 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/CarouselCaption.js', ['np
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _elementType = $__require('react-prop-types/lib/elementType');
+  var _elementType = $__require('npm:react-prop-types@0.4.0/lib/elementType.js');
   var _elementType2 = _interopRequireDefault(_elementType);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -1081,30 +1081,30 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Carousel.js', ['npm:babel
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _CarouselCaption = $__require('./CarouselCaption');
+  var _CarouselCaption = $__require('npm:react-bootstrap@0.30.3/lib/CarouselCaption.js');
   var _CarouselCaption2 = _interopRequireDefault(_CarouselCaption);
-  var _CarouselItem = $__require('./CarouselItem');
+  var _CarouselItem = $__require('npm:react-bootstrap@0.30.3/lib/CarouselItem.js');
   var _CarouselItem2 = _interopRequireDefault(_CarouselItem);
-  var _Glyphicon = $__require('./Glyphicon');
+  var _Glyphicon = $__require('npm:react-bootstrap@0.30.3/lib/Glyphicon.js');
   var _Glyphicon2 = _interopRequireDefault(_Glyphicon);
-  var _SafeAnchor = $__require('./SafeAnchor');
+  var _SafeAnchor = $__require('npm:react-bootstrap@0.30.3/lib/SafeAnchor.js');
   var _SafeAnchor2 = _interopRequireDefault(_SafeAnchor);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
-  var _ValidComponentChildren = $__require('./utils/ValidComponentChildren');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
+  var _ValidComponentChildren = $__require('npm:react-bootstrap@0.30.3/lib/utils/ValidComponentChildren.js');
   var _ValidComponentChildren2 = _interopRequireDefault(_ValidComponentChildren);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
@@ -1474,23 +1474,23 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/CarouselItem.js', ['npm:b
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _reactDom = $__require('react-dom');
+  var _reactDom = $__require('npm:react-dom@15.3.1.js');
   var _reactDom2 = _interopRequireDefault(_reactDom);
-  var _TransitionEvents = $__require('./utils/TransitionEvents');
+  var _TransitionEvents = $__require('npm:react-bootstrap@0.30.3/lib/utils/TransitionEvents.js');
   var _TransitionEvents2 = _interopRequireDefault(_TransitionEvents);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
@@ -1592,23 +1592,23 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Checkbox.js', ['npm:babel
     'use strict';
 
     exports.__esModule = true;
-    var _extends2 = $__require('babel-runtime/helpers/extends');
+    var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
     var _extends3 = _interopRequireDefault(_extends2);
-    var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+    var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
     var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-    var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+    var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
     var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-    var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+    var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
     var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-    var _inherits2 = $__require('babel-runtime/helpers/inherits');
+    var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
     var _inherits3 = _interopRequireDefault(_inherits2);
-    var _classnames = $__require('classnames');
+    var _classnames = $__require('npm:classnames@2.2.5.js');
     var _classnames2 = _interopRequireDefault(_classnames);
-    var _react = $__require('react');
+    var _react = $__require('npm:react@15.3.1.js');
     var _react2 = _interopRequireDefault(_react);
-    var _warning = $__require('warning');
+    var _warning = $__require('npm:warning@3.0.0.js');
     var _warning2 = _interopRequireDefault(_warning);
-    var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+    var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
     function _interopRequireDefault(obj) {
       return obj && obj.__esModule ? obj : { 'default': obj };
     }
@@ -1670,7 +1670,7 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Checkbox.js', ['npm:babel
     Checkbox.defaultProps = defaultProps;
     exports['default'] = (0, _bootstrapUtils.bsClass)('checkbox', Checkbox);
     module.exports = exports['default'];
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Clearfix.js', ['npm:babel-runtime@6.11.6/helpers/extends.js', 'npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js', 'npm:babel-runtime@6.11.6/helpers/classCallCheck.js', 'npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js', 'npm:babel-runtime@6.11.6/helpers/inherits.js', 'npm:classnames@2.2.5.js', 'npm:react@15.3.1.js', 'npm:react-prop-types@0.4.0/lib/elementType.js', 'npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js', 'npm:react-bootstrap@0.30.3/lib/utils/capitalize.js', 'npm:react-bootstrap@0.30.3/lib/utils/StyleConfig.js'], true, function ($__require, exports, module) {
@@ -1681,26 +1681,26 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Clearfix.js', ['npm:babel
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _elementType = $__require('react-prop-types/lib/elementType');
+  var _elementType = $__require('npm:react-prop-types@0.4.0/lib/elementType.js');
   var _elementType2 = _interopRequireDefault(_elementType);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
-  var _capitalize = $__require('./utils/capitalize');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
+  var _capitalize = $__require('npm:react-bootstrap@0.30.3/lib/utils/capitalize.js');
   var _capitalize2 = _interopRequireDefault(_capitalize);
-  var _StyleConfig = $__require('./utils/StyleConfig');
+  var _StyleConfig = $__require('npm:react-bootstrap@0.30.3/lib/utils/StyleConfig.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -1753,23 +1753,23 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/ControlLabel.js', ['npm:b
     'use strict';
 
     exports.__esModule = true;
-    var _extends2 = $__require('babel-runtime/helpers/extends');
+    var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
     var _extends3 = _interopRequireDefault(_extends2);
-    var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+    var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
     var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-    var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+    var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
     var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-    var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+    var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
     var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-    var _inherits2 = $__require('babel-runtime/helpers/inherits');
+    var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
     var _inherits3 = _interopRequireDefault(_inherits2);
-    var _classnames = $__require('classnames');
+    var _classnames = $__require('npm:classnames@2.2.5.js');
     var _classnames2 = _interopRequireDefault(_classnames);
-    var _react = $__require('react');
+    var _react = $__require('npm:react@15.3.1.js');
     var _react2 = _interopRequireDefault(_react);
-    var _warning = $__require('warning');
+    var _warning = $__require('npm:warning@3.0.0.js');
     var _warning2 = _interopRequireDefault(_warning);
-    var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+    var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
     function _interopRequireDefault(obj) {
       return obj && obj.__esModule ? obj : { 'default': obj };
     }
@@ -1811,7 +1811,7 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/ControlLabel.js', ['npm:b
     ControlLabel.contextTypes = contextTypes;
     exports['default'] = (0, _bootstrapUtils.bsClass)('control-label', ControlLabel);
     module.exports = exports['default'];
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Col.js', ['npm:babel-runtime@6.11.6/helpers/extends.js', 'npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js', 'npm:babel-runtime@6.11.6/helpers/classCallCheck.js', 'npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js', 'npm:babel-runtime@6.11.6/helpers/inherits.js', 'npm:classnames@2.2.5.js', 'npm:react@15.3.1.js', 'npm:react-prop-types@0.4.0/lib/elementType.js', 'npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js', 'npm:react-bootstrap@0.30.3/lib/utils/StyleConfig.js'], true, function ($__require, exports, module) {
@@ -1822,24 +1822,24 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Col.js', ['npm:babel-runt
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _elementType = $__require('react-prop-types/lib/elementType');
+  var _elementType = $__require('npm:react-prop-types@0.4.0/lib/elementType.js');
   var _elementType2 = _interopRequireDefault(_elementType);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
-  var _StyleConfig = $__require('./utils/StyleConfig');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
+  var _StyleConfig = $__require('npm:react-bootstrap@0.30.3/lib/utils/StyleConfig.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -1919,21 +1919,21 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/DropdownButton.js', ['npm
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _Dropdown = $__require('./Dropdown');
+  var _Dropdown = $__require('npm:react-bootstrap@0.30.3/lib/Dropdown.js');
   var _Dropdown2 = _interopRequireDefault(_Dropdown);
-  var _splitComponentProps2 = $__require('./utils/splitComponentProps');
+  var _splitComponentProps2 = $__require('npm:react-bootstrap@0.30.3/lib/utils/splitComponentProps.js');
   var _splitComponentProps3 = _interopRequireDefault(_splitComponentProps2);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
@@ -1984,23 +1984,23 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Form.js', ['npm:babel-run
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _elementType = $__require('react-prop-types/lib/elementType');
+  var _elementType = $__require('npm:react-prop-types@0.4.0/lib/elementType.js');
   var _elementType2 = _interopRequireDefault(_elementType);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -2055,23 +2055,23 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/FormControlFeedback.js', 
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _Glyphicon = $__require('./Glyphicon');
+  var _Glyphicon = $__require('npm:react-bootstrap@0.30.3/lib/Glyphicon.js');
   var _Glyphicon2 = _interopRequireDefault(_Glyphicon);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -2136,23 +2136,23 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/FormControlStatic.js', ['
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _elementType = $__require('react-prop-types/lib/elementType');
+  var _elementType = $__require('npm:react-prop-types@0.4.0/lib/elementType.js');
   var _elementType2 = _interopRequireDefault(_elementType);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -2192,29 +2192,29 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/FormControl.js', ['npm:ba
     'use strict';
 
     exports.__esModule = true;
-    var _extends2 = $__require('babel-runtime/helpers/extends');
+    var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
     var _extends3 = _interopRequireDefault(_extends2);
-    var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+    var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
     var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-    var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+    var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
     var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-    var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+    var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
     var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-    var _inherits2 = $__require('babel-runtime/helpers/inherits');
+    var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
     var _inherits3 = _interopRequireDefault(_inherits2);
-    var _classnames = $__require('classnames');
+    var _classnames = $__require('npm:classnames@2.2.5.js');
     var _classnames2 = _interopRequireDefault(_classnames);
-    var _react = $__require('react');
+    var _react = $__require('npm:react@15.3.1.js');
     var _react2 = _interopRequireDefault(_react);
-    var _elementType = $__require('react-prop-types/lib/elementType');
+    var _elementType = $__require('npm:react-prop-types@0.4.0/lib/elementType.js');
     var _elementType2 = _interopRequireDefault(_elementType);
-    var _warning = $__require('warning');
+    var _warning = $__require('npm:warning@3.0.0.js');
     var _warning2 = _interopRequireDefault(_warning);
-    var _FormControlFeedback = $__require('./FormControlFeedback');
+    var _FormControlFeedback = $__require('npm:react-bootstrap@0.30.3/lib/FormControlFeedback.js');
     var _FormControlFeedback2 = _interopRequireDefault(_FormControlFeedback);
-    var _FormControlStatic = $__require('./FormControlStatic');
+    var _FormControlStatic = $__require('npm:react-bootstrap@0.30.3/lib/FormControlStatic.js');
     var _FormControlStatic2 = _interopRequireDefault(_FormControlStatic);
-    var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+    var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
     function _interopRequireDefault(obj) {
       return obj && obj.__esModule ? obj : { 'default': obj };
     }
@@ -2264,7 +2264,7 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/FormControl.js', ['npm:ba
     FormControl.Static = _FormControlStatic2['default'];
     exports['default'] = (0, _bootstrapUtils.bsClass)('form-control', FormControl);
     module.exports = exports['default'];
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react-bootstrap@0.30.3/lib/FormGroup.js', ['npm:babel-runtime@6.11.6/helpers/extends.js', 'npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js', 'npm:babel-runtime@6.11.6/helpers/classCallCheck.js', 'npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js', 'npm:babel-runtime@6.11.6/helpers/inherits.js', 'npm:classnames@2.2.5.js', 'npm:react@15.3.1.js', 'npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js', 'npm:react-bootstrap@0.30.3/lib/utils/StyleConfig.js', 'npm:react-bootstrap@0.30.3/lib/utils/ValidComponentChildren.js'], true, function ($__require, exports, module) {
@@ -2275,23 +2275,23 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/FormGroup.js', ['npm:babe
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
-  var _StyleConfig = $__require('./utils/StyleConfig');
-  var _ValidComponentChildren = $__require('./utils/ValidComponentChildren');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
+  var _StyleConfig = $__require('npm:react-bootstrap@0.30.3/lib/utils/StyleConfig.js');
+  var _ValidComponentChildren = $__require('npm:react-bootstrap@0.30.3/lib/utils/ValidComponentChildren.js');
   var _ValidComponentChildren2 = _interopRequireDefault(_ValidComponentChildren);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
@@ -2353,21 +2353,21 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Glyphicon.js', ['npm:babe
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends3 = $__require('babel-runtime/helpers/extends');
+  var _extends3 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends4 = _interopRequireDefault(_extends3);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -2405,21 +2405,21 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/HelpBlock.js', ['npm:babe
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -2453,21 +2453,21 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Image.js', ['npm:babel-ru
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -2520,21 +2520,21 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/InputGroupAddon.js', ['np
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -2568,21 +2568,21 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/InputGroupButton.js', ['n
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -2616,26 +2616,26 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/InputGroup.js', ['npm:bab
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _InputGroupAddon = $__require('./InputGroupAddon');
+  var _InputGroupAddon = $__require('npm:react-bootstrap@0.30.3/lib/InputGroupAddon.js');
   var _InputGroupAddon2 = _interopRequireDefault(_InputGroupAddon);
-  var _InputGroupButton = $__require('./InputGroupButton');
+  var _InputGroupButton = $__require('npm:react-bootstrap@0.30.3/lib/InputGroupButton.js');
   var _InputGroupButton2 = _interopRequireDefault(_InputGroupButton);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
-  var _StyleConfig = $__require('./utils/StyleConfig');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
+  var _StyleConfig = $__require('npm:react-bootstrap@0.30.3/lib/utils/StyleConfig.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -2671,23 +2671,23 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Jumbotron.js', ['npm:babe
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _elementType = $__require('react-prop-types/lib/elementType');
+  var _elementType = $__require('npm:react-prop-types@0.4.0/lib/elementType.js');
   var _elementType2 = _interopRequireDefault(_elementType);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -2726,24 +2726,24 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Label.js', ['npm:babel-ru
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _values = $__require('babel-runtime/core-js/object/values');
+  var _values = $__require('npm:babel-runtime@6.11.6/core-js/object/values.js');
   var _values2 = _interopRequireDefault(_values);
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
-  var _StyleConfig = $__require('./utils/StyleConfig');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
+  var _StyleConfig = $__require('npm:react-bootstrap@0.30.3/lib/utils/StyleConfig.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -2790,26 +2790,26 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/ListGroup.js', ['npm:babe
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _elementType = $__require('react-prop-types/lib/elementType');
+  var _elementType = $__require('npm:react-prop-types@0.4.0/lib/elementType.js');
   var _elementType2 = _interopRequireDefault(_elementType);
-  var _ListGroupItem = $__require('./ListGroupItem');
+  var _ListGroupItem = $__require('npm:react-bootstrap@0.30.3/lib/ListGroupItem.js');
   var _ListGroupItem2 = _interopRequireDefault(_ListGroupItem);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
-  var _ValidComponentChildren = $__require('./utils/ValidComponentChildren');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
+  var _ValidComponentChildren = $__require('npm:react-bootstrap@0.30.3/lib/utils/ValidComponentChildren.js');
   var _ValidComponentChildren2 = _interopRequireDefault(_ValidComponentChildren);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
@@ -2865,24 +2865,24 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/ListGroupItem.js', ['npm:
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _values = $__require('babel-runtime/core-js/object/values');
+  var _values = $__require('npm:babel-runtime@6.11.6/core-js/object/values.js');
   var _values2 = _interopRequireDefault(_values);
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
-  var _StyleConfig = $__require('./utils/StyleConfig');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
+  var _StyleConfig = $__require('npm:react-bootstrap@0.30.3/lib/utils/StyleConfig.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -2957,23 +2957,23 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/MediaBody.js', ['npm:babe
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _elementType = $__require('react-prop-types/lib/elementType');
+  var _elementType = $__require('npm:react-prop-types@0.4.0/lib/elementType.js');
   var _elementType2 = _interopRequireDefault(_elementType);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -3012,23 +3012,23 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/MediaHeading.js', ['npm:b
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _elementType = $__require('react-prop-types/lib/elementType');
+  var _elementType = $__require('npm:react-prop-types@0.4.0/lib/elementType.js');
   var _elementType2 = _interopRequireDefault(_elementType);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -3067,23 +3067,23 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/MediaLeft.js', ['npm:babe
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _Media = $__require('./Media');
+  var _Media = $__require('npm:react-bootstrap@0.30.3/lib/Media.js');
   var _Media2 = _interopRequireDefault(_Media);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -3123,21 +3123,21 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/MediaList.js', ['npm:babe
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -3171,21 +3171,21 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/MediaListItem.js', ['npm:
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -3219,23 +3219,23 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/MediaRight.js', ['npm:bab
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _Media = $__require('./Media');
+  var _Media = $__require('npm:react-bootstrap@0.30.3/lib/Media.js');
   var _Media2 = _interopRequireDefault(_Media);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -3275,35 +3275,35 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Media.js', ['npm:babel-ru
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _elementType = $__require('react-prop-types/lib/elementType');
+  var _elementType = $__require('npm:react-prop-types@0.4.0/lib/elementType.js');
   var _elementType2 = _interopRequireDefault(_elementType);
-  var _MediaBody = $__require('./MediaBody');
+  var _MediaBody = $__require('npm:react-bootstrap@0.30.3/lib/MediaBody.js');
   var _MediaBody2 = _interopRequireDefault(_MediaBody);
-  var _MediaHeading = $__require('./MediaHeading');
+  var _MediaHeading = $__require('npm:react-bootstrap@0.30.3/lib/MediaHeading.js');
   var _MediaHeading2 = _interopRequireDefault(_MediaHeading);
-  var _MediaLeft = $__require('./MediaLeft');
+  var _MediaLeft = $__require('npm:react-bootstrap@0.30.3/lib/MediaLeft.js');
   var _MediaLeft2 = _interopRequireDefault(_MediaLeft);
-  var _MediaList = $__require('./MediaList');
+  var _MediaList = $__require('npm:react-bootstrap@0.30.3/lib/MediaList.js');
   var _MediaList2 = _interopRequireDefault(_MediaList);
-  var _MediaListItem = $__require('./MediaListItem');
+  var _MediaListItem = $__require('npm:react-bootstrap@0.30.3/lib/MediaListItem.js');
   var _MediaListItem2 = _interopRequireDefault(_MediaListItem);
-  var _MediaRight = $__require('./MediaRight');
+  var _MediaRight = $__require('npm:react-bootstrap@0.30.3/lib/MediaRight.js');
   var _MediaRight2 = _interopRequireDefault(_MediaRight);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -3348,26 +3348,26 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/MenuItem.js', ['npm:babel
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _all = $__require('react-prop-types/lib/all');
+  var _all = $__require('npm:react-prop-types@0.4.0/lib/all.js');
   var _all2 = _interopRequireDefault(_all);
-  var _SafeAnchor = $__require('./SafeAnchor');
+  var _SafeAnchor = $__require('npm:react-bootstrap@0.30.3/lib/SafeAnchor.js');
   var _SafeAnchor2 = _interopRequireDefault(_SafeAnchor);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
-  var _createChainedFunction = $__require('./utils/createChainedFunction');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
+  var _createChainedFunction = $__require('npm:react-bootstrap@0.30.3/lib/utils/createChainedFunction.js');
   var _createChainedFunction2 = _interopRequireDefault(_createChainedFunction);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
@@ -3506,8 +3506,8 @@ System.registerDynamic('npm:dom-helpers@2.4.0/events/filter.js', ['npm:dom-helpe
   var define,
       global = this || self,
       GLOBAL = global;
-  var contains = $__require('../query/contains'),
-      qsa = $__require('../query/querySelectorAll');
+  var contains = $__require('npm:dom-helpers@2.4.0/query/contains.js'),
+      qsa = $__require('npm:dom-helpers@2.4.0/query/querySelectorAll.js');
   module.exports = function (selector, handler) {
     return function (e) {
       var top = e.currentTarget,
@@ -3527,9 +3527,9 @@ System.registerDynamic('npm:dom-helpers@2.4.0/events/index.js', ['npm:dom-helper
   var define,
       global = this || self,
       GLOBAL = global;
-  var on = $__require('./on'),
-      off = $__require('./off'),
-      filter = $__require('./filter');
+  var on = $__require('npm:dom-helpers@2.4.0/events/on.js'),
+      off = $__require('npm:dom-helpers@2.4.0/events/off.js'),
+      filter = $__require('npm:dom-helpers@2.4.0/events/filter.js');
   module.exports = {
     on: on,
     off: off,
@@ -3542,7 +3542,7 @@ System.registerDynamic('npm:dom-helpers@2.4.0/events.js', ['npm:dom-helpers@2.4.
       global = this || self,
       GLOBAL = global;
   /* */
-  module.exports = $__require('./events/index');
+  module.exports = $__require('npm:dom-helpers@2.4.0/events/index.js');
   return module.exports;
 });
 System.registerDynamic('npm:dom-helpers@2.4.0/class/addClass.js', ['npm:dom-helpers@2.4.0/class/hasClass.js'], true, function ($__require, exports, module) {
@@ -3552,7 +3552,7 @@ System.registerDynamic('npm:dom-helpers@2.4.0/class/addClass.js', ['npm:dom-help
   var define,
       global = this || self,
       GLOBAL = global;
-  var hasClass = $__require('./hasClass');
+  var hasClass = $__require('npm:dom-helpers@2.4.0/class/hasClass.js');
   module.exports = function addClass(element, className) {
     if (element.classList) element.classList.add(className);else if (!hasClass(element)) element.className = element.className + ' ' + className;
   };
@@ -3590,9 +3590,9 @@ System.registerDynamic('npm:dom-helpers@2.4.0/class/index.js', ['npm:dom-helpers
       global = this || self,
       GLOBAL = global;
   module.exports = {
-    addClass: $__require('./addClass'),
-    removeClass: $__require('./removeClass'),
-    hasClass: $__require('./hasClass')
+    addClass: $__require('npm:dom-helpers@2.4.0/class/addClass.js'),
+    removeClass: $__require('npm:dom-helpers@2.4.0/class/removeClass.js'),
+    hasClass: $__require('npm:dom-helpers@2.4.0/class/hasClass.js')
   };
   return module.exports;
 });
@@ -3601,7 +3601,7 @@ System.registerDynamic('npm:dom-helpers@2.4.0/class.js', ['npm:dom-helpers@2.4.0
       global = this || self,
       GLOBAL = global;
   /* */
-  module.exports = $__require('./class/index');
+  module.exports = $__require('npm:dom-helpers@2.4.0/class/index.js');
   return module.exports;
 });
 System.registerDynamic('npm:dom-helpers@2.4.0/util/scrollbarSize.js', ['npm:dom-helpers@2.4.0/util/inDOM.js'], true, function ($__require, exports, module) {
@@ -3611,7 +3611,7 @@ System.registerDynamic('npm:dom-helpers@2.4.0/util/scrollbarSize.js', ['npm:dom-
   var define,
       global = this || self,
       GLOBAL = global;
-  var canUseDOM = $__require('./inDOM');
+  var canUseDOM = $__require('npm:dom-helpers@2.4.0/util/inDOM.js');
   var size;
   module.exports = function (recalc) {
     if (!size || recalc) {
@@ -3711,15 +3711,15 @@ System.registerDynamic("npm:react-overlays@0.6.6/lib/ModalManager.js", ["npm:dom
       return Constructor;
     };
   }();
-  var _style = $__require("dom-helpers/style");
+  var _style = $__require("npm:dom-helpers@2.4.0/style.js");
   var _style2 = _interopRequireDefault(_style);
-  var _class = $__require("dom-helpers/class");
+  var _class = $__require("npm:dom-helpers@2.4.0/class.js");
   var _class2 = _interopRequireDefault(_class);
-  var _scrollbarSize = $__require("dom-helpers/util/scrollbarSize");
+  var _scrollbarSize = $__require("npm:dom-helpers@2.4.0/util/scrollbarSize.js");
   var _scrollbarSize2 = _interopRequireDefault(_scrollbarSize);
-  var _isOverflowing = $__require("./utils/isOverflowing");
+  var _isOverflowing = $__require("npm:react-overlays@0.6.6/lib/utils/isOverflowing.js");
   var _isOverflowing2 = _interopRequireDefault(_isOverflowing);
-  var _manageAriaHidden = $__require("./utils/manageAriaHidden");
+  var _manageAriaHidden = $__require("npm:react-overlays@0.6.6/lib/utils/manageAriaHidden.js");
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { default: obj };
   }
@@ -3883,31 +3883,31 @@ System.registerDynamic('npm:react-overlays@0.6.6/lib/Modal.js', ['npm:react@15.3
     }
     return target;
   };
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _warning = $__require('warning');
+  var _warning = $__require('npm:warning@3.0.0.js');
   var _warning2 = _interopRequireDefault(_warning);
-  var _componentOrElement = $__require('react-prop-types/lib/componentOrElement');
+  var _componentOrElement = $__require('npm:react-prop-types@0.4.0/lib/componentOrElement.js');
   var _componentOrElement2 = _interopRequireDefault(_componentOrElement);
-  var _elementType = $__require('react-prop-types/lib/elementType');
+  var _elementType = $__require('npm:react-prop-types@0.4.0/lib/elementType.js');
   var _elementType2 = _interopRequireDefault(_elementType);
-  var _Portal = $__require('./Portal');
+  var _Portal = $__require('npm:react-overlays@0.6.6/lib/Portal.js');
   var _Portal2 = _interopRequireDefault(_Portal);
-  var _ModalManager = $__require('./ModalManager');
+  var _ModalManager = $__require('npm:react-overlays@0.6.6/lib/ModalManager.js');
   var _ModalManager2 = _interopRequireDefault(_ModalManager);
-  var _ownerDocument = $__require('./utils/ownerDocument');
+  var _ownerDocument = $__require('npm:react-overlays@0.6.6/lib/utils/ownerDocument.js');
   var _ownerDocument2 = _interopRequireDefault(_ownerDocument);
-  var _addEventListener = $__require('./utils/addEventListener');
+  var _addEventListener = $__require('npm:react-overlays@0.6.6/lib/utils/addEventListener.js');
   var _addEventListener2 = _interopRequireDefault(_addEventListener);
-  var _addFocusListener = $__require('./utils/addFocusListener');
+  var _addFocusListener = $__require('npm:react-overlays@0.6.6/lib/utils/addFocusListener.js');
   var _addFocusListener2 = _interopRequireDefault(_addFocusListener);
-  var _inDOM = $__require('dom-helpers/util/inDOM');
+  var _inDOM = $__require('npm:dom-helpers@2.4.0/util/inDOM.js');
   var _inDOM2 = _interopRequireDefault(_inDOM);
-  var _activeElement = $__require('dom-helpers/activeElement');
+  var _activeElement = $__require('npm:dom-helpers@2.4.0/activeElement.js');
   var _activeElement2 = _interopRequireDefault(_activeElement);
-  var _contains = $__require('dom-helpers/query/contains');
+  var _contains = $__require('npm:dom-helpers@2.4.0/query/contains.js');
   var _contains2 = _interopRequireDefault(_contains);
-  var _getContainer = $__require('./utils/getContainer');
+  var _getContainer = $__require('npm:react-overlays@0.6.6/lib/utils/getContainer.js');
   var _getContainer2 = _interopRequireDefault(_getContainer);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { default: obj };
@@ -4166,11 +4166,11 @@ System.registerDynamic('npm:react-overlays@0.6.6/lib/utils/isOverflowing.js', ['
   });
   exports.default = isOverflowing;
 
-  var _isWindow = $__require('dom-helpers/query/isWindow');
+  var _isWindow = $__require('npm:dom-helpers@2.4.0/query/isWindow.js');
 
   var _isWindow2 = _interopRequireDefault(_isWindow);
 
-  var _ownerDocument = $__require('dom-helpers/ownerDocument');
+  var _ownerDocument = $__require('npm:dom-helpers@2.4.0/ownerDocument.js');
 
   var _ownerDocument2 = _interopRequireDefault(_ownerDocument);
 
@@ -4212,22 +4212,22 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/ModalDialog.js', ['npm:ba
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends3 = $__require('babel-runtime/helpers/extends');
+  var _extends3 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends4 = _interopRequireDefault(_extends3);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
-  var _StyleConfig = $__require('./utils/StyleConfig');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
+  var _StyleConfig = $__require('npm:react-bootstrap@0.30.3/lib/utils/StyleConfig.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -4277,54 +4277,54 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Modal.js', ['npm:babel-ru
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _events = $__require('dom-helpers/events');
+  var _events = $__require('npm:dom-helpers@2.4.0/events.js');
   var _events2 = _interopRequireDefault(_events);
-  var _ownerDocument = $__require('dom-helpers/ownerDocument');
+  var _ownerDocument = $__require('npm:dom-helpers@2.4.0/ownerDocument.js');
   var _ownerDocument2 = _interopRequireDefault(_ownerDocument);
-  var _inDOM = $__require('dom-helpers/util/inDOM');
+  var _inDOM = $__require('npm:dom-helpers@2.4.0/util/inDOM.js');
   var _inDOM2 = _interopRequireDefault(_inDOM);
-  var _scrollbarSize = $__require('dom-helpers/util/scrollbarSize');
+  var _scrollbarSize = $__require('npm:dom-helpers@2.4.0/util/scrollbarSize.js');
   var _scrollbarSize2 = _interopRequireDefault(_scrollbarSize);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _reactDom = $__require('react-dom');
+  var _reactDom = $__require('npm:react-dom@15.3.1.js');
   var _reactDom2 = _interopRequireDefault(_reactDom);
-  var _Modal = $__require('react-overlays/lib/Modal');
+  var _Modal = $__require('npm:react-overlays@0.6.6/lib/Modal.js');
   var _Modal2 = _interopRequireDefault(_Modal);
-  var _isOverflowing = $__require('react-overlays/lib/utils/isOverflowing');
+  var _isOverflowing = $__require('npm:react-overlays@0.6.6/lib/utils/isOverflowing.js');
   var _isOverflowing2 = _interopRequireDefault(_isOverflowing);
-  var _elementType = $__require('react-prop-types/lib/elementType');
+  var _elementType = $__require('npm:react-prop-types@0.4.0/lib/elementType.js');
   var _elementType2 = _interopRequireDefault(_elementType);
-  var _Fade = $__require('./Fade');
+  var _Fade = $__require('npm:react-bootstrap@0.30.3/lib/Fade.js');
   var _Fade2 = _interopRequireDefault(_Fade);
-  var _ModalBody = $__require('./ModalBody');
+  var _ModalBody = $__require('npm:react-bootstrap@0.30.3/lib/ModalBody.js');
   var _ModalBody2 = _interopRequireDefault(_ModalBody);
-  var _ModalDialog = $__require('./ModalDialog');
+  var _ModalDialog = $__require('npm:react-bootstrap@0.30.3/lib/ModalDialog.js');
   var _ModalDialog2 = _interopRequireDefault(_ModalDialog);
-  var _ModalFooter = $__require('./ModalFooter');
+  var _ModalFooter = $__require('npm:react-bootstrap@0.30.3/lib/ModalFooter.js');
   var _ModalFooter2 = _interopRequireDefault(_ModalFooter);
-  var _ModalHeader = $__require('./ModalHeader');
+  var _ModalHeader = $__require('npm:react-bootstrap@0.30.3/lib/ModalHeader.js');
   var _ModalHeader2 = _interopRequireDefault(_ModalHeader);
-  var _ModalTitle = $__require('./ModalTitle');
+  var _ModalTitle = $__require('npm:react-bootstrap@0.30.3/lib/ModalTitle.js');
   var _ModalTitle2 = _interopRequireDefault(_ModalTitle);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
-  var _createChainedFunction = $__require('./utils/createChainedFunction');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
+  var _createChainedFunction = $__require('npm:react-bootstrap@0.30.3/lib/utils/createChainedFunction.js');
   var _createChainedFunction2 = _interopRequireDefault(_createChainedFunction);
-  var _splitComponentProps2 = $__require('./utils/splitComponentProps');
+  var _splitComponentProps2 = $__require('npm:react-bootstrap@0.30.3/lib/utils/splitComponentProps.js');
   var _splitComponentProps3 = _interopRequireDefault(_splitComponentProps2);
-  var _StyleConfig = $__require('./utils/StyleConfig');
+  var _StyleConfig = $__require('npm:react-bootstrap@0.30.3/lib/utils/StyleConfig.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -4458,21 +4458,21 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/ModalBody.js', ['npm:babe
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -4506,21 +4506,21 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/ModalFooter.js', ['npm:ba
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -4554,22 +4554,22 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/ModalHeader.js', ['npm:ba
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
-  var _createChainedFunction = $__require('./utils/createChainedFunction');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
+  var _createChainedFunction = $__require('npm:react-bootstrap@0.30.3/lib/utils/createChainedFunction.js');
   var _createChainedFunction2 = _interopRequireDefault(_createChainedFunction);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
@@ -4627,21 +4627,21 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/ModalTitle.js', ['npm:bab
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -4675,23 +4675,23 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Grid.js', ['npm:babel-run
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _elementType = $__require('react-prop-types/lib/elementType');
+  var _elementType = $__require('npm:react-prop-types@0.4.0/lib/elementType.js');
   var _elementType2 = _interopRequireDefault(_elementType);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -4737,21 +4737,21 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/NavbarCollapse.js', ['npm
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _Collapse = $__require('./Collapse');
+  var _Collapse = $__require('npm:react-bootstrap@0.30.3/lib/Collapse.js');
   var _Collapse2 = _interopRequireDefault(_Collapse);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -4788,21 +4788,21 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/NavbarHeader.js', ['npm:b
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -4836,22 +4836,22 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/NavbarToggle.js', ['npm:b
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
-  var _createChainedFunction = $__require('./utils/createChainedFunction');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
+  var _createChainedFunction = $__require('npm:react-bootstrap@0.30.3/lib/utils/createChainedFunction.js');
   var _createChainedFunction2 = _interopRequireDefault(_createChainedFunction);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
@@ -4903,36 +4903,36 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Navbar.js', ['npm:babel-r
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends3 = $__require('babel-runtime/helpers/extends');
+  var _extends3 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends4 = _interopRequireDefault(_extends3);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _elementType = $__require('react-prop-types/lib/elementType');
+  var _elementType = $__require('npm:react-prop-types@0.4.0/lib/elementType.js');
   var _elementType2 = _interopRequireDefault(_elementType);
-  var _uncontrollable = $__require('uncontrollable');
+  var _uncontrollable = $__require('npm:uncontrollable@4.0.3.js');
   var _uncontrollable2 = _interopRequireDefault(_uncontrollable);
-  var _Grid = $__require('./Grid');
+  var _Grid = $__require('npm:react-bootstrap@0.30.3/lib/Grid.js');
   var _Grid2 = _interopRequireDefault(_Grid);
-  var _NavbarBrand = $__require('./NavbarBrand');
+  var _NavbarBrand = $__require('npm:react-bootstrap@0.30.3/lib/NavbarBrand.js');
   var _NavbarBrand2 = _interopRequireDefault(_NavbarBrand);
-  var _NavbarCollapse = $__require('./NavbarCollapse');
+  var _NavbarCollapse = $__require('npm:react-bootstrap@0.30.3/lib/NavbarCollapse.js');
   var _NavbarCollapse2 = _interopRequireDefault(_NavbarCollapse);
-  var _NavbarHeader = $__require('./NavbarHeader');
+  var _NavbarHeader = $__require('npm:react-bootstrap@0.30.3/lib/NavbarHeader.js');
   var _NavbarHeader2 = _interopRequireDefault(_NavbarHeader);
-  var _NavbarToggle = $__require('./NavbarToggle');
+  var _NavbarToggle = $__require('npm:react-bootstrap@0.30.3/lib/NavbarToggle.js');
   var _NavbarToggle2 = _interopRequireDefault(_NavbarToggle);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
-  var _StyleConfig = $__require('./utils/StyleConfig');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
+  var _StyleConfig = $__require('npm:react-bootstrap@0.30.3/lib/utils/StyleConfig.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -5059,21 +5059,21 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/NavbarBrand.js', ['npm:ba
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -5111,25 +5111,25 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/NavDropdown.js', ['npm:ba
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _Dropdown = $__require('./Dropdown');
+  var _Dropdown = $__require('npm:react-bootstrap@0.30.3/lib/Dropdown.js');
   var _Dropdown2 = _interopRequireDefault(_Dropdown);
-  var _splitComponentProps2 = $__require('./utils/splitComponentProps');
+  var _splitComponentProps2 = $__require('npm:react-bootstrap@0.30.3/lib/utils/splitComponentProps.js');
   var _splitComponentProps3 = _interopRequireDefault(_splitComponentProps2);
-  var _ValidComponentChildren = $__require('./utils/ValidComponentChildren');
+  var _ValidComponentChildren = $__require('npm:react-bootstrap@0.30.3/lib/utils/ValidComponentChildren.js');
   var _ValidComponentChildren2 = _interopRequireDefault(_ValidComponentChildren);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
@@ -5198,15 +5198,15 @@ System.registerDynamic('npm:react-overlays@0.6.6/lib/Portal.js', ['npm:react@15.
       global = this || self,
       GLOBAL = global;
   Object.defineProperty(exports, "__esModule", { value: true });
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _reactDom = $__require('react-dom');
+  var _reactDom = $__require('npm:react-dom@15.3.1.js');
   var _reactDom2 = _interopRequireDefault(_reactDom);
-  var _componentOrElement = $__require('react-prop-types/lib/componentOrElement');
+  var _componentOrElement = $__require('npm:react-prop-types@0.4.0/lib/componentOrElement.js');
   var _componentOrElement2 = _interopRequireDefault(_componentOrElement);
-  var _ownerDocument = $__require('./utils/ownerDocument');
+  var _ownerDocument = $__require('npm:react-overlays@0.6.6/lib/utils/ownerDocument.js');
   var _ownerDocument2 = _interopRequireDefault(_ownerDocument);
-  var _getContainer = $__require('./utils/getContainer');
+  var _getContainer = $__require('npm:react-overlays@0.6.6/lib/utils/getContainer.js');
   var _getContainer2 = _interopRequireDefault(_getContainer);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { default: obj };
@@ -5298,9 +5298,9 @@ System.registerDynamic("npm:react-prop-types@0.4.0/lib/componentOrElement.js", [
   } : function (obj) {
     return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj;
   };
-  var _react = $__require("react");
+  var _react = $__require("npm:react@15.3.1.js");
   var _react2 = _interopRequireDefault(_react);
-  var _createChainableTypeChecker = $__require("./utils/createChainableTypeChecker");
+  var _createChainableTypeChecker = $__require("npm:react-prop-types@0.4.0/lib/utils/createChainableTypeChecker.js");
   var _createChainableTypeChecker2 = _interopRequireDefault(_createChainableTypeChecker);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { default: obj };
@@ -5326,9 +5326,9 @@ System.registerDynamic('npm:dom-helpers@2.4.0/query/offset.js', ['npm:dom-helper
   var define,
       global = this || self,
       GLOBAL = global;
-  var contains = $__require('./contains'),
-      getWindow = $__require('./isWindow'),
-      ownerDocument = $__require('../ownerDocument');
+  var contains = $__require('npm:dom-helpers@2.4.0/query/contains.js'),
+      getWindow = $__require('npm:dom-helpers@2.4.0/query/isWindow.js'),
+      ownerDocument = $__require('npm:dom-helpers@2.4.0/ownerDocument.js');
   module.exports = function offset(node) {
     var doc = ownerDocument(node),
         win = getWindow(doc),
@@ -5361,12 +5361,12 @@ System.registerDynamic('npm:dom-helpers@2.4.0/query/offsetParent.js', ['npm:dom-
   var define,
       global = this || self,
       GLOBAL = global;
-  var babelHelpers = $__require('../util/babelHelpers');
+  var babelHelpers = $__require('npm:dom-helpers@2.4.0/util/babelHelpers.js');
   exports.__esModule = true;
   exports['default'] = offsetParent;
-  var _ownerDocument = $__require('../ownerDocument');
+  var _ownerDocument = $__require('npm:dom-helpers@2.4.0/ownerDocument.js');
   var _ownerDocument2 = babelHelpers.interopRequireDefault(_ownerDocument);
-  var _style = $__require('../style/index');
+  var _style = $__require('npm:dom-helpers@2.4.0/style/index.js');
   var _style2 = babelHelpers.interopRequireDefault(_style);
   function nodeName(node) {
     return node.nodeName && node.nodeName.toLowerCase();
@@ -5389,7 +5389,7 @@ System.registerDynamic('npm:dom-helpers@2.4.0/query/scrollLeft.js', ['npm:dom-he
   var define,
       global = this || self,
       GLOBAL = global;
-  var getWindow = $__require('./isWindow');
+  var getWindow = $__require('npm:dom-helpers@2.4.0/query/isWindow.js');
   module.exports = function scrollTop(node, val) {
     var win = getWindow(node);
     if (val === undefined) return win ? 'pageXOffset' in win ? win.pageXOffset : win.document.documentElement.scrollLeft : node.scrollLeft;
@@ -5404,18 +5404,18 @@ System.registerDynamic('npm:dom-helpers@2.4.0/query/position.js', ['npm:dom-help
   var define,
       global = this || self,
       GLOBAL = global;
-  var babelHelpers = $__require('../util/babelHelpers');
+  var babelHelpers = $__require('npm:dom-helpers@2.4.0/util/babelHelpers.js');
   exports.__esModule = true;
   exports['default'] = position;
-  var _offset = $__require('./offset');
+  var _offset = $__require('npm:dom-helpers@2.4.0/query/offset.js');
   var _offset2 = babelHelpers.interopRequireDefault(_offset);
-  var _offsetParent = $__require('./offsetParent');
+  var _offsetParent = $__require('npm:dom-helpers@2.4.0/query/offsetParent.js');
   var _offsetParent2 = babelHelpers.interopRequireDefault(_offsetParent);
-  var _scrollTop = $__require('./scrollTop');
+  var _scrollTop = $__require('npm:dom-helpers@2.4.0/query/scrollTop.js');
   var _scrollTop2 = babelHelpers.interopRequireDefault(_scrollTop);
-  var _scrollLeft = $__require('./scrollLeft');
+  var _scrollLeft = $__require('npm:dom-helpers@2.4.0/query/scrollLeft.js');
   var _scrollLeft2 = babelHelpers.interopRequireDefault(_scrollLeft);
-  var _style = $__require('../style/index');
+  var _style = $__require('npm:dom-helpers@2.4.0/style/index.js');
   var _style2 = babelHelpers.interopRequireDefault(_style);
   function nodeName(node) {
     return node.nodeName && node.nodeName.toLowerCase();
@@ -5462,7 +5462,7 @@ System.registerDynamic('npm:dom-helpers@2.4.0/query/scrollTop.js', ['npm:dom-hel
   var define,
       global = this || self,
       GLOBAL = global;
-  var getWindow = $__require('./isWindow');
+  var getWindow = $__require('npm:dom-helpers@2.4.0/query/isWindow.js');
   module.exports = function scrollTop(node, val) {
     var win = getWindow(node);
     if (val === undefined) return win ? 'pageYOffset' in win ? win.pageYOffset : win.document.documentElement.scrollTop : node.scrollTop;
@@ -5479,13 +5479,13 @@ System.registerDynamic('npm:react-overlays@0.6.6/lib/utils/calculatePosition.js'
       GLOBAL = global;
   Object.defineProperty(exports, "__esModule", { value: true });
   exports.default = calculatePosition;
-  var _offset = $__require('dom-helpers/query/offset');
+  var _offset = $__require('npm:dom-helpers@2.4.0/query/offset.js');
   var _offset2 = _interopRequireDefault(_offset);
-  var _position = $__require('dom-helpers/query/position');
+  var _position = $__require('npm:dom-helpers@2.4.0/query/position.js');
   var _position2 = _interopRequireDefault(_position);
-  var _scrollTop = $__require('dom-helpers/query/scrollTop');
+  var _scrollTop = $__require('npm:dom-helpers@2.4.0/query/scrollTop.js');
   var _scrollTop2 = _interopRequireDefault(_scrollTop);
-  var _ownerDocument = $__require('./ownerDocument');
+  var _ownerDocument = $__require('npm:react-overlays@0.6.6/lib/utils/ownerDocument.js');
   var _ownerDocument2 = _interopRequireDefault(_ownerDocument);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { default: obj };
@@ -5592,7 +5592,7 @@ System.registerDynamic('npm:react-overlays@0.6.6/lib/utils/getContainer.js', ['n
   });
   exports.default = getContainer;
 
-  var _reactDom = $__require('react-dom');
+  var _reactDom = $__require('npm:react-dom@15.3.1.js');
 
   var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -5642,19 +5642,19 @@ System.registerDynamic("npm:react-overlays@0.6.6/lib/Position.js", ["npm:classna
       return Constructor;
     };
   }();
-  var _classnames = $__require("classnames");
+  var _classnames = $__require("npm:classnames@2.2.5.js");
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require("react");
+  var _react = $__require("npm:react@15.3.1.js");
   var _react2 = _interopRequireDefault(_react);
-  var _reactDom = $__require("react-dom");
+  var _reactDom = $__require("npm:react-dom@15.3.1.js");
   var _reactDom2 = _interopRequireDefault(_reactDom);
-  var _componentOrElement = $__require("react-prop-types/lib/componentOrElement");
+  var _componentOrElement = $__require("npm:react-prop-types@0.4.0/lib/componentOrElement.js");
   var _componentOrElement2 = _interopRequireDefault(_componentOrElement);
-  var _calculatePosition = $__require("./utils/calculatePosition");
+  var _calculatePosition = $__require("npm:react-overlays@0.6.6/lib/utils/calculatePosition.js");
   var _calculatePosition2 = _interopRequireDefault(_calculatePosition);
-  var _getContainer = $__require("./utils/getContainer");
+  var _getContainer = $__require("npm:react-overlays@0.6.6/lib/utils/getContainer.js");
   var _getContainer2 = _interopRequireDefault(_getContainer);
-  var _ownerDocument = $__require("./utils/ownerDocument");
+  var _ownerDocument = $__require("npm:react-overlays@0.6.6/lib/utils/ownerDocument.js");
   var _ownerDocument2 = _interopRequireDefault(_ownerDocument);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { default: obj };
@@ -5838,15 +5838,15 @@ System.registerDynamic("npm:react-overlays@0.6.6/lib/Overlay.js", ["npm:react@15
       return Constructor;
     };
   }();
-  var _react = $__require("react");
+  var _react = $__require("npm:react@15.3.1.js");
   var _react2 = _interopRequireDefault(_react);
-  var _Portal = $__require("./Portal");
+  var _Portal = $__require("npm:react-overlays@0.6.6/lib/Portal.js");
   var _Portal2 = _interopRequireDefault(_Portal);
-  var _Position = $__require("./Position");
+  var _Position = $__require("npm:react-overlays@0.6.6/lib/Position.js");
   var _Position2 = _interopRequireDefault(_Position);
-  var _RootCloseWrapper = $__require("./RootCloseWrapper");
+  var _RootCloseWrapper = $__require("npm:react-overlays@0.6.6/lib/RootCloseWrapper.js");
   var _RootCloseWrapper2 = _interopRequireDefault(_RootCloseWrapper);
-  var _elementType = $__require("react-prop-types/lib/elementType");
+  var _elementType = $__require("npm:react-prop-types@0.4.0/lib/elementType.js");
   var _elementType2 = _interopRequireDefault(_elementType);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { default: obj };
@@ -5993,25 +5993,25 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Overlay.js', ['npm:babel-
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _Overlay = $__require('react-overlays/lib/Overlay');
+  var _Overlay = $__require('npm:react-overlays@0.6.6/lib/Overlay.js');
   var _Overlay2 = _interopRequireDefault(_Overlay);
-  var _elementType = $__require('react-prop-types/lib/elementType');
+  var _elementType = $__require('npm:react-prop-types@0.4.0/lib/elementType.js');
   var _elementType2 = _interopRequireDefault(_elementType);
-  var _Fade = $__require('./Fade');
+  var _Fade = $__require('npm:react-bootstrap@0.30.3/lib/Fade.js');
   var _Fade2 = _interopRequireDefault(_Fade);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
@@ -6070,27 +6070,27 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/OverlayTrigger.js', ['npm
     'use strict';
 
     exports.__esModule = true;
-    var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+    var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
     var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-    var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+    var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
     var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-    var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+    var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
     var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-    var _inherits2 = $__require('babel-runtime/helpers/inherits');
+    var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
     var _inherits3 = _interopRequireDefault(_inherits2);
-    var _extends2 = $__require('babel-runtime/helpers/extends');
+    var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
     var _extends3 = _interopRequireDefault(_extends2);
-    var _contains = $__require('dom-helpers/query/contains');
+    var _contains = $__require('npm:dom-helpers@2.4.0/query/contains.js');
     var _contains2 = _interopRequireDefault(_contains);
-    var _react = $__require('react');
+    var _react = $__require('npm:react@15.3.1.js');
     var _react2 = _interopRequireDefault(_react);
-    var _reactDom = $__require('react-dom');
+    var _reactDom = $__require('npm:react-dom@15.3.1.js');
     var _reactDom2 = _interopRequireDefault(_reactDom);
-    var _warning = $__require('warning');
+    var _warning = $__require('npm:warning@3.0.0.js');
     var _warning2 = _interopRequireDefault(_warning);
-    var _Overlay = $__require('./Overlay');
+    var _Overlay = $__require('npm:react-bootstrap@0.30.3/lib/Overlay.js');
     var _Overlay2 = _interopRequireDefault(_Overlay);
-    var _createChainedFunction = $__require('./utils/createChainedFunction');
+    var _createChainedFunction = $__require('npm:react-bootstrap@0.30.3/lib/utils/createChainedFunction.js');
     var _createChainedFunction2 = _interopRequireDefault(_createChainedFunction);
     function _interopRequireDefault(obj) {
       return obj && obj.__esModule ? obj : { 'default': obj };
@@ -6267,7 +6267,7 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/OverlayTrigger.js', ['npm
     OverlayTrigger.defaultProps = defaultProps;
     exports['default'] = OverlayTrigger;
     module.exports = exports['default'];
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react-bootstrap@0.30.3/lib/PageHeader.js', ['npm:babel-runtime@6.11.6/helpers/extends.js', 'npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js', 'npm:babel-runtime@6.11.6/helpers/classCallCheck.js', 'npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js', 'npm:babel-runtime@6.11.6/helpers/inherits.js', 'npm:classnames@2.2.5.js', 'npm:react@15.3.1.js', 'npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js'], true, function ($__require, exports, module) {
@@ -6278,21 +6278,21 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/PageHeader.js', ['npm:bab
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -6328,16 +6328,16 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/utils/deprecationWarning.
     'use strict';
 
     exports.__esModule = true;
-    var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+    var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
     var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-    var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+    var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
     var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-    var _inherits2 = $__require('babel-runtime/helpers/inherits');
+    var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
     var _inherits3 = _interopRequireDefault(_inherits2);
-    var _typeof2 = $__require('babel-runtime/helpers/typeof');
+    var _typeof2 = $__require('npm:babel-runtime@6.11.6/helpers/typeof.js');
     var _typeof3 = _interopRequireDefault(_typeof2);
     exports._resetWarned = _resetWarned;
-    var _warning = $__require('warning');
+    var _warning = $__require('npm:warning@3.0.0.js');
     var _warning2 = _interopRequireDefault(_warning);
     function _interopRequireDefault(obj) {
       return obj && obj.__esModule ? obj : { 'default': obj };
@@ -6386,7 +6386,7 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/utils/deprecationWarning.
     function _resetWarned() {
       warned = {};
     }
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react-bootstrap@0.30.3/lib/PageItem.js', ['npm:react-bootstrap@0.30.3/lib/PagerItem.js', 'npm:react-bootstrap@0.30.3/lib/utils/deprecationWarning.js'], true, function ($__require, exports, module) {
@@ -6397,9 +6397,9 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/PageItem.js', ['npm:react
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _PagerItem = $__require('./PagerItem');
+  var _PagerItem = $__require('npm:react-bootstrap@0.30.3/lib/PagerItem.js');
   var _PagerItem2 = _interopRequireDefault(_PagerItem);
-  var _deprecationWarning = $__require('./utils/deprecationWarning');
+  var _deprecationWarning = $__require('npm:react-bootstrap@0.30.3/lib/utils/deprecationWarning.js');
   var _deprecationWarning2 = _interopRequireDefault(_deprecationWarning);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
@@ -6416,23 +6416,23 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/PagerItem.js', ['npm:babe
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _SafeAnchor = $__require('./SafeAnchor');
+  var _SafeAnchor = $__require('npm:react-bootstrap@0.30.3/lib/SafeAnchor.js');
   var _SafeAnchor2 = _interopRequireDefault(_SafeAnchor);
-  var _createChainedFunction = $__require('./utils/createChainedFunction');
+  var _createChainedFunction = $__require('npm:react-bootstrap@0.30.3/lib/utils/createChainedFunction.js');
   var _createChainedFunction2 = _interopRequireDefault(_createChainedFunction);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
@@ -6512,26 +6512,26 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Pager.js', ['npm:babel-ru
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _PagerItem = $__require('./PagerItem');
+  var _PagerItem = $__require('npm:react-bootstrap@0.30.3/lib/PagerItem.js');
   var _PagerItem2 = _interopRequireDefault(_PagerItem);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
-  var _createChainedFunction = $__require('./utils/createChainedFunction');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
+  var _createChainedFunction = $__require('npm:react-bootstrap@0.30.3/lib/utils/createChainedFunction.js');
   var _createChainedFunction2 = _interopRequireDefault(_createChainedFunction);
-  var _ValidComponentChildren = $__require('./utils/ValidComponentChildren');
+  var _ValidComponentChildren = $__require('npm:react-bootstrap@0.30.3/lib/utils/ValidComponentChildren.js');
   var _ValidComponentChildren2 = _interopRequireDefault(_ValidComponentChildren);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
@@ -6573,25 +6573,25 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/PaginationButton.js', ['n
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _elementType = $__require('react-prop-types/lib/elementType');
+  var _elementType = $__require('npm:react-prop-types@0.4.0/lib/elementType.js');
   var _elementType2 = _interopRequireDefault(_elementType);
-  var _SafeAnchor = $__require('./SafeAnchor');
+  var _SafeAnchor = $__require('npm:react-bootstrap@0.30.3/lib/SafeAnchor.js');
   var _SafeAnchor2 = _interopRequireDefault(_SafeAnchor);
-  var _createChainedFunction = $__require('./utils/createChainedFunction');
+  var _createChainedFunction = $__require('npm:react-bootstrap@0.30.3/lib/utils/createChainedFunction.js');
   var _createChainedFunction2 = _interopRequireDefault(_createChainedFunction);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
@@ -6670,25 +6670,25 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Pagination.js', ['npm:bab
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _elementType = $__require('react-prop-types/lib/elementType');
+  var _elementType = $__require('npm:react-prop-types@0.4.0/lib/elementType.js');
   var _elementType2 = _interopRequireDefault(_elementType);
-  var _PaginationButton = $__require('./PaginationButton');
+  var _PaginationButton = $__require('npm:react-bootstrap@0.30.3/lib/PaginationButton.js');
   var _PaginationButton2 = _interopRequireDefault(_PaginationButton);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -6845,7 +6845,7 @@ System.registerDynamic("npm:dom-helpers@2.4.0/util/hyphenateStyle.js", ["npm:dom
   var define,
       global = this || self,
       GLOBAL = global;
-  var hyphenate = $__require("./hyphenate");
+  var hyphenate = $__require("npm:dom-helpers@2.4.0/util/hyphenate.js");
   var msPattern = /^ms-/;
   module.exports = function hyphenateStyleName(string) {
     return hyphenate(string).replace(msPattern, "-ms-");
@@ -6875,7 +6875,7 @@ System.registerDynamic('npm:dom-helpers@2.4.0/util/camelizeStyle.js', ['npm:dom-
   var define,
       global = this || self,
       GLOBAL = global;
-  var camelize = $__require('./camelize');
+  var camelize = $__require('npm:dom-helpers@2.4.0/util/camelize.js');
   var msPattern = /^-ms-/;
   module.exports = function camelizeStyleName(string) {
     return camelize(string.replace(msPattern, 'ms-'));
@@ -6889,8 +6889,8 @@ System.registerDynamic('npm:dom-helpers@2.4.0/style/getComputedStyle.js', ['npm:
   var define,
       global = this || self,
       GLOBAL = global;
-  var babelHelpers = $__require('../util/babelHelpers');
-  var _utilCamelizeStyle = $__require('../util/camelizeStyle');
+  var babelHelpers = $__require('npm:dom-helpers@2.4.0/util/babelHelpers.js');
+  var _utilCamelizeStyle = $__require('npm:dom-helpers@2.4.0/util/camelizeStyle.js');
   var _utilCamelizeStyle2 = babelHelpers.interopRequireDefault(_utilCamelizeStyle);
   var rposition = /^(top|right|bottom|left)$/;
   var rnumnonpx = /^([+-]?(?:\d*\.|)\d+(?:[eE][+-]?\d+|))(?!px)[a-z%]+$/i;
@@ -6937,10 +6937,10 @@ System.registerDynamic('npm:dom-helpers@2.4.0/style/index.js', ['npm:dom-helpers
   var define,
       global = this || self,
       GLOBAL = global;
-  var camelize = $__require('../util/camelizeStyle'),
-      hyphenate = $__require('../util/hyphenateStyle'),
-      _getComputedStyle = $__require('./getComputedStyle'),
-      removeStyle = $__require('./removeStyle');
+  var camelize = $__require('npm:dom-helpers@2.4.0/util/camelizeStyle.js'),
+      hyphenate = $__require('npm:dom-helpers@2.4.0/util/hyphenateStyle.js'),
+      _getComputedStyle = $__require('npm:dom-helpers@2.4.0/style/getComputedStyle.js'),
+      removeStyle = $__require('npm:dom-helpers@2.4.0/style/removeStyle.js');
   var has = Object.prototype.hasOwnProperty;
   module.exports = function style(node, property, value) {
     var css = '',
@@ -6960,7 +6960,7 @@ System.registerDynamic('npm:dom-helpers@2.4.0/style.js', ['npm:dom-helpers@2.4.0
       global = this || self,
       GLOBAL = global;
   /* */
-  module.exports = $__require('./style/index');
+  module.exports = $__require('npm:dom-helpers@2.4.0/style/index.js');
   return module.exports;
 });
 System.registerDynamic("npm:react-bootstrap@0.30.3/lib/utils/capitalize.js", [], true, function ($__require, exports, module) {
@@ -6986,27 +6986,27 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Collapse.js', ['npm:babel
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _style = $__require('dom-helpers/style');
+  var _style = $__require('npm:dom-helpers@2.4.0/style.js');
   var _style2 = _interopRequireDefault(_style);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _Transition = $__require('react-overlays/lib/Transition');
+  var _Transition = $__require('npm:react-overlays@0.6.6/lib/Transition.js');
   var _Transition2 = _interopRequireDefault(_Transition);
-  var _capitalize = $__require('./utils/capitalize');
+  var _capitalize = $__require('npm:react-bootstrap@0.30.3/lib/utils/capitalize.js');
   var _capitalize2 = _interopRequireDefault(_capitalize);
-  var _createChainedFunction = $__require('./utils/createChainedFunction');
+  var _createChainedFunction = $__require('npm:react-bootstrap@0.30.3/lib/utils/createChainedFunction.js');
   var _createChainedFunction2 = _interopRequireDefault(_createChainedFunction);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
@@ -7132,26 +7132,26 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Panel.js', ['npm:babel-ru
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _values = $__require('babel-runtime/core-js/object/values');
+  var _values = $__require('npm:babel-runtime@6.11.6/core-js/object/values.js');
   var _values2 = _interopRequireDefault(_values);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _Collapse = $__require('./Collapse');
+  var _Collapse = $__require('npm:react-bootstrap@0.30.3/lib/Collapse.js');
   var _Collapse2 = _interopRequireDefault(_Collapse);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
-  var _StyleConfig = $__require('./utils/StyleConfig');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
+  var _StyleConfig = $__require('npm:react-bootstrap@0.30.3/lib/utils/StyleConfig.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -7311,26 +7311,26 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/PanelGroup.js', ['npm:bab
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _assign = $__require('babel-runtime/core-js/object/assign');
+  var _assign = $__require('npm:babel-runtime@6.11.6/core-js/object/assign.js');
   var _assign2 = _interopRequireDefault(_assign);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
-  var _createChainedFunction = $__require('./utils/createChainedFunction');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
+  var _createChainedFunction = $__require('npm:react-bootstrap@0.30.3/lib/utils/createChainedFunction.js');
   var _createChainedFunction2 = _interopRequireDefault(_createChainedFunction);
-  var _ValidComponentChildren = $__require('./utils/ValidComponentChildren');
+  var _ValidComponentChildren = $__require('npm:react-bootstrap@0.30.3/lib/utils/ValidComponentChildren.js');
   var _ValidComponentChildren2 = _interopRequireDefault(_ValidComponentChildren);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
@@ -7409,23 +7409,23 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Popover.js', ['npm:babel-
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends3 = $__require('babel-runtime/helpers/extends');
+  var _extends3 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends4 = _interopRequireDefault(_extends3);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _isRequiredForA11y = $__require('react-prop-types/lib/isRequiredForA11y');
+  var _isRequiredForA11y = $__require('npm:react-prop-types@0.4.0/lib/isRequiredForA11y.js');
   var _isRequiredForA11y2 = _interopRequireDefault(_isRequiredForA11y);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -7496,25 +7496,25 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/ProgressBar.js', ['npm:ba
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _values = $__require('babel-runtime/core-js/object/values');
+  var _values = $__require('npm:babel-runtime@6.11.6/core-js/object/values.js');
   var _values2 = _interopRequireDefault(_values);
-  var _extends3 = $__require('babel-runtime/helpers/extends');
+  var _extends3 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends4 = _interopRequireDefault(_extends3);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
-  var _StyleConfig = $__require('./utils/StyleConfig');
-  var _ValidComponentChildren = $__require('./utils/ValidComponentChildren');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
+  var _StyleConfig = $__require('npm:react-bootstrap@0.30.3/lib/utils/StyleConfig.js');
+  var _ValidComponentChildren = $__require('npm:react-bootstrap@0.30.3/lib/utils/ValidComponentChildren.js');
   var _ValidComponentChildren2 = _interopRequireDefault(_ValidComponentChildren);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
@@ -7642,23 +7642,23 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Radio.js', ['npm:babel-ru
     'use strict';
 
     exports.__esModule = true;
-    var _extends2 = $__require('babel-runtime/helpers/extends');
+    var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
     var _extends3 = _interopRequireDefault(_extends2);
-    var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+    var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
     var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-    var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+    var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
     var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-    var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+    var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
     var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-    var _inherits2 = $__require('babel-runtime/helpers/inherits');
+    var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
     var _inherits3 = _interopRequireDefault(_inherits2);
-    var _classnames = $__require('classnames');
+    var _classnames = $__require('npm:classnames@2.2.5.js');
     var _classnames2 = _interopRequireDefault(_classnames);
-    var _react = $__require('react');
+    var _react = $__require('npm:react@15.3.1.js');
     var _react2 = _interopRequireDefault(_react);
-    var _warning = $__require('warning');
+    var _warning = $__require('npm:warning@3.0.0.js');
     var _warning2 = _interopRequireDefault(_warning);
-    var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+    var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
     function _interopRequireDefault(obj) {
       return obj && obj.__esModule ? obj : { 'default': obj };
     }
@@ -7720,7 +7720,7 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Radio.js', ['npm:babel-ru
     Radio.defaultProps = defaultProps;
     exports['default'] = (0, _bootstrapUtils.bsClass)('radio', Radio);
     module.exports = exports['default'];
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react-bootstrap@0.30.3/lib/ResponsiveEmbed.js', ['npm:babel-runtime@6.11.6/helpers/extends.js', 'npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js', 'npm:babel-runtime@6.11.6/helpers/classCallCheck.js', 'npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js', 'npm:babel-runtime@6.11.6/helpers/inherits.js', 'npm:classnames@2.2.5.js', 'npm:react@15.3.1.js', 'npm:warning@3.0.0.js', 'npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -7732,23 +7732,23 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/ResponsiveEmbed.js', ['np
     'use strict';
 
     exports.__esModule = true;
-    var _extends3 = $__require('babel-runtime/helpers/extends');
+    var _extends3 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
     var _extends4 = _interopRequireDefault(_extends3);
-    var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+    var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
     var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-    var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+    var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
     var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-    var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+    var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
     var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-    var _inherits2 = $__require('babel-runtime/helpers/inherits');
+    var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
     var _inherits3 = _interopRequireDefault(_inherits2);
-    var _classnames = $__require('classnames');
+    var _classnames = $__require('npm:classnames@2.2.5.js');
     var _classnames2 = _interopRequireDefault(_classnames);
-    var _react = $__require('react');
+    var _react = $__require('npm:react@15.3.1.js');
     var _react2 = _interopRequireDefault(_react);
-    var _warning = $__require('warning');
+    var _warning = $__require('npm:warning@3.0.0.js');
     var _warning2 = _interopRequireDefault(_warning);
-    var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+    var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
     function _interopRequireDefault(obj) {
       return obj && obj.__esModule ? obj : { 'default': obj };
     }
@@ -7789,7 +7789,7 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/ResponsiveEmbed.js', ['np
     ResponsiveEmbed.defaultProps = defaultProps;
     exports['default'] = (0, _bootstrapUtils.bsClass)('embed-responsive', ResponsiveEmbed);
     module.exports = exports['default'];
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Row.js', ['npm:babel-runtime@6.11.6/helpers/extends.js', 'npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js', 'npm:babel-runtime@6.11.6/helpers/classCallCheck.js', 'npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js', 'npm:babel-runtime@6.11.6/helpers/inherits.js', 'npm:classnames@2.2.5.js', 'npm:react@15.3.1.js', 'npm:react-prop-types@0.4.0/lib/elementType.js', 'npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js'], true, function ($__require, exports, module) {
@@ -7800,23 +7800,23 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Row.js', ['npm:babel-runt
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _elementType = $__require('react-prop-types/lib/elementType');
+  var _elementType = $__require('npm:react-prop-types@0.4.0/lib/elementType.js');
   var _elementType2 = _interopRequireDefault(_elementType);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -7894,10 +7894,10 @@ System.registerDynamic('npm:dom-helpers@2.4.0/activeElement.js', ['npm:dom-helpe
   var define,
       global = this || self,
       GLOBAL = global;
-  var babelHelpers = $__require('./util/babelHelpers');
+  var babelHelpers = $__require('npm:dom-helpers@2.4.0/util/babelHelpers.js');
   exports.__esModule = true;
   exports['default'] = activeElement;
-  var _ownerDocument = $__require('./ownerDocument');
+  var _ownerDocument = $__require('npm:dom-helpers@2.4.0/ownerDocument.js');
   var _ownerDocument2 = babelHelpers.interopRequireDefault(_ownerDocument);
   function activeElement() {
     var doc = arguments[0] === undefined ? document : arguments[0];
@@ -7915,7 +7915,7 @@ System.registerDynamic('npm:dom-helpers@2.4.0/query/contains.js', ['npm:dom-help
   var define,
       global = this || self,
       GLOBAL = global;
-  var canUseDOM = $__require('../util/inDOM');
+  var canUseDOM = $__require('npm:dom-helpers@2.4.0/util/inDOM.js');
   var contains = function () {
     var root = canUseDOM && document.documentElement;
     return root && root.contains ? function (context, node) {
@@ -7940,25 +7940,25 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/ButtonGroup.js', ['npm:ba
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends3 = $__require('babel-runtime/helpers/extends');
+  var _extends3 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends4 = _interopRequireDefault(_extends3);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _all = $__require('react-prop-types/lib/all');
+  var _all = $__require('npm:react-prop-types@0.4.0/lib/all.js');
   var _all2 = _interopRequireDefault(_all);
-  var _Button = $__require('./Button');
+  var _Button = $__require('npm:react-bootstrap@0.30.3/lib/Button.js');
   var _Button2 = _interopRequireDefault(_Button);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -8009,7 +8009,7 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_iter-call.js', ['npm:
       global = this || self,
       GLOBAL = global;
   /* */
-  var anObject = $__require('./_an-object');
+  var anObject = $__require('npm:core-js@2.4.1/library/modules/_an-object.js');
   module.exports = function (iterator, fn, value, entries) {
     try {
       return entries ? fn(anObject(value)[0], value[1]) : fn(value);
@@ -8026,8 +8026,8 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_is-array-iter.js', ['
         global = this || self,
         GLOBAL = global;
     /* */
-    var Iterators = $__require('./_iterators'),
-        ITERATOR = $__require('./_wks')('iterator'),
+    var Iterators = $__require('npm:core-js@2.4.1/library/modules/_iterators.js'),
+        ITERATOR = $__require('npm:core-js@2.4.1/library/modules/_wks.js')('iterator'),
         ArrayProto = Array.prototype;
     module.exports = function (it) {
         return it !== undefined && (Iterators.Array === it || ArrayProto[ITERATOR] === it);
@@ -8041,8 +8041,8 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_create-property.js', 
   var define,
       global = this || self,
       GLOBAL = global;
-  var $defineProperty = $__require('./_object-dp'),
-      createDesc = $__require('./_property-desc');
+  var $defineProperty = $__require('npm:core-js@2.4.1/library/modules/_object-dp.js'),
+      createDesc = $__require('npm:core-js@2.4.1/library/modules/_property-desc.js');
   module.exports = function (object, index, value) {
     if (index in object) $defineProperty.f(object, index, createDesc(0, value));else object[index] = value;
   };
@@ -8053,8 +8053,8 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_classof.js', ['npm:co
       global = this || self,
       GLOBAL = global;
   /* */
-  var cof = $__require('./_cof'),
-      TAG = $__require('./_wks')('toStringTag'),
+  var cof = $__require('npm:core-js@2.4.1/library/modules/_cof.js'),
+      TAG = $__require('npm:core-js@2.4.1/library/modules/_wks.js')('toStringTag'),
       ARG = cof(function () {
     return arguments;
   }()) == 'Arguments';
@@ -8074,10 +8074,10 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/core.get-iterator-meth
         global = this || self,
         GLOBAL = global;
     /* */
-    var classof = $__require('./_classof'),
-        ITERATOR = $__require('./_wks')('iterator'),
-        Iterators = $__require('./_iterators');
-    module.exports = $__require('./_core').getIteratorMethod = function (it) {
+    var classof = $__require('npm:core-js@2.4.1/library/modules/_classof.js'),
+        ITERATOR = $__require('npm:core-js@2.4.1/library/modules/_wks.js')('iterator'),
+        Iterators = $__require('npm:core-js@2.4.1/library/modules/_iterators.js');
+    module.exports = $__require('npm:core-js@2.4.1/library/modules/_core.js').getIteratorMethod = function (it) {
         if (it != undefined) return it[ITERATOR] || it['@@iterator'] || Iterators[classof(it)];
     };
     return module.exports;
@@ -8087,7 +8087,7 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_iter-detect.js', ['np
       global = this || self,
       GLOBAL = global;
   /* */
-  var ITERATOR = $__require('./_wks')('iterator'),
+  var ITERATOR = $__require('npm:core-js@2.4.1/library/modules/_wks.js')('iterator'),
       SAFE_CLOSING = false;
   try {
     var riter = [7][ITERATOR]();
@@ -8123,15 +8123,15 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/es6.array.from.js', ['
   var define,
       global = this || self,
       GLOBAL = global;
-  var ctx = $__require('./_ctx'),
-      $export = $__require('./_export'),
-      toObject = $__require('./_to-object'),
-      call = $__require('./_iter-call'),
-      isArrayIter = $__require('./_is-array-iter'),
-      toLength = $__require('./_to-length'),
-      createProperty = $__require('./_create-property'),
-      getIterFn = $__require('./core.get-iterator-method');
-  $export($export.S + $export.F * !$__require('./_iter-detect')(function (iter) {
+  var ctx = $__require('npm:core-js@2.4.1/library/modules/_ctx.js'),
+      $export = $__require('npm:core-js@2.4.1/library/modules/_export.js'),
+      toObject = $__require('npm:core-js@2.4.1/library/modules/_to-object.js'),
+      call = $__require('npm:core-js@2.4.1/library/modules/_iter-call.js'),
+      isArrayIter = $__require('npm:core-js@2.4.1/library/modules/_is-array-iter.js'),
+      toLength = $__require('npm:core-js@2.4.1/library/modules/_to-length.js'),
+      createProperty = $__require('npm:core-js@2.4.1/library/modules/_create-property.js'),
+      getIterFn = $__require('npm:core-js@2.4.1/library/modules/core.get-iterator-method.js');
+  $export($export.S + $export.F * !$__require('npm:core-js@2.4.1/library/modules/_iter-detect.js')(function (iter) {
     Array.from(iter);
   }), 'Array', { from: function from(arrayLike) {
       var O = toObject(arrayLike),
@@ -8166,9 +8166,9 @@ System.registerDynamic('npm:core-js@2.4.1/library/fn/array/from.js', ['npm:core-
       global = this || self,
       GLOBAL = global;
   /* */
-  $__require('../../modules/es6.string.iterator');
-  $__require('../../modules/es6.array.from');
-  module.exports = $__require('../../modules/_core').Array.from;
+  $__require('npm:core-js@2.4.1/library/modules/es6.string.iterator.js');
+  $__require('npm:core-js@2.4.1/library/modules/es6.array.from.js');
+  module.exports = $__require('npm:core-js@2.4.1/library/modules/_core.js').Array.from;
   return module.exports;
 });
 System.registerDynamic("npm:babel-runtime@6.11.6/core-js/array/from.js", ["npm:core-js@2.4.1/library/fn/array/from.js"], true, function ($__require, exports, module) {
@@ -8176,7 +8176,7 @@ System.registerDynamic("npm:babel-runtime@6.11.6/core-js/array/from.js", ["npm:c
       global = this || self,
       GLOBAL = global;
   /* */
-  module.exports = { "default": $__require("core-js/library/fn/array/from"), __esModule: true };
+  module.exports = { "default": $__require("npm:core-js@2.4.1/library/fn/array/from.js"), __esModule: true };
   return module.exports;
 });
 System.registerDynamic('npm:dom-helpers@2.4.0/events/off.js', ['npm:dom-helpers@2.4.0/util/inDOM.js'], true, function ($__require, exports, module) {
@@ -8186,7 +8186,7 @@ System.registerDynamic('npm:dom-helpers@2.4.0/events/off.js', ['npm:dom-helpers@
   var define,
       global = this || self,
       GLOBAL = global;
-  var canUseDOM = $__require('../util/inDOM');
+  var canUseDOM = $__require('npm:dom-helpers@2.4.0/util/inDOM.js');
   var off = function off() {};
   if (canUseDOM) {
     off = function () {
@@ -8220,11 +8220,11 @@ System.registerDynamic('npm:react-overlays@0.6.6/lib/utils/addEventListener.js',
     };
   };
 
-  var _on = $__require('dom-helpers/events/on');
+  var _on = $__require('npm:dom-helpers@2.4.0/events/on.js');
 
   var _on2 = _interopRequireDefault(_on);
 
-  var _off = $__require('dom-helpers/events/off');
+  var _off = $__require('npm:dom-helpers@2.4.0/events/off.js');
 
   var _off2 = _interopRequireDefault(_off);
 
@@ -8317,11 +8317,11 @@ System.registerDynamic('npm:react-overlays@0.6.6/lib/utils/ownerDocument.js', ['
     return (0, _ownerDocument2.default)(_reactDom2.default.findDOMNode(componentOrElement));
   };
 
-  var _reactDom = $__require('react-dom');
+  var _reactDom = $__require('npm:react-dom@15.3.1.js');
 
   var _reactDom2 = _interopRequireDefault(_reactDom);
 
-  var _ownerDocument = $__require('dom-helpers/ownerDocument');
+  var _ownerDocument = $__require('npm:dom-helpers@2.4.0/ownerDocument.js');
 
   var _ownerDocument2 = _interopRequireDefault(_ownerDocument);
 
@@ -8356,15 +8356,15 @@ System.registerDynamic("npm:react-overlays@0.6.6/lib/RootCloseWrapper.js", ["npm
       return Constructor;
     };
   }();
-  var _react = $__require("react");
+  var _react = $__require("npm:react@15.3.1.js");
   var _react2 = _interopRequireDefault(_react);
-  var _reactDom = $__require("react-dom");
+  var _reactDom = $__require("npm:react-dom@15.3.1.js");
   var _reactDom2 = _interopRequireDefault(_reactDom);
-  var _addEventListener = $__require("./utils/addEventListener");
+  var _addEventListener = $__require("npm:react-overlays@0.6.6/lib/utils/addEventListener.js");
   var _addEventListener2 = _interopRequireDefault(_addEventListener);
-  var _createChainedFunction = $__require("./utils/createChainedFunction");
+  var _createChainedFunction = $__require("npm:react-overlays@0.6.6/lib/utils/createChainedFunction.js");
   var _createChainedFunction2 = _interopRequireDefault(_createChainedFunction);
-  var _ownerDocument = $__require("./utils/ownerDocument");
+  var _ownerDocument = $__require("npm:react-overlays@0.6.6/lib/utils/ownerDocument.js");
   var _ownerDocument2 = _interopRequireDefault(_ownerDocument);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { default: obj };
@@ -8524,32 +8524,32 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/DropdownMenu.js', ['npm:b
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends3 = $__require('babel-runtime/helpers/extends');
+  var _extends3 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends4 = _interopRequireDefault(_extends3);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _from = $__require('babel-runtime/core-js/array/from');
+  var _from = $__require('npm:babel-runtime@6.11.6/core-js/array/from.js');
   var _from2 = _interopRequireDefault(_from);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _keycode = $__require('keycode');
+  var _keycode = $__require('npm:keycode@2.1.4.js');
   var _keycode2 = _interopRequireDefault(_keycode);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _reactDom = $__require('react-dom');
+  var _reactDom = $__require('npm:react-dom@15.3.1.js');
   var _reactDom2 = _interopRequireDefault(_reactDom);
-  var _RootCloseWrapper = $__require('react-overlays/lib/RootCloseWrapper');
+  var _RootCloseWrapper = $__require('npm:react-overlays@0.6.6/lib/RootCloseWrapper.js');
   var _RootCloseWrapper2 = _interopRequireDefault(_RootCloseWrapper);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
-  var _createChainedFunction = $__require('./utils/createChainedFunction');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
+  var _createChainedFunction = $__require('npm:react-bootstrap@0.30.3/lib/utils/createChainedFunction.js');
   var _createChainedFunction2 = _interopRequireDefault(_createChainedFunction);
-  var _ValidComponentChildren = $__require('./utils/ValidComponentChildren');
+  var _ValidComponentChildren = $__require('npm:react-bootstrap@0.30.3/lib/utils/ValidComponentChildren.js');
   var _ValidComponentChildren2 = _interopRequireDefault(_ValidComponentChildren);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
@@ -8677,9 +8677,9 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/utils/PropTypes.js', ['np
   exports.__esModule = true;
   exports.requiredRoles = requiredRoles;
   exports.exclusiveRoles = exclusiveRoles;
-  var _createChainableTypeChecker = $__require('react-prop-types/lib/utils/createChainableTypeChecker');
+  var _createChainableTypeChecker = $__require('npm:react-prop-types@0.4.0/lib/utils/createChainableTypeChecker.js');
   var _createChainableTypeChecker2 = _interopRequireDefault(_createChainableTypeChecker);
-  var _ValidComponentChildren = $__require('./ValidComponentChildren');
+  var _ValidComponentChildren = $__require('npm:react-bootstrap@0.30.3/lib/utils/ValidComponentChildren.js');
   var _ValidComponentChildren2 = _interopRequireDefault(_ValidComponentChildren);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
@@ -8738,49 +8738,49 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Dropdown.js', ['npm:babel
     'use strict';
 
     exports.__esModule = true;
-    var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+    var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
     var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-    var _extends2 = $__require('babel-runtime/helpers/extends');
+    var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
     var _extends3 = _interopRequireDefault(_extends2);
-    var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+    var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
     var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-    var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+    var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
     var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-    var _inherits2 = $__require('babel-runtime/helpers/inherits');
+    var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
     var _inherits3 = _interopRequireDefault(_inherits2);
-    var _classnames = $__require('classnames');
+    var _classnames = $__require('npm:classnames@2.2.5.js');
     var _classnames2 = _interopRequireDefault(_classnames);
-    var _activeElement = $__require('dom-helpers/activeElement');
+    var _activeElement = $__require('npm:dom-helpers@2.4.0/activeElement.js');
     var _activeElement2 = _interopRequireDefault(_activeElement);
-    var _contains = $__require('dom-helpers/query/contains');
+    var _contains = $__require('npm:dom-helpers@2.4.0/query/contains.js');
     var _contains2 = _interopRequireDefault(_contains);
-    var _keycode = $__require('keycode');
+    var _keycode = $__require('npm:keycode@2.1.4.js');
     var _keycode2 = _interopRequireDefault(_keycode);
-    var _react = $__require('react');
+    var _react = $__require('npm:react@15.3.1.js');
     var _react2 = _interopRequireDefault(_react);
-    var _reactDom = $__require('react-dom');
+    var _reactDom = $__require('npm:react-dom@15.3.1.js');
     var _reactDom2 = _interopRequireDefault(_reactDom);
-    var _all = $__require('react-prop-types/lib/all');
+    var _all = $__require('npm:react-prop-types@0.4.0/lib/all.js');
     var _all2 = _interopRequireDefault(_all);
-    var _elementType = $__require('react-prop-types/lib/elementType');
+    var _elementType = $__require('npm:react-prop-types@0.4.0/lib/elementType.js');
     var _elementType2 = _interopRequireDefault(_elementType);
-    var _isRequiredForA11y = $__require('react-prop-types/lib/isRequiredForA11y');
+    var _isRequiredForA11y = $__require('npm:react-prop-types@0.4.0/lib/isRequiredForA11y.js');
     var _isRequiredForA11y2 = _interopRequireDefault(_isRequiredForA11y);
-    var _uncontrollable = $__require('uncontrollable');
+    var _uncontrollable = $__require('npm:uncontrollable@4.0.3.js');
     var _uncontrollable2 = _interopRequireDefault(_uncontrollable);
-    var _warning = $__require('warning');
+    var _warning = $__require('npm:warning@3.0.0.js');
     var _warning2 = _interopRequireDefault(_warning);
-    var _ButtonGroup = $__require('./ButtonGroup');
+    var _ButtonGroup = $__require('npm:react-bootstrap@0.30.3/lib/ButtonGroup.js');
     var _ButtonGroup2 = _interopRequireDefault(_ButtonGroup);
-    var _DropdownMenu = $__require('./DropdownMenu');
+    var _DropdownMenu = $__require('npm:react-bootstrap@0.30.3/lib/DropdownMenu.js');
     var _DropdownMenu2 = _interopRequireDefault(_DropdownMenu);
-    var _DropdownToggle = $__require('./DropdownToggle');
+    var _DropdownToggle = $__require('npm:react-bootstrap@0.30.3/lib/DropdownToggle.js');
     var _DropdownToggle2 = _interopRequireDefault(_DropdownToggle);
-    var _bootstrapUtils = $__require('./utils/bootstrapUtils');
-    var _createChainedFunction = $__require('./utils/createChainedFunction');
+    var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
+    var _createChainedFunction = $__require('npm:react-bootstrap@0.30.3/lib/utils/createChainedFunction.js');
     var _createChainedFunction2 = _interopRequireDefault(_createChainedFunction);
-    var _PropTypes = $__require('./utils/PropTypes');
-    var _ValidComponentChildren = $__require('./utils/ValidComponentChildren');
+    var _PropTypes = $__require('npm:react-bootstrap@0.30.3/lib/utils/PropTypes.js');
+    var _ValidComponentChildren = $__require('npm:react-bootstrap@0.30.3/lib/utils/ValidComponentChildren.js');
     var _ValidComponentChildren2 = _interopRequireDefault(_ValidComponentChildren);
     function _interopRequireDefault(obj) {
       return obj && obj.__esModule ? obj : { 'default': obj };
@@ -8986,7 +8986,7 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Dropdown.js', ['npm:babel
     UncontrolledDropdown.Menu = _DropdownMenu2['default'];
     exports['default'] = UncontrolledDropdown;
     module.exports = exports['default'];
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:core-js@2.4.1/library/modules/es7.object.values.js', ['npm:core-js@2.4.1/library/modules/_export.js', 'npm:core-js@2.4.1/library/modules/_object-to-array.js'], true, function ($__require, exports, module) {
@@ -8994,8 +8994,8 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/es7.object.values.js',
         global = this || self,
         GLOBAL = global;
     /* */
-    var $export = $__require('./_export'),
-        $values = $__require('./_object-to-array')(false);
+    var $export = $__require('npm:core-js@2.4.1/library/modules/_export.js'),
+        $values = $__require('npm:core-js@2.4.1/library/modules/_object-to-array.js')(false);
     $export($export.S, 'Object', { values: function values(it) {
             return $values(it);
         } });
@@ -9006,8 +9006,8 @@ System.registerDynamic('npm:core-js@2.4.1/library/fn/object/values.js', ['npm:co
       global = this || self,
       GLOBAL = global;
   /* */
-  $__require('../../modules/es7.object.values');
-  module.exports = $__require('../../modules/_core').Object.values;
+  $__require('npm:core-js@2.4.1/library/modules/es7.object.values.js');
+  module.exports = $__require('npm:core-js@2.4.1/library/modules/_core.js').Object.values;
   return module.exports;
 });
 System.registerDynamic("npm:babel-runtime@6.11.6/core-js/object/values.js", ["npm:core-js@2.4.1/library/fn/object/values.js"], true, function ($__require, exports, module) {
@@ -9015,7 +9015,7 @@ System.registerDynamic("npm:babel-runtime@6.11.6/core-js/object/values.js", ["np
       global = this || self,
       GLOBAL = global;
   /* */
-  module.exports = { "default": $__require("core-js/library/fn/object/values"), __esModule: true };
+  module.exports = { "default": $__require("npm:core-js@2.4.1/library/fn/object/values.js"), __esModule: true };
   return module.exports;
 });
 System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Button.js', ['npm:babel-runtime@6.11.6/core-js/object/values.js', 'npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js', 'npm:babel-runtime@6.11.6/helpers/extends.js', 'npm:babel-runtime@6.11.6/helpers/classCallCheck.js', 'npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js', 'npm:babel-runtime@6.11.6/helpers/inherits.js', 'npm:classnames@2.2.5.js', 'npm:react@15.3.1.js', 'npm:react-prop-types@0.4.0/lib/elementType.js', 'npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js', 'npm:react-bootstrap@0.30.3/lib/utils/StyleConfig.js', 'npm:react-bootstrap@0.30.3/lib/SafeAnchor.js'], true, function ($__require, exports, module) {
@@ -9026,27 +9026,27 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Button.js', ['npm:babel-r
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _values = $__require('babel-runtime/core-js/object/values');
+  var _values = $__require('npm:babel-runtime@6.11.6/core-js/object/values.js');
   var _values2 = _interopRequireDefault(_values);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _extends3 = $__require('babel-runtime/helpers/extends');
+  var _extends3 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends4 = _interopRequireDefault(_extends3);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _elementType = $__require('react-prop-types/lib/elementType');
+  var _elementType = $__require('npm:react-prop-types@0.4.0/lib/elementType.js');
   var _elementType2 = _interopRequireDefault(_elementType);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
-  var _StyleConfig = $__require('./utils/StyleConfig');
-  var _SafeAnchor = $__require('./SafeAnchor');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
+  var _StyleConfig = $__require('npm:react-bootstrap@0.30.3/lib/utils/StyleConfig.js');
+  var _SafeAnchor = $__require('npm:react-bootstrap@0.30.3/lib/SafeAnchor.js');
   var _SafeAnchor2 = _interopRequireDefault(_SafeAnchor);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
@@ -9116,25 +9116,25 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/DropdownToggle.js', ['npm
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _Button = $__require('./Button');
+  var _Button = $__require('npm:react-bootstrap@0.30.3/lib/Button.js');
   var _Button2 = _interopRequireDefault(_Button);
-  var _SafeAnchor = $__require('./SafeAnchor');
+  var _SafeAnchor = $__require('npm:react-bootstrap@0.30.3/lib/SafeAnchor.js');
   var _SafeAnchor2 = _interopRequireDefault(_SafeAnchor);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -9190,17 +9190,17 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/SplitToggle.js', ['npm:ba
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _DropdownToggle = $__require('./DropdownToggle');
+  var _DropdownToggle = $__require('npm:react-bootstrap@0.30.3/lib/DropdownToggle.js');
   var _DropdownToggle2 = _interopRequireDefault(_DropdownToggle);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
@@ -9233,7 +9233,7 @@ System.registerDynamic("npm:react-bootstrap@0.30.3/lib/utils/splitComponentProps
       GLOBAL = global;
   exports.__esModule = true;
 
-  var _entries = $__require("babel-runtime/core-js/object/entries");
+  var _entries = $__require("npm:babel-runtime@6.11.6/core-js/object/entries.js");
 
   var _entries2 = _interopRequireDefault(_entries);
 
@@ -9273,25 +9273,25 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/SplitButton.js', ['npm:ba
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _Button = $__require('./Button');
+  var _Button = $__require('npm:react-bootstrap@0.30.3/lib/Button.js');
   var _Button2 = _interopRequireDefault(_Button);
-  var _Dropdown = $__require('./Dropdown');
+  var _Dropdown = $__require('npm:react-bootstrap@0.30.3/lib/Dropdown.js');
   var _Dropdown2 = _interopRequireDefault(_Dropdown);
-  var _SplitToggle = $__require('./SplitToggle');
+  var _SplitToggle = $__require('npm:react-bootstrap@0.30.3/lib/SplitToggle.js');
   var _SplitToggle2 = _interopRequireDefault(_SplitToggle);
-  var _splitComponentProps2 = $__require('./utils/splitComponentProps');
+  var _splitComponentProps2 = $__require('npm:react-bootstrap@0.30.3/lib/utils/splitComponentProps.js');
   var _splitComponentProps3 = _interopRequireDefault(_splitComponentProps2);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
@@ -9351,21 +9351,21 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Tab.js', ['npm:babel-runt
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _TabContainer = $__require('./TabContainer');
+  var _TabContainer = $__require('npm:react-bootstrap@0.30.3/lib/TabContainer.js');
   var _TabContainer2 = _interopRequireDefault(_TabContainer);
-  var _TabContent = $__require('./TabContent');
+  var _TabContent = $__require('npm:react-bootstrap@0.30.3/lib/TabContent.js');
   var _TabContent2 = _interopRequireDefault(_TabContent);
-  var _TabPane = $__require('./TabPane');
+  var _TabPane = $__require('npm:react-bootstrap@0.30.3/lib/TabPane.js');
   var _TabPane2 = _interopRequireDefault(_TabPane);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
@@ -9406,21 +9406,21 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Table.js', ['npm:babel-ru
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends3 = $__require('babel-runtime/helpers/extends');
+  var _extends3 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends4 = _interopRequireDefault(_extends3);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -9479,7 +9479,7 @@ System.registerDynamic('npm:dom-helpers@2.4.0/transition/properties.js', ['npm:d
   var define,
       global = this || self,
       GLOBAL = global;
-  var canUseDOM = $__require('../util/inDOM');
+  var canUseDOM = $__require('npm:dom-helpers@2.4.0/util/inDOM.js');
   var has = Object.prototype.hasOwnProperty,
       transform = 'transform',
       transition = {},
@@ -9545,7 +9545,7 @@ System.registerDynamic('npm:dom-helpers@2.4.0/events/on.js', ['npm:dom-helpers@2
   var define,
       global = this || self,
       GLOBAL = global;
-  var canUseDOM = $__require('../util/inDOM');
+  var canUseDOM = $__require('npm:dom-helpers@2.4.0/util/inDOM.js');
   var on = function on() {};
   if (canUseDOM) {
     on = function () {
@@ -9591,23 +9591,23 @@ System.registerDynamic("npm:react-overlays@0.6.6/lib/Transition.js", ["npm:react
     };
   }();
 
-  var _react = $__require("react");
+  var _react = $__require("npm:react@15.3.1.js");
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _reactDom = $__require("react-dom");
+  var _reactDom = $__require("npm:react-dom@15.3.1.js");
 
   var _reactDom2 = _interopRequireDefault(_reactDom);
 
-  var _properties = $__require("dom-helpers/transition/properties");
+  var _properties = $__require("npm:dom-helpers@2.4.0/transition/properties.js");
 
   var _properties2 = _interopRequireDefault(_properties);
 
-  var _on = $__require("dom-helpers/events/on");
+  var _on = $__require("npm:dom-helpers@2.4.0/events/on.js");
 
   var _on2 = _interopRequireDefault(_on);
 
-  var _classnames = $__require("classnames");
+  var _classnames = $__require("npm:classnames@2.2.5.js");
 
   var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -9972,31 +9972,31 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Fade.js', ['npm:babel-run
       GLOBAL = global;
   exports.__esModule = true;
 
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
 
   var _extends3 = _interopRequireDefault(_extends2);
 
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
 
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
 
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
 
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
 
   var _inherits3 = _interopRequireDefault(_inherits2);
 
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
 
   var _classnames2 = _interopRequireDefault(_classnames);
 
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _Transition = $__require('react-overlays/lib/Transition');
+  var _Transition = $__require('npm:react-overlays@0.6.6/lib/Transition.js');
 
   var _Transition2 = _interopRequireDefault(_Transition);
 
@@ -10096,28 +10096,28 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/TabPane.js', ['npm:babel-
     'use strict';
 
     exports.__esModule = true;
-    var _extends2 = $__require('babel-runtime/helpers/extends');
+    var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
     var _extends3 = _interopRequireDefault(_extends2);
-    var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+    var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
     var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-    var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+    var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
     var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-    var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+    var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
     var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-    var _inherits2 = $__require('babel-runtime/helpers/inherits');
+    var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
     var _inherits3 = _interopRequireDefault(_inherits2);
-    var _classnames = $__require('classnames');
+    var _classnames = $__require('npm:classnames@2.2.5.js');
     var _classnames2 = _interopRequireDefault(_classnames);
-    var _react = $__require('react');
+    var _react = $__require('npm:react@15.3.1.js');
     var _react2 = _interopRequireDefault(_react);
-    var _elementType = $__require('react-prop-types/lib/elementType');
+    var _elementType = $__require('npm:react-prop-types@0.4.0/lib/elementType.js');
     var _elementType2 = _interopRequireDefault(_elementType);
-    var _warning = $__require('warning');
+    var _warning = $__require('npm:warning@3.0.0.js');
     var _warning2 = _interopRequireDefault(_warning);
-    var _bootstrapUtils = $__require('./utils/bootstrapUtils');
-    var _createChainedFunction = $__require('./utils/createChainedFunction');
+    var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
+    var _createChainedFunction = $__require('npm:react-bootstrap@0.30.3/lib/utils/createChainedFunction.js');
     var _createChainedFunction2 = _interopRequireDefault(_createChainedFunction);
-    var _Fade = $__require('./Fade');
+    var _Fade = $__require('npm:react-bootstrap@0.30.3/lib/Fade.js');
     var _Fade2 = _interopRequireDefault(_Fade);
     function _interopRequireDefault(obj) {
       return obj && obj.__esModule ? obj : { 'default': obj };
@@ -10275,7 +10275,7 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/TabPane.js', ['npm:babel-
     TabPane.childContextTypes = childContextTypes;
     exports['default'] = (0, _bootstrapUtils.bsClass)('tab-pane', TabPane);
     module.exports = exports['default'];
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:keycode@2.1.4/index.js', [], true, function ($__require, exports, module) {
@@ -10443,9 +10443,9 @@ System.registerDynamic('npm:react@15.3.1/lib/FallbackCompositionState.js', ['npm
   var define,
       global = this || self,
       GLOBAL = global;
-  var _assign = $__require('object-assign');
-  var PooledClass = $__require('./PooledClass');
-  var getTextContentAccessor = $__require('./getTextContentAccessor');
+  var _assign = $__require('npm:object-assign@4.1.0.js');
+  var PooledClass = $__require('npm:react@15.3.1/lib/PooledClass.js');
+  var getTextContentAccessor = $__require('npm:react@15.3.1/lib/getTextContentAccessor.js');
   function FallbackCompositionState(root) {
     this._root = root;
     this._startText = this.getText();
@@ -10500,7 +10500,7 @@ System.registerDynamic('npm:react@15.3.1/lib/SyntheticCompositionEvent.js', ['np
   var define,
       global = this || self,
       GLOBAL = global;
-  var SyntheticEvent = $__require('./SyntheticEvent');
+  var SyntheticEvent = $__require('npm:react@15.3.1/lib/SyntheticEvent.js');
   var CompositionEventInterface = { data: null };
   function SyntheticCompositionEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeEventTarget) {
     return SyntheticEvent.call(this, dispatchConfig, dispatchMarker, nativeEvent, nativeEventTarget);
@@ -10516,7 +10516,7 @@ System.registerDynamic('npm:react@15.3.1/lib/SyntheticInputEvent.js', ['npm:reac
   var define,
       global = this || self,
       GLOBAL = global;
-  var SyntheticEvent = $__require('./SyntheticEvent');
+  var SyntheticEvent = $__require('npm:react@15.3.1/lib/SyntheticEvent.js');
   var InputEventInterface = { data: null };
   function SyntheticInputEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeEventTarget) {
     return SyntheticEvent.call(this, dispatchConfig, dispatchMarker, nativeEvent, nativeEventTarget);
@@ -10532,13 +10532,13 @@ System.registerDynamic('npm:react@15.3.1/lib/BeforeInputEventPlugin.js', ['npm:r
   var define,
       global = this || self,
       GLOBAL = global;
-  var EventConstants = $__require('./EventConstants');
-  var EventPropagators = $__require('./EventPropagators');
-  var ExecutionEnvironment = $__require('fbjs/lib/ExecutionEnvironment');
-  var FallbackCompositionState = $__require('./FallbackCompositionState');
-  var SyntheticCompositionEvent = $__require('./SyntheticCompositionEvent');
-  var SyntheticInputEvent = $__require('./SyntheticInputEvent');
-  var keyOf = $__require('fbjs/lib/keyOf');
+  var EventConstants = $__require('npm:react@15.3.1/lib/EventConstants.js');
+  var EventPropagators = $__require('npm:react@15.3.1/lib/EventPropagators.js');
+  var ExecutionEnvironment = $__require('npm:fbjs@0.8.4/lib/ExecutionEnvironment.js');
+  var FallbackCompositionState = $__require('npm:react@15.3.1/lib/FallbackCompositionState.js');
+  var SyntheticCompositionEvent = $__require('npm:react@15.3.1/lib/SyntheticCompositionEvent.js');
+  var SyntheticInputEvent = $__require('npm:react@15.3.1/lib/SyntheticInputEvent.js');
+  var keyOf = $__require('npm:fbjs@0.8.4/lib/keyOf.js');
   var END_KEYCODES = [9, 13, 27, 32];
   var START_KEYCODE = 229;
   var canUseCompositionEvent = ExecutionEnvironment.canUseDOM && 'CompositionEvent' in window;
@@ -10737,17 +10737,17 @@ System.registerDynamic('npm:react@15.3.1/lib/ChangeEventPlugin.js', ['npm:react@
   (function (process) {
     'use strict';
 
-    var EventConstants = $__require('./EventConstants');
-    var EventPluginHub = $__require('./EventPluginHub');
-    var EventPropagators = $__require('./EventPropagators');
-    var ExecutionEnvironment = $__require('fbjs/lib/ExecutionEnvironment');
-    var ReactDOMComponentTree = $__require('./ReactDOMComponentTree');
-    var ReactUpdates = $__require('./ReactUpdates');
-    var SyntheticEvent = $__require('./SyntheticEvent');
-    var getEventTarget = $__require('./getEventTarget');
-    var isEventSupported = $__require('./isEventSupported');
-    var isTextInputElement = $__require('./isTextInputElement');
-    var keyOf = $__require('fbjs/lib/keyOf');
+    var EventConstants = $__require('npm:react@15.3.1/lib/EventConstants.js');
+    var EventPluginHub = $__require('npm:react@15.3.1/lib/EventPluginHub.js');
+    var EventPropagators = $__require('npm:react@15.3.1/lib/EventPropagators.js');
+    var ExecutionEnvironment = $__require('npm:fbjs@0.8.4/lib/ExecutionEnvironment.js');
+    var ReactDOMComponentTree = $__require('npm:react@15.3.1/lib/ReactDOMComponentTree.js');
+    var ReactUpdates = $__require('npm:react@15.3.1/lib/ReactUpdates.js');
+    var SyntheticEvent = $__require('npm:react@15.3.1/lib/SyntheticEvent.js');
+    var getEventTarget = $__require('npm:react@15.3.1/lib/getEventTarget.js');
+    var isEventSupported = $__require('npm:react@15.3.1/lib/isEventSupported.js');
+    var isTextInputElement = $__require('npm:react@15.3.1/lib/isTextInputElement.js');
+    var keyOf = $__require('npm:fbjs@0.8.4/lib/keyOf.js');
     var topLevelTypes = EventConstants.topLevelTypes;
     var eventTypes = { change: {
         phasedRegistrationNames: {
@@ -10919,7 +10919,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ChangeEventPlugin.js', ['npm:react@
       }
     };
     module.exports = ChangeEventPlugin;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/DefaultEventPluginOrder.js', ['npm:fbjs@0.8.4/lib/keyOf.js'], true, function ($__require, exports, module) {
@@ -10939,7 +10939,7 @@ System.registerDynamic('npm:react@15.3.1/lib/DefaultEventPluginOrder.js', ['npm:
   var define,
       global = this || self,
       GLOBAL = global;
-  var keyOf = $__require('fbjs/lib/keyOf');
+  var keyOf = $__require('npm:fbjs@0.8.4/lib/keyOf.js');
 
   /**
    * Module that is injectable into `EventPluginHub`, that specifies a
@@ -10962,11 +10962,11 @@ System.registerDynamic('npm:react@15.3.1/lib/EnterLeaveEventPlugin.js', ['npm:re
   var define,
       global = this || self,
       GLOBAL = global;
-  var EventConstants = $__require('./EventConstants');
-  var EventPropagators = $__require('./EventPropagators');
-  var ReactDOMComponentTree = $__require('./ReactDOMComponentTree');
-  var SyntheticMouseEvent = $__require('./SyntheticMouseEvent');
-  var keyOf = $__require('fbjs/lib/keyOf');
+  var EventConstants = $__require('npm:react@15.3.1/lib/EventConstants.js');
+  var EventPropagators = $__require('npm:react@15.3.1/lib/EventPropagators.js');
+  var ReactDOMComponentTree = $__require('npm:react@15.3.1/lib/ReactDOMComponentTree.js');
+  var SyntheticMouseEvent = $__require('npm:react@15.3.1/lib/SyntheticMouseEvent.js');
+  var keyOf = $__require('npm:fbjs@0.8.4/lib/keyOf.js');
   var topLevelTypes = EventConstants.topLevelTypes;
   var eventTypes = {
     mouseEnter: {
@@ -11035,7 +11035,7 @@ System.registerDynamic('npm:react@15.3.1/lib/HTMLDOMPropertyConfig.js', ['npm:re
   var define,
       global = this || self,
       GLOBAL = global;
-  var DOMProperty = $__require('./DOMProperty');
+  var DOMProperty = $__require('npm:react@15.3.1/lib/DOMProperty.js');
   var MUST_USE_PROPERTY = DOMProperty.injection.MUST_USE_PROPERTY;
   var HAS_BOOLEAN_VALUE = DOMProperty.injection.HAS_BOOLEAN_VALUE;
   var HAS_NUMERIC_VALUE = DOMProperty.injection.HAS_NUMERIC_VALUE;
@@ -11207,14 +11207,14 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDOMIDOperations.js', ['npm:rea
   (function (process) {
     'use strict';
 
-    var DOMChildrenOperations = $__require('./DOMChildrenOperations');
-    var ReactDOMComponentTree = $__require('./ReactDOMComponentTree');
+    var DOMChildrenOperations = $__require('npm:react@15.3.1/lib/DOMChildrenOperations.js');
+    var ReactDOMComponentTree = $__require('npm:react@15.3.1/lib/ReactDOMComponentTree.js');
     var ReactDOMIDOperations = { dangerouslyProcessChildrenUpdates: function (parentInst, updates) {
         var node = ReactDOMComponentTree.getNodeFromInstance(parentInst);
         DOMChildrenOperations.processUpdates(node, updates);
       } };
     module.exports = ReactDOMIDOperations;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactComponentBrowserEnvironment.js', ['npm:react@15.3.1/lib/DOMChildrenOperations.js', 'npm:react@15.3.1/lib/ReactDOMIDOperations.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -11225,14 +11225,14 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactComponentBrowserEnvironment.js
   (function (process) {
     'use strict';
 
-    var DOMChildrenOperations = $__require('./DOMChildrenOperations');
-    var ReactDOMIDOperations = $__require('./ReactDOMIDOperations');
+    var DOMChildrenOperations = $__require('npm:react@15.3.1/lib/DOMChildrenOperations.js');
+    var ReactDOMIDOperations = $__require('npm:react@15.3.1/lib/ReactDOMIDOperations.js');
     var ReactComponentBrowserEnvironment = {
       processChildrenUpdates: ReactDOMIDOperations.dangerouslyProcessChildrenUpdates,
       replaceNodeWithMarkup: DOMChildrenOperations.dangerouslyReplaceNodeWithMarkup
     };
     module.exports = ReactComponentBrowserEnvironment;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/AutoFocusUtils.js', ['npm:react@15.3.1/lib/ReactDOMComponentTree.js', 'npm:fbjs@0.8.4/lib/focusNode.js'], true, function ($__require, exports, module) {
@@ -11242,8 +11242,8 @@ System.registerDynamic('npm:react@15.3.1/lib/AutoFocusUtils.js', ['npm:react@15.
     var define,
         global = this || self,
         GLOBAL = global;
-    var ReactDOMComponentTree = $__require('./ReactDOMComponentTree');
-    var focusNode = $__require('fbjs/lib/focusNode');
+    var ReactDOMComponentTree = $__require('npm:react@15.3.1/lib/ReactDOMComponentTree.js');
+    var focusNode = $__require('npm:fbjs@0.8.4/lib/focusNode.js');
     var AutoFocusUtils = { focusDOMComponent: function () {
             focusNode(ReactDOMComponentTree.getNodeFromInstance(this));
         } };
@@ -11295,7 +11295,7 @@ System.registerDynamic('npm:fbjs@0.8.4/lib/camelizeStyleName.js', ['npm:fbjs@0.8
   var define,
       global = this || self,
       GLOBAL = global;
-  var camelize = $__require('./camelize');
+  var camelize = $__require('npm:fbjs@0.8.4/lib/camelize.js');
   var msPattern = /^-ms-/;
   function camelizeStyleName(string) {
     return camelize(string.replace(msPattern, 'ms-'));
@@ -11465,8 +11465,8 @@ System.registerDynamic('npm:react@15.3.1/lib/dangerousStyleValue.js', ['npm:reac
   (function (process) {
     'use strict';
 
-    var CSSProperty = $__require('./CSSProperty');
-    var warning = $__require('fbjs/lib/warning');
+    var CSSProperty = $__require('npm:react@15.3.1/lib/CSSProperty.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     var isUnitlessNumber = CSSProperty.isUnitlessNumber;
     var styleWarnings = {};
     function dangerousStyleValue(name, value, component) {
@@ -11504,7 +11504,7 @@ System.registerDynamic('npm:react@15.3.1/lib/dangerousStyleValue.js', ['npm:reac
       return value + 'px';
     }
     module.exports = dangerousStyleValue;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:fbjs@0.8.4/lib/hyphenate.js', [], true, function ($__require, exports, module) {
@@ -11553,7 +11553,7 @@ System.registerDynamic('npm:fbjs@0.8.4/lib/hyphenateStyleName.js', ['npm:fbjs@0.
   var define,
       global = this || self,
       GLOBAL = global;
-  var hyphenate = $__require('./hyphenate');
+  var hyphenate = $__require('npm:fbjs@0.8.4/lib/hyphenate.js');
   var msPattern = /^ms-/;
   function hyphenateStyleName(string) {
     return hyphenate(string).replace(msPattern, '-ms-');
@@ -11604,14 +11604,14 @@ System.registerDynamic('npm:react@15.3.1/lib/CSSPropertyOperations.js', ['npm:re
   (function (process) {
     'use strict';
 
-    var CSSProperty = $__require('./CSSProperty');
-    var ExecutionEnvironment = $__require('fbjs/lib/ExecutionEnvironment');
-    var ReactInstrumentation = $__require('./ReactInstrumentation');
-    var camelizeStyleName = $__require('fbjs/lib/camelizeStyleName');
-    var dangerousStyleValue = $__require('./dangerousStyleValue');
-    var hyphenateStyleName = $__require('fbjs/lib/hyphenateStyleName');
-    var memoizeStringOnly = $__require('fbjs/lib/memoizeStringOnly');
-    var warning = $__require('fbjs/lib/warning');
+    var CSSProperty = $__require('npm:react@15.3.1/lib/CSSProperty.js');
+    var ExecutionEnvironment = $__require('npm:fbjs@0.8.4/lib/ExecutionEnvironment.js');
+    var ReactInstrumentation = $__require('npm:react@15.3.1/lib/ReactInstrumentation.js');
+    var camelizeStyleName = $__require('npm:fbjs@0.8.4/lib/camelizeStyleName.js');
+    var dangerousStyleValue = $__require('npm:react@15.3.1/lib/dangerousStyleValue.js');
+    var hyphenateStyleName = $__require('npm:fbjs@0.8.4/lib/hyphenateStyleName.js');
+    var memoizeStringOnly = $__require('npm:fbjs@0.8.4/lib/memoizeStringOnly.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     var processStyleName = memoizeStringOnly(function (styleName) {
       return hyphenateStyleName(styleName);
     });
@@ -11738,7 +11738,7 @@ System.registerDynamic('npm:react@15.3.1/lib/CSSPropertyOperations.js', ['npm:re
       }
     };
     module.exports = CSSPropertyOperations;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactDOMButton.js', ['npm:react@15.3.1/lib/DisabledInputUtils.js'], true, function ($__require, exports, module) {
@@ -11748,7 +11748,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDOMButton.js', ['npm:react@15.
   var define,
       global = this || self,
       GLOBAL = global;
-  var DisabledInputUtils = $__require('./DisabledInputUtils');
+  var DisabledInputUtils = $__require('npm:react@15.3.1/lib/DisabledInputUtils.js');
   var ReactDOMButton = { getHostProps: DisabledInputUtils.getHostProps };
   module.exports = ReactDOMButton;
   return module.exports;
@@ -11760,7 +11760,7 @@ System.registerDynamic('npm:react@15.3.1/lib/quoteAttributeValueForBrowser.js', 
   var define,
       global = this || self,
       GLOBAL = global;
-  var escapeTextContentForBrowser = $__require('./escapeTextContentForBrowser');
+  var escapeTextContentForBrowser = $__require('npm:react@15.3.1/lib/escapeTextContentForBrowser.js');
   function quoteAttributeValueForBrowser(value) {
     return '"' + escapeTextContentForBrowser(value) + '"';
   }
@@ -11775,11 +11775,11 @@ System.registerDynamic('npm:react@15.3.1/lib/DOMPropertyOperations.js', ['npm:re
   (function (process) {
     'use strict';
 
-    var DOMProperty = $__require('./DOMProperty');
-    var ReactDOMComponentTree = $__require('./ReactDOMComponentTree');
-    var ReactInstrumentation = $__require('./ReactInstrumentation');
-    var quoteAttributeValueForBrowser = $__require('./quoteAttributeValueForBrowser');
-    var warning = $__require('fbjs/lib/warning');
+    var DOMProperty = $__require('npm:react@15.3.1/lib/DOMProperty.js');
+    var ReactDOMComponentTree = $__require('npm:react@15.3.1/lib/ReactDOMComponentTree.js');
+    var ReactInstrumentation = $__require('npm:react@15.3.1/lib/ReactInstrumentation.js');
+    var quoteAttributeValueForBrowser = $__require('npm:react@15.3.1/lib/quoteAttributeValueForBrowser.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     var VALID_ATTRIBUTE_NAME_REGEX = new RegExp('^[' + DOMProperty.ATTRIBUTE_NAME_START_CHAR + '][' + DOMProperty.ATTRIBUTE_NAME_CHAR + ']*$');
     var illegalAttributeNameCache = {};
     var validatedAttributeNameCache = {};
@@ -11917,7 +11917,7 @@ System.registerDynamic('npm:react@15.3.1/lib/DOMPropertyOperations.js', ['npm:re
       }
     };
     module.exports = DOMPropertyOperations;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactDOMInput.js', ['npm:react@15.3.1/lib/reactProdInvariant.js', 'npm:object-assign@4.1.0.js', 'npm:react@15.3.1/lib/DisabledInputUtils.js', 'npm:react@15.3.1/lib/DOMPropertyOperations.js', 'npm:react@15.3.1/lib/LinkedValueUtils.js', 'npm:react@15.3.1/lib/ReactDOMComponentTree.js', 'npm:react@15.3.1/lib/ReactUpdates.js', 'npm:fbjs@0.8.4/lib/invariant.js', 'npm:fbjs@0.8.4/lib/warning.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -11928,15 +11928,15 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDOMInput.js', ['npm:react@15.3
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant'),
-        _assign = $__require('object-assign');
-    var DisabledInputUtils = $__require('./DisabledInputUtils');
-    var DOMPropertyOperations = $__require('./DOMPropertyOperations');
-    var LinkedValueUtils = $__require('./LinkedValueUtils');
-    var ReactDOMComponentTree = $__require('./ReactDOMComponentTree');
-    var ReactUpdates = $__require('./ReactUpdates');
-    var invariant = $__require('fbjs/lib/invariant');
-    var warning = $__require('fbjs/lib/warning');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js'),
+        _assign = $__require('npm:object-assign@4.1.0.js');
+    var DisabledInputUtils = $__require('npm:react@15.3.1/lib/DisabledInputUtils.js');
+    var DOMPropertyOperations = $__require('npm:react@15.3.1/lib/DOMPropertyOperations.js');
+    var LinkedValueUtils = $__require('npm:react@15.3.1/lib/LinkedValueUtils.js');
+    var ReactDOMComponentTree = $__require('npm:react@15.3.1/lib/ReactDOMComponentTree.js');
+    var ReactUpdates = $__require('npm:react@15.3.1/lib/ReactUpdates.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     var didWarnValueLink = false;
     var didWarnCheckedLink = false;
     var didWarnValueDefaultValue = false;
@@ -12093,7 +12093,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDOMInput.js', ['npm:react@15.3
       return returnValue;
     }
     module.exports = ReactDOMInput;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactDOMOption.js', ['npm:object-assign@4.1.0.js', 'npm:react@15.3.1/lib/ReactChildren.js', 'npm:react@15.3.1/lib/ReactDOMComponentTree.js', 'npm:react@15.3.1/lib/ReactDOMSelect.js', 'npm:fbjs@0.8.4/lib/warning.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -12104,11 +12104,11 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDOMOption.js', ['npm:object-as
   (function (process) {
     'use strict';
 
-    var _assign = $__require('object-assign');
-    var ReactChildren = $__require('./ReactChildren');
-    var ReactDOMComponentTree = $__require('./ReactDOMComponentTree');
-    var ReactDOMSelect = $__require('./ReactDOMSelect');
-    var warning = $__require('fbjs/lib/warning');
+    var _assign = $__require('npm:object-assign@4.1.0.js');
+    var ReactChildren = $__require('npm:react@15.3.1/lib/ReactChildren.js');
+    var ReactDOMComponentTree = $__require('npm:react@15.3.1/lib/ReactDOMComponentTree.js');
+    var ReactDOMSelect = $__require('npm:react@15.3.1/lib/ReactDOMSelect.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     var didWarnInvalidOptionChildren = false;
     function flattenChildren(children) {
       var content = '';
@@ -12185,7 +12185,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDOMOption.js', ['npm:object-as
       }
     };
     module.exports = ReactDOMOption;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactDOMSelect.js', ['npm:object-assign@4.1.0.js', 'npm:react@15.3.1/lib/DisabledInputUtils.js', 'npm:react@15.3.1/lib/LinkedValueUtils.js', 'npm:react@15.3.1/lib/ReactDOMComponentTree.js', 'npm:react@15.3.1/lib/ReactUpdates.js', 'npm:fbjs@0.8.4/lib/warning.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -12196,12 +12196,12 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDOMSelect.js', ['npm:object-as
   (function (process) {
     'use strict';
 
-    var _assign = $__require('object-assign');
-    var DisabledInputUtils = $__require('./DisabledInputUtils');
-    var LinkedValueUtils = $__require('./LinkedValueUtils');
-    var ReactDOMComponentTree = $__require('./ReactDOMComponentTree');
-    var ReactUpdates = $__require('./ReactUpdates');
-    var warning = $__require('fbjs/lib/warning');
+    var _assign = $__require('npm:object-assign@4.1.0.js');
+    var DisabledInputUtils = $__require('npm:react@15.3.1/lib/DisabledInputUtils.js');
+    var LinkedValueUtils = $__require('npm:react@15.3.1/lib/LinkedValueUtils.js');
+    var ReactDOMComponentTree = $__require('npm:react@15.3.1/lib/ReactDOMComponentTree.js');
+    var ReactUpdates = $__require('npm:react@15.3.1/lib/ReactUpdates.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     var didWarnValueLink = false;
     var didWarnValueDefaultValue = false;
     function updateOptionsIfPendingUpdateAndMounted() {
@@ -12326,7 +12326,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDOMSelect.js', ['npm:object-as
       return returnValue;
     }
     module.exports = ReactDOMSelect;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/DisabledInputUtils.js', [], true, function ($__require, exports, module) {
@@ -12393,12 +12393,12 @@ System.registerDynamic('npm:react@15.3.1/lib/LinkedValueUtils.js', ['npm:react@1
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant');
-    var ReactPropTypes = $__require('./ReactPropTypes');
-    var ReactPropTypeLocations = $__require('./ReactPropTypeLocations');
-    var ReactPropTypesSecret = $__require('./ReactPropTypesSecret');
-    var invariant = $__require('fbjs/lib/invariant');
-    var warning = $__require('fbjs/lib/warning');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js');
+    var ReactPropTypes = $__require('npm:react@15.3.1/lib/ReactPropTypes.js');
+    var ReactPropTypeLocations = $__require('npm:react@15.3.1/lib/ReactPropTypeLocations.js');
+    var ReactPropTypesSecret = $__require('npm:react@15.3.1/lib/ReactPropTypesSecret.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     var hasReadOnlyValue = {
       'button': true,
       'checkbox': true,
@@ -12484,7 +12484,7 @@ System.registerDynamic('npm:react@15.3.1/lib/LinkedValueUtils.js', ['npm:react@1
       }
     };
     module.exports = LinkedValueUtils;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactDOMTextarea.js', ['npm:react@15.3.1/lib/reactProdInvariant.js', 'npm:object-assign@4.1.0.js', 'npm:react@15.3.1/lib/DisabledInputUtils.js', 'npm:react@15.3.1/lib/LinkedValueUtils.js', 'npm:react@15.3.1/lib/ReactDOMComponentTree.js', 'npm:react@15.3.1/lib/ReactUpdates.js', 'npm:fbjs@0.8.4/lib/invariant.js', 'npm:fbjs@0.8.4/lib/warning.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -12495,14 +12495,14 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDOMTextarea.js', ['npm:react@1
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant'),
-        _assign = $__require('object-assign');
-    var DisabledInputUtils = $__require('./DisabledInputUtils');
-    var LinkedValueUtils = $__require('./LinkedValueUtils');
-    var ReactDOMComponentTree = $__require('./ReactDOMComponentTree');
-    var ReactUpdates = $__require('./ReactUpdates');
-    var invariant = $__require('fbjs/lib/invariant');
-    var warning = $__require('fbjs/lib/warning');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js'),
+        _assign = $__require('npm:object-assign@4.1.0.js');
+    var DisabledInputUtils = $__require('npm:react@15.3.1/lib/DisabledInputUtils.js');
+    var LinkedValueUtils = $__require('npm:react@15.3.1/lib/LinkedValueUtils.js');
+    var ReactDOMComponentTree = $__require('npm:react@15.3.1/lib/ReactDOMComponentTree.js');
+    var ReactUpdates = $__require('npm:react@15.3.1/lib/ReactUpdates.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     var didWarnValueLink = false;
     var didWarnValDefaultVal = false;
     function forceUpdateIfMounted() {
@@ -12589,7 +12589,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDOMTextarea.js', ['npm:react@1
       return returnValue;
     }
     module.exports = ReactDOMTextarea;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactChildReconciler.js', ['npm:react@15.3.1/lib/ReactReconciler.js', 'npm:react@15.3.1/lib/instantiateReactComponent.js', 'npm:react@15.3.1/lib/KeyEscapeUtils.js', 'npm:react@15.3.1/lib/shouldUpdateReactComponent.js', 'npm:react@15.3.1/lib/traverseAllChildren.js', 'npm:fbjs@0.8.4/lib/warning.js', 'npm:react@15.3.1/lib/ReactComponentTreeHook.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -12600,21 +12600,21 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactChildReconciler.js', ['npm:rea
   (function (process) {
     'use strict';
 
-    var ReactReconciler = $__require('./ReactReconciler');
-    var instantiateReactComponent = $__require('./instantiateReactComponent');
-    var KeyEscapeUtils = $__require('./KeyEscapeUtils');
-    var shouldUpdateReactComponent = $__require('./shouldUpdateReactComponent');
-    var traverseAllChildren = $__require('./traverseAllChildren');
-    var warning = $__require('fbjs/lib/warning');
+    var ReactReconciler = $__require('npm:react@15.3.1/lib/ReactReconciler.js');
+    var instantiateReactComponent = $__require('npm:react@15.3.1/lib/instantiateReactComponent.js');
+    var KeyEscapeUtils = $__require('npm:react@15.3.1/lib/KeyEscapeUtils.js');
+    var shouldUpdateReactComponent = $__require('npm:react@15.3.1/lib/shouldUpdateReactComponent.js');
+    var traverseAllChildren = $__require('npm:react@15.3.1/lib/traverseAllChildren.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     var ReactComponentTreeHook;
     if (typeof process !== 'undefined' && process.env && 'production' === 'test') {
-      ReactComponentTreeHook = $__require('./ReactComponentTreeHook');
+      ReactComponentTreeHook = $__require('npm:react@15.3.1/lib/ReactComponentTreeHook.js');
     }
     function instantiateChild(childInstances, child, name, selfDebugID) {
       var keyUnique = childInstances[name] === undefined;
       if ('production' !== 'production') {
         if (!ReactComponentTreeHook) {
-          ReactComponentTreeHook = $__require('./ReactComponentTreeHook');
+          ReactComponentTreeHook = $__require('npm:react@15.3.1/lib/ReactComponentTreeHook.js');
         }
         if (!keyUnique) {
           'production' !== 'production' ? warning(false, 'flattenChildren(...): Encountered two children with the same key, ' + '`%s`. Child keys must be unique; when two children share a key, only ' + 'the first child will be used.%s', KeyEscapeUtils.unescape(name), ReactComponentTreeHook.getStackAddendumByID(selfDebugID)) : void 0;
@@ -12684,7 +12684,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactChildReconciler.js', ['npm:rea
       }
     };
     module.exports = ReactChildReconciler;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/flattenChildren.js', ['npm:react@15.3.1/lib/KeyEscapeUtils.js', 'npm:react@15.3.1/lib/traverseAllChildren.js', 'npm:fbjs@0.8.4/lib/warning.js', 'npm:react@15.3.1/lib/ReactComponentTreeHook.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -12695,12 +12695,12 @@ System.registerDynamic('npm:react@15.3.1/lib/flattenChildren.js', ['npm:react@15
   (function (process) {
     'use strict';
 
-    var KeyEscapeUtils = $__require('./KeyEscapeUtils');
-    var traverseAllChildren = $__require('./traverseAllChildren');
-    var warning = $__require('fbjs/lib/warning');
+    var KeyEscapeUtils = $__require('npm:react@15.3.1/lib/KeyEscapeUtils.js');
+    var traverseAllChildren = $__require('npm:react@15.3.1/lib/traverseAllChildren.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     var ReactComponentTreeHook;
     if (typeof process !== 'undefined' && process.env && 'production' === 'test') {
-      ReactComponentTreeHook = $__require('./ReactComponentTreeHook');
+      ReactComponentTreeHook = $__require('npm:react@15.3.1/lib/ReactComponentTreeHook.js');
     }
     function flattenSingleChildIntoContext(traverseContext, child, name, selfDebugID) {
       if (traverseContext && typeof traverseContext === 'object') {
@@ -12708,7 +12708,7 @@ System.registerDynamic('npm:react@15.3.1/lib/flattenChildren.js', ['npm:react@15
         var keyUnique = result[name] === undefined;
         if ('production' !== 'production') {
           if (!ReactComponentTreeHook) {
-            ReactComponentTreeHook = $__require('./ReactComponentTreeHook');
+            ReactComponentTreeHook = $__require('npm:react@15.3.1/lib/ReactComponentTreeHook.js');
           }
           if (!keyUnique) {
             'production' !== 'production' ? warning(false, 'flattenChildren(...): Encountered two children with the same key, ' + '`%s`. Child keys must be unique; when two children share a key, only ' + 'the first child will be used.%s', KeyEscapeUtils.unescape(name), ReactComponentTreeHook.getStackAddendumByID(selfDebugID)) : void 0;
@@ -12734,7 +12734,7 @@ System.registerDynamic('npm:react@15.3.1/lib/flattenChildren.js', ['npm:react@15
       return result;
     }
     module.exports = flattenChildren;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactMultiChild.js', ['npm:react@15.3.1/lib/reactProdInvariant.js', 'npm:react@15.3.1/lib/ReactComponentEnvironment.js', 'npm:react@15.3.1/lib/ReactInstanceMap.js', 'npm:react@15.3.1/lib/ReactInstrumentation.js', 'npm:react@15.3.1/lib/ReactMultiChildUpdateTypes.js', 'npm:react@15.3.1/lib/ReactCurrentOwner.js', 'npm:react@15.3.1/lib/ReactReconciler.js', 'npm:react@15.3.1/lib/ReactChildReconciler.js', 'npm:fbjs@0.8.4/lib/emptyFunction.js', 'npm:react@15.3.1/lib/flattenChildren.js', 'npm:fbjs@0.8.4/lib/invariant.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -12745,17 +12745,17 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactMultiChild.js', ['npm:react@15
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant');
-    var ReactComponentEnvironment = $__require('./ReactComponentEnvironment');
-    var ReactInstanceMap = $__require('./ReactInstanceMap');
-    var ReactInstrumentation = $__require('./ReactInstrumentation');
-    var ReactMultiChildUpdateTypes = $__require('./ReactMultiChildUpdateTypes');
-    var ReactCurrentOwner = $__require('./ReactCurrentOwner');
-    var ReactReconciler = $__require('./ReactReconciler');
-    var ReactChildReconciler = $__require('./ReactChildReconciler');
-    var emptyFunction = $__require('fbjs/lib/emptyFunction');
-    var flattenChildren = $__require('./flattenChildren');
-    var invariant = $__require('fbjs/lib/invariant');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js');
+    var ReactComponentEnvironment = $__require('npm:react@15.3.1/lib/ReactComponentEnvironment.js');
+    var ReactInstanceMap = $__require('npm:react@15.3.1/lib/ReactInstanceMap.js');
+    var ReactInstrumentation = $__require('npm:react@15.3.1/lib/ReactInstrumentation.js');
+    var ReactMultiChildUpdateTypes = $__require('npm:react@15.3.1/lib/ReactMultiChildUpdateTypes.js');
+    var ReactCurrentOwner = $__require('npm:react@15.3.1/lib/ReactCurrentOwner.js');
+    var ReactReconciler = $__require('npm:react@15.3.1/lib/ReactReconciler.js');
+    var ReactChildReconciler = $__require('npm:react@15.3.1/lib/ReactChildReconciler.js');
+    var emptyFunction = $__require('npm:fbjs@0.8.4/lib/emptyFunction.js');
+    var flattenChildren = $__require('npm:react@15.3.1/lib/flattenChildren.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
     function makeInsertMarkup(markup, afterNode, toIndex) {
       return {
         type: ReactMultiChildUpdateTypes.INSERT_MARKUP,
@@ -12992,7 +12992,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactMultiChild.js', ['npm:react@15
         }
       } };
     module.exports = ReactMultiChild;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactServerUpdateQueue.js', ['npm:react@15.3.1/lib/ReactUpdateQueue.js', 'npm:react@15.3.1/lib/Transaction.js', 'npm:fbjs@0.8.4/lib/warning.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -13008,9 +13008,9 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactServerUpdateQueue.js', ['npm:r
         throw new TypeError("Cannot call a class as a function");
       }
     }
-    var ReactUpdateQueue = $__require('./ReactUpdateQueue');
-    var Transaction = $__require('./Transaction');
-    var warning = $__require('fbjs/lib/warning');
+    var ReactUpdateQueue = $__require('npm:react@15.3.1/lib/ReactUpdateQueue.js');
+    var Transaction = $__require('npm:react@15.3.1/lib/Transaction.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     function warnNoop(publicInstance, callerName) {
       if ('production' !== 'production') {
         var constructor = publicInstance.constructor;
@@ -13054,7 +13054,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactServerUpdateQueue.js', ['npm:r
       return ReactServerUpdateQueue;
     }();
     module.exports = ReactServerUpdateQueue;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactServerRenderingTransaction.js', ['npm:object-assign@4.1.0.js', 'npm:react@15.3.1/lib/PooledClass.js', 'npm:react@15.3.1/lib/Transaction.js', 'npm:react@15.3.1/lib/ReactInstrumentation.js', 'npm:react@15.3.1/lib/ReactServerUpdateQueue.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -13065,11 +13065,11 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactServerRenderingTransaction.js'
   (function (process) {
     'use strict';
 
-    var _assign = $__require('object-assign');
-    var PooledClass = $__require('./PooledClass');
-    var Transaction = $__require('./Transaction');
-    var ReactInstrumentation = $__require('./ReactInstrumentation');
-    var ReactServerUpdateQueue = $__require('./ReactServerUpdateQueue');
+    var _assign = $__require('npm:object-assign@4.1.0.js');
+    var PooledClass = $__require('npm:react@15.3.1/lib/PooledClass.js');
+    var Transaction = $__require('npm:react@15.3.1/lib/Transaction.js');
+    var ReactInstrumentation = $__require('npm:react@15.3.1/lib/ReactInstrumentation.js');
+    var ReactServerUpdateQueue = $__require('npm:react@15.3.1/lib/ReactServerUpdateQueue.js');
     var TRANSACTION_WRAPPERS = [];
     if ('production' !== 'production') {
       TRANSACTION_WRAPPERS.push({
@@ -13101,7 +13101,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactServerRenderingTransaction.js'
     _assign(ReactServerRenderingTransaction.prototype, Transaction.Mixin, Mixin);
     PooledClass.addPoolingTo(ReactServerRenderingTransaction);
     module.exports = ReactServerRenderingTransaction;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactDOMComponent.js', ['npm:react@15.3.1/lib/reactProdInvariant.js', 'npm:object-assign@4.1.0.js', 'npm:react@15.3.1/lib/AutoFocusUtils.js', 'npm:react@15.3.1/lib/CSSPropertyOperations.js', 'npm:react@15.3.1/lib/DOMLazyTree.js', 'npm:react@15.3.1/lib/DOMNamespaces.js', 'npm:react@15.3.1/lib/DOMProperty.js', 'npm:react@15.3.1/lib/DOMPropertyOperations.js', 'npm:react@15.3.1/lib/EventConstants.js', 'npm:react@15.3.1/lib/EventPluginHub.js', 'npm:react@15.3.1/lib/EventPluginRegistry.js', 'npm:react@15.3.1/lib/ReactBrowserEventEmitter.js', 'npm:react@15.3.1/lib/ReactDOMButton.js', 'npm:react@15.3.1/lib/ReactDOMComponentFlags.js', 'npm:react@15.3.1/lib/ReactDOMComponentTree.js', 'npm:react@15.3.1/lib/ReactDOMInput.js', 'npm:react@15.3.1/lib/ReactDOMOption.js', 'npm:react@15.3.1/lib/ReactDOMSelect.js', 'npm:react@15.3.1/lib/ReactDOMTextarea.js', 'npm:react@15.3.1/lib/ReactInstrumentation.js', 'npm:react@15.3.1/lib/ReactMultiChild.js', 'npm:react@15.3.1/lib/ReactServerRenderingTransaction.js', 'npm:fbjs@0.8.4/lib/emptyFunction.js', 'npm:react@15.3.1/lib/escapeTextContentForBrowser.js', 'npm:fbjs@0.8.4/lib/invariant.js', 'npm:react@15.3.1/lib/isEventSupported.js', 'npm:fbjs@0.8.4/lib/keyOf.js', 'npm:fbjs@0.8.4/lib/shallowEqual.js', 'npm:react@15.3.1/lib/validateDOMNesting.js', 'npm:fbjs@0.8.4/lib/warning.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -13112,36 +13112,36 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDOMComponent.js', ['npm:react@
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant'),
-        _assign = $__require('object-assign');
-    var AutoFocusUtils = $__require('./AutoFocusUtils');
-    var CSSPropertyOperations = $__require('./CSSPropertyOperations');
-    var DOMLazyTree = $__require('./DOMLazyTree');
-    var DOMNamespaces = $__require('./DOMNamespaces');
-    var DOMProperty = $__require('./DOMProperty');
-    var DOMPropertyOperations = $__require('./DOMPropertyOperations');
-    var EventConstants = $__require('./EventConstants');
-    var EventPluginHub = $__require('./EventPluginHub');
-    var EventPluginRegistry = $__require('./EventPluginRegistry');
-    var ReactBrowserEventEmitter = $__require('./ReactBrowserEventEmitter');
-    var ReactDOMButton = $__require('./ReactDOMButton');
-    var ReactDOMComponentFlags = $__require('./ReactDOMComponentFlags');
-    var ReactDOMComponentTree = $__require('./ReactDOMComponentTree');
-    var ReactDOMInput = $__require('./ReactDOMInput');
-    var ReactDOMOption = $__require('./ReactDOMOption');
-    var ReactDOMSelect = $__require('./ReactDOMSelect');
-    var ReactDOMTextarea = $__require('./ReactDOMTextarea');
-    var ReactInstrumentation = $__require('./ReactInstrumentation');
-    var ReactMultiChild = $__require('./ReactMultiChild');
-    var ReactServerRenderingTransaction = $__require('./ReactServerRenderingTransaction');
-    var emptyFunction = $__require('fbjs/lib/emptyFunction');
-    var escapeTextContentForBrowser = $__require('./escapeTextContentForBrowser');
-    var invariant = $__require('fbjs/lib/invariant');
-    var isEventSupported = $__require('./isEventSupported');
-    var keyOf = $__require('fbjs/lib/keyOf');
-    var shallowEqual = $__require('fbjs/lib/shallowEqual');
-    var validateDOMNesting = $__require('./validateDOMNesting');
-    var warning = $__require('fbjs/lib/warning');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js'),
+        _assign = $__require('npm:object-assign@4.1.0.js');
+    var AutoFocusUtils = $__require('npm:react@15.3.1/lib/AutoFocusUtils.js');
+    var CSSPropertyOperations = $__require('npm:react@15.3.1/lib/CSSPropertyOperations.js');
+    var DOMLazyTree = $__require('npm:react@15.3.1/lib/DOMLazyTree.js');
+    var DOMNamespaces = $__require('npm:react@15.3.1/lib/DOMNamespaces.js');
+    var DOMProperty = $__require('npm:react@15.3.1/lib/DOMProperty.js');
+    var DOMPropertyOperations = $__require('npm:react@15.3.1/lib/DOMPropertyOperations.js');
+    var EventConstants = $__require('npm:react@15.3.1/lib/EventConstants.js');
+    var EventPluginHub = $__require('npm:react@15.3.1/lib/EventPluginHub.js');
+    var EventPluginRegistry = $__require('npm:react@15.3.1/lib/EventPluginRegistry.js');
+    var ReactBrowserEventEmitter = $__require('npm:react@15.3.1/lib/ReactBrowserEventEmitter.js');
+    var ReactDOMButton = $__require('npm:react@15.3.1/lib/ReactDOMButton.js');
+    var ReactDOMComponentFlags = $__require('npm:react@15.3.1/lib/ReactDOMComponentFlags.js');
+    var ReactDOMComponentTree = $__require('npm:react@15.3.1/lib/ReactDOMComponentTree.js');
+    var ReactDOMInput = $__require('npm:react@15.3.1/lib/ReactDOMInput.js');
+    var ReactDOMOption = $__require('npm:react@15.3.1/lib/ReactDOMOption.js');
+    var ReactDOMSelect = $__require('npm:react@15.3.1/lib/ReactDOMSelect.js');
+    var ReactDOMTextarea = $__require('npm:react@15.3.1/lib/ReactDOMTextarea.js');
+    var ReactInstrumentation = $__require('npm:react@15.3.1/lib/ReactInstrumentation.js');
+    var ReactMultiChild = $__require('npm:react@15.3.1/lib/ReactMultiChild.js');
+    var ReactServerRenderingTransaction = $__require('npm:react@15.3.1/lib/ReactServerRenderingTransaction.js');
+    var emptyFunction = $__require('npm:fbjs@0.8.4/lib/emptyFunction.js');
+    var escapeTextContentForBrowser = $__require('npm:react@15.3.1/lib/escapeTextContentForBrowser.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
+    var isEventSupported = $__require('npm:react@15.3.1/lib/isEventSupported.js');
+    var keyOf = $__require('npm:fbjs@0.8.4/lib/keyOf.js');
+    var shallowEqual = $__require('npm:fbjs@0.8.4/lib/shallowEqual.js');
+    var validateDOMNesting = $__require('npm:react@15.3.1/lib/validateDOMNesting.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     var Flags = ReactDOMComponentFlags;
     var deleteListener = EventPluginHub.deleteListener;
     var getNode = ReactDOMComponentTree.getNodeFromInstance;
@@ -13853,7 +13853,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDOMComponent.js', ['npm:react@
     };
     _assign(ReactDOMComponent.prototype, ReactDOMComponent.Mixin, ReactMultiChild.Mixin);
     module.exports = ReactDOMComponent;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactDOMEmptyComponent.js', ['npm:object-assign@4.1.0.js', 'npm:react@15.3.1/lib/DOMLazyTree.js', 'npm:react@15.3.1/lib/ReactDOMComponentTree.js'], true, function ($__require, exports, module) {
@@ -13863,9 +13863,9 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDOMEmptyComponent.js', ['npm:o
   var define,
       global = this || self,
       GLOBAL = global;
-  var _assign = $__require('object-assign');
-  var DOMLazyTree = $__require('./DOMLazyTree');
-  var ReactDOMComponentTree = $__require('./ReactDOMComponentTree');
+  var _assign = $__require('npm:object-assign@4.1.0.js');
+  var DOMLazyTree = $__require('npm:react@15.3.1/lib/DOMLazyTree.js');
+  var ReactDOMComponentTree = $__require('npm:react@15.3.1/lib/ReactDOMComponentTree.js');
   var ReactDOMEmptyComponent = function (instantiate) {
     this._currentElement = null;
     this._hostNode = null;
@@ -13911,8 +13911,8 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDOMTreeTraversal.js', ['npm:re
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant');
-    var invariant = $__require('fbjs/lib/invariant');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
     function getLowestCommonAncestor(instA, instB) {
       !('_hostNode' in instA) ? 'production' !== 'production' ? invariant(false, 'getNodeFromInstance: Invalid argument.') : _prodInvariant('33') : void 0;
       !('_hostNode' in instB) ? 'production' !== 'production' ? invariant(false, 'getNodeFromInstance: Invalid argument.') : _prodInvariant('33') : void 0;
@@ -13998,7 +13998,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDOMTreeTraversal.js', ['npm:re
       traverseTwoPhase: traverseTwoPhase,
       traverseEnterLeave: traverseEnterLeave
     };
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:fbjs@0.8.4/lib/createArrayFromMixed.js', ['npm:fbjs@0.8.4/lib/invariant.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -14009,7 +14009,7 @@ System.registerDynamic('npm:fbjs@0.8.4/lib/createArrayFromMixed.js', ['npm:fbjs@
   (function (process) {
     'use strict';
 
-    var invariant = $__require('./invariant');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
     function toArray(obj) {
       var length = obj.length;
       !(!Array.isArray(obj) && (typeof obj === 'object' || typeof obj === 'function')) ? 'production' !== 'production' ? invariant(false, 'toArray: Array-like object expected') : invariant(false) : void 0;
@@ -14040,7 +14040,7 @@ System.registerDynamic('npm:fbjs@0.8.4/lib/createArrayFromMixed.js', ['npm:fbjs@
       }
     }
     module.exports = createArrayFromMixed;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:fbjs@0.8.4/lib/getMarkupWrap.js', ['npm:fbjs@0.8.4/lib/ExecutionEnvironment.js', 'npm:fbjs@0.8.4/lib/invariant.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -14051,8 +14051,8 @@ System.registerDynamic('npm:fbjs@0.8.4/lib/getMarkupWrap.js', ['npm:fbjs@0.8.4/l
   (function (process) {
     'use strict';
 
-    var ExecutionEnvironment = $__require('./ExecutionEnvironment');
-    var invariant = $__require('./invariant');
+    var ExecutionEnvironment = $__require('npm:fbjs@0.8.4/lib/ExecutionEnvironment.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
     var dummyNode = ExecutionEnvironment.canUseDOM ? document.createElement('div') : null;
     var shouldWrap = {};
     var selectWrap = [1, '<select multiple="true">', '</select>'];
@@ -14097,7 +14097,7 @@ System.registerDynamic('npm:fbjs@0.8.4/lib/getMarkupWrap.js', ['npm:fbjs@0.8.4/l
       return shouldWrap[nodeName] ? markupWrap[nodeName] : null;
     }
     module.exports = getMarkupWrap;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:fbjs@0.8.4/lib/createNodesFromMarkup.js', ['npm:fbjs@0.8.4/lib/ExecutionEnvironment.js', 'npm:fbjs@0.8.4/lib/createArrayFromMixed.js', 'npm:fbjs@0.8.4/lib/getMarkupWrap.js', 'npm:fbjs@0.8.4/lib/invariant.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -14108,10 +14108,10 @@ System.registerDynamic('npm:fbjs@0.8.4/lib/createNodesFromMarkup.js', ['npm:fbjs
   (function (process) {
     'use strict';
 
-    var ExecutionEnvironment = $__require('./ExecutionEnvironment');
-    var createArrayFromMixed = $__require('./createArrayFromMixed');
-    var getMarkupWrap = $__require('./getMarkupWrap');
-    var invariant = $__require('./invariant');
+    var ExecutionEnvironment = $__require('npm:fbjs@0.8.4/lib/ExecutionEnvironment.js');
+    var createArrayFromMixed = $__require('npm:fbjs@0.8.4/lib/createArrayFromMixed.js');
+    var getMarkupWrap = $__require('npm:fbjs@0.8.4/lib/getMarkupWrap.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
     var dummyNode = ExecutionEnvironment.canUseDOM ? document.createElement('div') : null;
     var nodeNamePattern = /^\s*<(\w+)/;
     function getNodeName(markup) {
@@ -14144,7 +14144,7 @@ System.registerDynamic('npm:fbjs@0.8.4/lib/createNodesFromMarkup.js', ['npm:fbjs
       return nodes;
     }
     module.exports = createNodesFromMarkup;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/Danger.js', ['npm:react@15.3.1/lib/reactProdInvariant.js', 'npm:react@15.3.1/lib/DOMLazyTree.js', 'npm:fbjs@0.8.4/lib/ExecutionEnvironment.js', 'npm:fbjs@0.8.4/lib/createNodesFromMarkup.js', 'npm:fbjs@0.8.4/lib/emptyFunction.js', 'npm:fbjs@0.8.4/lib/invariant.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -14155,12 +14155,12 @@ System.registerDynamic('npm:react@15.3.1/lib/Danger.js', ['npm:react@15.3.1/lib/
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant');
-    var DOMLazyTree = $__require('./DOMLazyTree');
-    var ExecutionEnvironment = $__require('fbjs/lib/ExecutionEnvironment');
-    var createNodesFromMarkup = $__require('fbjs/lib/createNodesFromMarkup');
-    var emptyFunction = $__require('fbjs/lib/emptyFunction');
-    var invariant = $__require('fbjs/lib/invariant');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js');
+    var DOMLazyTree = $__require('npm:react@15.3.1/lib/DOMLazyTree.js');
+    var ExecutionEnvironment = $__require('npm:fbjs@0.8.4/lib/ExecutionEnvironment.js');
+    var createNodesFromMarkup = $__require('npm:fbjs@0.8.4/lib/createNodesFromMarkup.js');
+    var emptyFunction = $__require('npm:fbjs@0.8.4/lib/emptyFunction.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
     var Danger = { dangerouslyReplaceNodeWithMarkup: function (oldChild, markup) {
         !ExecutionEnvironment.canUseDOM ? 'production' !== 'production' ? invariant(false, 'dangerouslyReplaceNodeWithMarkup(...): Cannot render markup in a worker thread. Make sure `window` and `document` are available globally before requiring React when unit testing or use ReactDOMServer.renderToString() for server rendering.') : _prodInvariant('56') : void 0;
         !markup ? 'production' !== 'production' ? invariant(false, 'dangerouslyReplaceNodeWithMarkup(...): Missing markup.') : _prodInvariant('57') : void 0;
@@ -14173,7 +14173,7 @@ System.registerDynamic('npm:react@15.3.1/lib/Danger.js', ['npm:react@15.3.1/lib/
         }
       } };
     module.exports = Danger;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactMultiChildUpdateTypes.js', ['npm:fbjs@0.8.4/lib/keyMirror.js'], true, function ($__require, exports, module) {
@@ -14193,7 +14193,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactMultiChildUpdateTypes.js', ['n
   var define,
       global = this || self,
       GLOBAL = global;
-  var keyMirror = $__require('fbjs/lib/keyMirror');
+  var keyMirror = $__require('npm:fbjs@0.8.4/lib/keyMirror.js');
 
   /**
    * When a component's children are updated, a series of update configuration
@@ -14222,14 +14222,14 @@ System.registerDynamic('npm:react@15.3.1/lib/DOMChildrenOperations.js', ['npm:re
   (function (process) {
     'use strict';
 
-    var DOMLazyTree = $__require('./DOMLazyTree');
-    var Danger = $__require('./Danger');
-    var ReactMultiChildUpdateTypes = $__require('./ReactMultiChildUpdateTypes');
-    var ReactDOMComponentTree = $__require('./ReactDOMComponentTree');
-    var ReactInstrumentation = $__require('./ReactInstrumentation');
-    var createMicrosoftUnsafeLocalFunction = $__require('./createMicrosoftUnsafeLocalFunction');
-    var setInnerHTML = $__require('./setInnerHTML');
-    var setTextContent = $__require('./setTextContent');
+    var DOMLazyTree = $__require('npm:react@15.3.1/lib/DOMLazyTree.js');
+    var Danger = $__require('npm:react@15.3.1/lib/Danger.js');
+    var ReactMultiChildUpdateTypes = $__require('npm:react@15.3.1/lib/ReactMultiChildUpdateTypes.js');
+    var ReactDOMComponentTree = $__require('npm:react@15.3.1/lib/ReactDOMComponentTree.js');
+    var ReactInstrumentation = $__require('npm:react@15.3.1/lib/ReactInstrumentation.js');
+    var createMicrosoftUnsafeLocalFunction = $__require('npm:react@15.3.1/lib/createMicrosoftUnsafeLocalFunction.js');
+    var setInnerHTML = $__require('npm:react@15.3.1/lib/setInnerHTML.js');
+    var setTextContent = $__require('npm:react@15.3.1/lib/setTextContent.js');
     function getNodeAfter(parentNode, node) {
       if (Array.isArray(node)) {
         node = node[1];
@@ -14363,7 +14363,7 @@ System.registerDynamic('npm:react@15.3.1/lib/DOMChildrenOperations.js', ['npm:re
       }
     };
     module.exports = DOMChildrenOperations;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactDOMTextComponent.js', ['npm:react@15.3.1/lib/reactProdInvariant.js', 'npm:object-assign@4.1.0.js', 'npm:react@15.3.1/lib/DOMChildrenOperations.js', 'npm:react@15.3.1/lib/DOMLazyTree.js', 'npm:react@15.3.1/lib/ReactDOMComponentTree.js', 'npm:react@15.3.1/lib/escapeTextContentForBrowser.js', 'npm:fbjs@0.8.4/lib/invariant.js', 'npm:react@15.3.1/lib/validateDOMNesting.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -14374,14 +14374,14 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDOMTextComponent.js', ['npm:re
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant'),
-        _assign = $__require('object-assign');
-    var DOMChildrenOperations = $__require('./DOMChildrenOperations');
-    var DOMLazyTree = $__require('./DOMLazyTree');
-    var ReactDOMComponentTree = $__require('./ReactDOMComponentTree');
-    var escapeTextContentForBrowser = $__require('./escapeTextContentForBrowser');
-    var invariant = $__require('fbjs/lib/invariant');
-    var validateDOMNesting = $__require('./validateDOMNesting');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js'),
+        _assign = $__require('npm:object-assign@4.1.0.js');
+    var DOMChildrenOperations = $__require('npm:react@15.3.1/lib/DOMChildrenOperations.js');
+    var DOMLazyTree = $__require('npm:react@15.3.1/lib/DOMLazyTree.js');
+    var ReactDOMComponentTree = $__require('npm:react@15.3.1/lib/ReactDOMComponentTree.js');
+    var escapeTextContentForBrowser = $__require('npm:react@15.3.1/lib/escapeTextContentForBrowser.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
+    var validateDOMNesting = $__require('npm:react@15.3.1/lib/validateDOMNesting.js');
     var ReactDOMTextComponent = function (text) {
       this._currentElement = text;
       this._stringText = '' + text;
@@ -14470,7 +14470,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDOMTextComponent.js', ['npm:re
       }
     });
     module.exports = ReactDOMTextComponent;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactDefaultBatchingStrategy.js', ['npm:object-assign@4.1.0.js', 'npm:react@15.3.1/lib/ReactUpdates.js', 'npm:react@15.3.1/lib/Transaction.js', 'npm:fbjs@0.8.4/lib/emptyFunction.js'], true, function ($__require, exports, module) {
@@ -14480,10 +14480,10 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDefaultBatchingStrategy.js', [
   var define,
       global = this || self,
       GLOBAL = global;
-  var _assign = $__require('object-assign');
-  var ReactUpdates = $__require('./ReactUpdates');
-  var Transaction = $__require('./Transaction');
-  var emptyFunction = $__require('fbjs/lib/emptyFunction');
+  var _assign = $__require('npm:object-assign@4.1.0.js');
+  var ReactUpdates = $__require('npm:react@15.3.1/lib/ReactUpdates.js');
+  var Transaction = $__require('npm:react@15.3.1/lib/Transaction.js');
+  var emptyFunction = $__require('npm:fbjs@0.8.4/lib/emptyFunction.js');
   var RESET_BATCHED_UPDATES = {
     initialize: emptyFunction,
     close: function () {
@@ -14569,14 +14569,14 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactEventListener.js', ['npm:objec
   (function (process) {
     'use strict';
 
-    var _assign = $__require('object-assign');
-    var EventListener = $__require('fbjs/lib/EventListener');
-    var ExecutionEnvironment = $__require('fbjs/lib/ExecutionEnvironment');
-    var PooledClass = $__require('./PooledClass');
-    var ReactDOMComponentTree = $__require('./ReactDOMComponentTree');
-    var ReactUpdates = $__require('./ReactUpdates');
-    var getEventTarget = $__require('./getEventTarget');
-    var getUnboundedScrollPosition = $__require('fbjs/lib/getUnboundedScrollPosition');
+    var _assign = $__require('npm:object-assign@4.1.0.js');
+    var EventListener = $__require('npm:fbjs@0.8.4/lib/EventListener.js');
+    var ExecutionEnvironment = $__require('npm:fbjs@0.8.4/lib/ExecutionEnvironment.js');
+    var PooledClass = $__require('npm:react@15.3.1/lib/PooledClass.js');
+    var ReactDOMComponentTree = $__require('npm:react@15.3.1/lib/ReactDOMComponentTree.js');
+    var ReactUpdates = $__require('npm:react@15.3.1/lib/ReactUpdates.js');
+    var getEventTarget = $__require('npm:react@15.3.1/lib/getEventTarget.js');
+    var getUnboundedScrollPosition = $__require('npm:fbjs@0.8.4/lib/getUnboundedScrollPosition.js');
     function findParent(inst) {
       while (inst._hostParent) {
         inst = inst._hostParent;
@@ -14657,7 +14657,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactEventListener.js', ['npm:objec
       }
     };
     module.exports = ReactEventListener;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactInjection.js', ['npm:react@15.3.1/lib/DOMProperty.js', 'npm:react@15.3.1/lib/EventPluginHub.js', 'npm:react@15.3.1/lib/EventPluginUtils.js', 'npm:react@15.3.1/lib/ReactComponentEnvironment.js', 'npm:react@15.3.1/lib/ReactClass.js', 'npm:react@15.3.1/lib/ReactEmptyComponent.js', 'npm:react@15.3.1/lib/ReactBrowserEventEmitter.js', 'npm:react@15.3.1/lib/ReactHostComponent.js', 'npm:react@15.3.1/lib/ReactUpdates.js'], true, function ($__require, exports, module) {
@@ -14667,15 +14667,15 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactInjection.js', ['npm:react@15.
   var define,
       global = this || self,
       GLOBAL = global;
-  var DOMProperty = $__require('./DOMProperty');
-  var EventPluginHub = $__require('./EventPluginHub');
-  var EventPluginUtils = $__require('./EventPluginUtils');
-  var ReactComponentEnvironment = $__require('./ReactComponentEnvironment');
-  var ReactClass = $__require('./ReactClass');
-  var ReactEmptyComponent = $__require('./ReactEmptyComponent');
-  var ReactBrowserEventEmitter = $__require('./ReactBrowserEventEmitter');
-  var ReactHostComponent = $__require('./ReactHostComponent');
-  var ReactUpdates = $__require('./ReactUpdates');
+  var DOMProperty = $__require('npm:react@15.3.1/lib/DOMProperty.js');
+  var EventPluginHub = $__require('npm:react@15.3.1/lib/EventPluginHub.js');
+  var EventPluginUtils = $__require('npm:react@15.3.1/lib/EventPluginUtils.js');
+  var ReactComponentEnvironment = $__require('npm:react@15.3.1/lib/ReactComponentEnvironment.js');
+  var ReactClass = $__require('npm:react@15.3.1/lib/ReactClass.js');
+  var ReactEmptyComponent = $__require('npm:react@15.3.1/lib/ReactEmptyComponent.js');
+  var ReactBrowserEventEmitter = $__require('npm:react@15.3.1/lib/ReactBrowserEventEmitter.js');
+  var ReactHostComponent = $__require('npm:react@15.3.1/lib/ReactHostComponent.js');
+  var ReactUpdates = $__require('npm:react@15.3.1/lib/ReactUpdates.js');
   var ReactInjection = {
     Component: ReactComponentEnvironment.injection,
     Class: ReactClass.injection,
@@ -14698,14 +14698,14 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactReconcileTransaction.js', ['np
   (function (process) {
     'use strict';
 
-    var _assign = $__require('object-assign');
-    var CallbackQueue = $__require('./CallbackQueue');
-    var PooledClass = $__require('./PooledClass');
-    var ReactBrowserEventEmitter = $__require('./ReactBrowserEventEmitter');
-    var ReactInputSelection = $__require('./ReactInputSelection');
-    var ReactInstrumentation = $__require('./ReactInstrumentation');
-    var Transaction = $__require('./Transaction');
-    var ReactUpdateQueue = $__require('./ReactUpdateQueue');
+    var _assign = $__require('npm:object-assign@4.1.0.js');
+    var CallbackQueue = $__require('npm:react@15.3.1/lib/CallbackQueue.js');
+    var PooledClass = $__require('npm:react@15.3.1/lib/PooledClass.js');
+    var ReactBrowserEventEmitter = $__require('npm:react@15.3.1/lib/ReactBrowserEventEmitter.js');
+    var ReactInputSelection = $__require('npm:react@15.3.1/lib/ReactInputSelection.js');
+    var ReactInstrumentation = $__require('npm:react@15.3.1/lib/ReactInstrumentation.js');
+    var Transaction = $__require('npm:react@15.3.1/lib/Transaction.js');
+    var ReactUpdateQueue = $__require('npm:react@15.3.1/lib/ReactUpdateQueue.js');
     var SELECTION_RESTORATION = {
       initialize: ReactInputSelection.getSelectionInformation,
       close: ReactInputSelection.restoreSelection
@@ -14765,7 +14765,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactReconcileTransaction.js', ['np
     _assign(ReactReconcileTransaction.prototype, Transaction.Mixin, Mixin);
     PooledClass.addPoolingTo(ReactReconcileTransaction);
     module.exports = ReactReconcileTransaction;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/SVGDOMPropertyConfig.js', [], true, function ($__require, exports, module) {
@@ -15173,7 +15173,7 @@ System.registerDynamic('npm:react@15.3.1/lib/getTextContentAccessor.js', ['npm:f
   var define,
       global = this || self,
       GLOBAL = global;
-  var ExecutionEnvironment = $__require('fbjs/lib/ExecutionEnvironment');
+  var ExecutionEnvironment = $__require('npm:fbjs@0.8.4/lib/ExecutionEnvironment.js');
 
   var contentKey = null;
 
@@ -15202,9 +15202,9 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDOMSelection.js', ['npm:fbjs@0
   var define,
       global = this || self,
       GLOBAL = global;
-  var ExecutionEnvironment = $__require('fbjs/lib/ExecutionEnvironment');
-  var getNodeForCharacterOffset = $__require('./getNodeForCharacterOffset');
-  var getTextContentAccessor = $__require('./getTextContentAccessor');
+  var ExecutionEnvironment = $__require('npm:fbjs@0.8.4/lib/ExecutionEnvironment.js');
+  var getNodeForCharacterOffset = $__require('npm:react@15.3.1/lib/getNodeForCharacterOffset.js');
+  var getTextContentAccessor = $__require('npm:react@15.3.1/lib/getTextContentAccessor.js');
   function isCollapsed(anchorNode, anchorOffset, focusNode, focusOffset) {
     return anchorNode === focusNode && anchorOffset === focusOffset;
   }
@@ -15347,7 +15347,7 @@ System.registerDynamic('npm:fbjs@0.8.4/lib/isTextNode.js', ['npm:fbjs@0.8.4/lib/
   var define,
       global = this || self,
       GLOBAL = global;
-  var isNode = $__require('./isNode');
+  var isNode = $__require('npm:fbjs@0.8.4/lib/isNode.js');
   function isTextNode(object) {
     return isNode(object) && object.nodeType == 3;
   }
@@ -15361,7 +15361,7 @@ System.registerDynamic('npm:fbjs@0.8.4/lib/containsNode.js', ['npm:fbjs@0.8.4/li
   var define,
       global = this || self,
       GLOBAL = global;
-  var isTextNode = $__require('./isTextNode');
+  var isTextNode = $__require('npm:fbjs@0.8.4/lib/isTextNode.js');
   function containsNode(outerNode, innerNode) {
     if (!outerNode || !innerNode) {
       return false;
@@ -15421,10 +15421,10 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactInputSelection.js', ['npm:reac
   var define,
       global = this || self,
       GLOBAL = global;
-  var ReactDOMSelection = $__require('./ReactDOMSelection');
-  var containsNode = $__require('fbjs/lib/containsNode');
-  var focusNode = $__require('fbjs/lib/focusNode');
-  var getActiveElement = $__require('fbjs/lib/getActiveElement');
+  var ReactDOMSelection = $__require('npm:react@15.3.1/lib/ReactDOMSelection.js');
+  var containsNode = $__require('npm:fbjs@0.8.4/lib/containsNode.js');
+  var focusNode = $__require('npm:fbjs@0.8.4/lib/focusNode.js');
+  var getActiveElement = $__require('npm:fbjs@0.8.4/lib/getActiveElement.js');
   function isInDocument(node) {
     return containsNode(document.documentElement, node);
   }
@@ -15603,16 +15603,16 @@ System.registerDynamic('npm:react@15.3.1/lib/SelectEventPlugin.js', ['npm:react@
   var define,
       global = this || self,
       GLOBAL = global;
-  var EventConstants = $__require('./EventConstants');
-  var EventPropagators = $__require('./EventPropagators');
-  var ExecutionEnvironment = $__require('fbjs/lib/ExecutionEnvironment');
-  var ReactDOMComponentTree = $__require('./ReactDOMComponentTree');
-  var ReactInputSelection = $__require('./ReactInputSelection');
-  var SyntheticEvent = $__require('./SyntheticEvent');
-  var getActiveElement = $__require('fbjs/lib/getActiveElement');
-  var isTextInputElement = $__require('./isTextInputElement');
-  var keyOf = $__require('fbjs/lib/keyOf');
-  var shallowEqual = $__require('fbjs/lib/shallowEqual');
+  var EventConstants = $__require('npm:react@15.3.1/lib/EventConstants.js');
+  var EventPropagators = $__require('npm:react@15.3.1/lib/EventPropagators.js');
+  var ExecutionEnvironment = $__require('npm:fbjs@0.8.4/lib/ExecutionEnvironment.js');
+  var ReactDOMComponentTree = $__require('npm:react@15.3.1/lib/ReactDOMComponentTree.js');
+  var ReactInputSelection = $__require('npm:react@15.3.1/lib/ReactInputSelection.js');
+  var SyntheticEvent = $__require('npm:react@15.3.1/lib/SyntheticEvent.js');
+  var getActiveElement = $__require('npm:fbjs@0.8.4/lib/getActiveElement.js');
+  var isTextInputElement = $__require('npm:react@15.3.1/lib/isTextInputElement.js');
+  var keyOf = $__require('npm:fbjs@0.8.4/lib/keyOf.js');
+  var shallowEqual = $__require('npm:fbjs@0.8.4/lib/shallowEqual.js');
   var topLevelTypes = EventConstants.topLevelTypes;
   var skipSelectionChangeEvent = ExecutionEnvironment.canUseDOM && 'documentMode' in document && document.documentMode <= 11;
   var eventTypes = { select: {
@@ -15721,7 +15721,7 @@ System.registerDynamic('npm:fbjs@0.8.4/lib/EventListener.js', ['npm:fbjs@0.8.4/l
   (function (process) {
     'use strict';
 
-    var emptyFunction = $__require('./emptyFunction');
+    var emptyFunction = $__require('npm:fbjs@0.8.4/lib/emptyFunction.js');
     var EventListener = {
       listen: function listen(target, eventType, callback) {
         if (target.addEventListener) {
@@ -15752,7 +15752,7 @@ System.registerDynamic('npm:fbjs@0.8.4/lib/EventListener.js', ['npm:fbjs@0.8.4/l
       registerDefault: function registerDefault() {}
     };
     module.exports = EventListener;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/EventPropagators.js', ['npm:react@15.3.1/lib/EventConstants.js', 'npm:react@15.3.1/lib/EventPluginHub.js', 'npm:react@15.3.1/lib/EventPluginUtils.js', 'npm:react@15.3.1/lib/accumulateInto.js', 'npm:react@15.3.1/lib/forEachAccumulated.js', 'npm:fbjs@0.8.4/lib/warning.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -15763,12 +15763,12 @@ System.registerDynamic('npm:react@15.3.1/lib/EventPropagators.js', ['npm:react@1
   (function (process) {
     'use strict';
 
-    var EventConstants = $__require('./EventConstants');
-    var EventPluginHub = $__require('./EventPluginHub');
-    var EventPluginUtils = $__require('./EventPluginUtils');
-    var accumulateInto = $__require('./accumulateInto');
-    var forEachAccumulated = $__require('./forEachAccumulated');
-    var warning = $__require('fbjs/lib/warning');
+    var EventConstants = $__require('npm:react@15.3.1/lib/EventConstants.js');
+    var EventPluginHub = $__require('npm:react@15.3.1/lib/EventPluginHub.js');
+    var EventPluginUtils = $__require('npm:react@15.3.1/lib/EventPluginUtils.js');
+    var accumulateInto = $__require('npm:react@15.3.1/lib/accumulateInto.js');
+    var forEachAccumulated = $__require('npm:react@15.3.1/lib/forEachAccumulated.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     var PropagationPhases = EventConstants.PropagationPhases;
     var getListener = EventPluginHub.getListener;
     function listenerAtPhase(inst, event, propagationPhase) {
@@ -15832,7 +15832,7 @@ System.registerDynamic('npm:react@15.3.1/lib/EventPropagators.js', ['npm:react@1
       accumulateEnterLeaveDispatches: accumulateEnterLeaveDispatches
     };
     module.exports = EventPropagators;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/SyntheticAnimationEvent.js', ['npm:react@15.3.1/lib/SyntheticEvent.js'], true, function ($__require, exports, module) {
@@ -15842,7 +15842,7 @@ System.registerDynamic('npm:react@15.3.1/lib/SyntheticAnimationEvent.js', ['npm:
   var define,
       global = this || self,
       GLOBAL = global;
-  var SyntheticEvent = $__require('./SyntheticEvent');
+  var SyntheticEvent = $__require('npm:react@15.3.1/lib/SyntheticEvent.js');
   var AnimationEventInterface = {
     animationName: null,
     elapsedTime: null,
@@ -15862,7 +15862,7 @@ System.registerDynamic('npm:react@15.3.1/lib/SyntheticClipboardEvent.js', ['npm:
   var define,
       global = this || self,
       GLOBAL = global;
-  var SyntheticEvent = $__require('./SyntheticEvent');
+  var SyntheticEvent = $__require('npm:react@15.3.1/lib/SyntheticEvent.js');
   var ClipboardEventInterface = { clipboardData: function (event) {
       return 'clipboardData' in event ? event.clipboardData : window.clipboardData;
     } };
@@ -15880,7 +15880,7 @@ System.registerDynamic('npm:react@15.3.1/lib/SyntheticFocusEvent.js', ['npm:reac
   var define,
       global = this || self,
       GLOBAL = global;
-  var SyntheticUIEvent = $__require('./SyntheticUIEvent');
+  var SyntheticUIEvent = $__require('npm:react@15.3.1/lib/SyntheticUIEvent.js');
   var FocusEventInterface = { relatedTarget: null };
   function SyntheticFocusEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeEventTarget) {
     return SyntheticUIEvent.call(this, dispatchConfig, dispatchMarker, nativeEvent, nativeEventTarget);
@@ -15896,7 +15896,7 @@ System.registerDynamic('npm:react@15.3.1/lib/getEventKey.js', ['npm:react@15.3.1
   var define,
       global = this || self,
       GLOBAL = global;
-  var getEventCharCode = $__require('./getEventCharCode');
+  var getEventCharCode = $__require('npm:react@15.3.1/lib/getEventCharCode.js');
   var normalizeKey = {
     'Esc': 'Escape',
     'Spacebar': ' ',
@@ -15975,10 +15975,10 @@ System.registerDynamic('npm:react@15.3.1/lib/SyntheticKeyboardEvent.js', ['npm:r
   var define,
       global = this || self,
       GLOBAL = global;
-  var SyntheticUIEvent = $__require('./SyntheticUIEvent');
-  var getEventCharCode = $__require('./getEventCharCode');
-  var getEventKey = $__require('./getEventKey');
-  var getEventModifierState = $__require('./getEventModifierState');
+  var SyntheticUIEvent = $__require('npm:react@15.3.1/lib/SyntheticUIEvent.js');
+  var getEventCharCode = $__require('npm:react@15.3.1/lib/getEventCharCode.js');
+  var getEventKey = $__require('npm:react@15.3.1/lib/getEventKey.js');
+  var getEventModifierState = $__require('npm:react@15.3.1/lib/getEventModifierState.js');
   var KeyboardEventInterface = {
     key: getEventKey,
     location: null,
@@ -16025,7 +16025,7 @@ System.registerDynamic('npm:react@15.3.1/lib/SyntheticDragEvent.js', ['npm:react
   var define,
       global = this || self,
       GLOBAL = global;
-  var SyntheticMouseEvent = $__require('./SyntheticMouseEvent');
+  var SyntheticMouseEvent = $__require('npm:react@15.3.1/lib/SyntheticMouseEvent.js');
   var DragEventInterface = { dataTransfer: null };
   function SyntheticDragEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeEventTarget) {
     return SyntheticMouseEvent.call(this, dispatchConfig, dispatchMarker, nativeEvent, nativeEventTarget);
@@ -16041,8 +16041,8 @@ System.registerDynamic('npm:react@15.3.1/lib/SyntheticTouchEvent.js', ['npm:reac
   var define,
       global = this || self,
       GLOBAL = global;
-  var SyntheticUIEvent = $__require('./SyntheticUIEvent');
-  var getEventModifierState = $__require('./getEventModifierState');
+  var SyntheticUIEvent = $__require('npm:react@15.3.1/lib/SyntheticUIEvent.js');
+  var getEventModifierState = $__require('npm:react@15.3.1/lib/getEventModifierState.js');
   var TouchEventInterface = {
     touches: null,
     targetTouches: null,
@@ -16067,7 +16067,7 @@ System.registerDynamic('npm:react@15.3.1/lib/SyntheticTransitionEvent.js', ['npm
   var define,
       global = this || self,
       GLOBAL = global;
-  var SyntheticEvent = $__require('./SyntheticEvent');
+  var SyntheticEvent = $__require('npm:react@15.3.1/lib/SyntheticEvent.js');
   var TransitionEventInterface = {
     propertyName: null,
     elapsedTime: null,
@@ -16088,10 +16088,10 @@ System.registerDynamic('npm:react@15.3.1/lib/SyntheticEvent.js', ['npm:object-as
   (function (process) {
     'use strict';
 
-    var _assign = $__require('object-assign');
-    var PooledClass = $__require('./PooledClass');
-    var emptyFunction = $__require('fbjs/lib/emptyFunction');
-    var warning = $__require('fbjs/lib/warning');
+    var _assign = $__require('npm:object-assign@4.1.0.js');
+    var PooledClass = $__require('npm:react@15.3.1/lib/PooledClass.js');
+    var emptyFunction = $__require('npm:fbjs@0.8.4/lib/emptyFunction.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     var didWarnForAddedNewProperty = false;
     var isProxySupported = typeof Proxy === 'function';
     var shouldBeReleasedProperties = ['dispatchConfig', '_targetInst', 'nativeEvent', 'isDefaultPrevented', 'isPropagationStopped', '_dispatchListeners', '_dispatchInstances'];
@@ -16251,7 +16251,7 @@ System.registerDynamic('npm:react@15.3.1/lib/SyntheticEvent.js', ['npm:object-as
         'production' !== 'production' ? warning(warningCondition, 'This synthetic event is reused for performance reasons. If you\'re seeing this, ' + 'you\'re %s `%s` on a released/nullified synthetic event. %s. ' + 'If you must keep the original synthetic event around, use event.persist(). ' + 'See https://fb.me/react-event-pooling for more information.', action, propName, result) : void 0;
       }
     }
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/getEventTarget.js', [], true, function ($__require, exports, module) {
@@ -16302,8 +16302,8 @@ System.registerDynamic('npm:react@15.3.1/lib/SyntheticUIEvent.js', ['npm:react@1
   var define,
       global = this || self,
       GLOBAL = global;
-  var SyntheticEvent = $__require('./SyntheticEvent');
-  var getEventTarget = $__require('./getEventTarget');
+  var SyntheticEvent = $__require('npm:react@15.3.1/lib/SyntheticEvent.js');
+  var getEventTarget = $__require('npm:react@15.3.1/lib/getEventTarget.js');
   var UIEventInterface = {
     view: function (event) {
       if (event.view) {
@@ -16387,9 +16387,9 @@ System.registerDynamic('npm:react@15.3.1/lib/SyntheticMouseEvent.js', ['npm:reac
   var define,
       global = this || self,
       GLOBAL = global;
-  var SyntheticUIEvent = $__require('./SyntheticUIEvent');
-  var ViewportMetrics = $__require('./ViewportMetrics');
-  var getEventModifierState = $__require('./getEventModifierState');
+  var SyntheticUIEvent = $__require('npm:react@15.3.1/lib/SyntheticUIEvent.js');
+  var ViewportMetrics = $__require('npm:react@15.3.1/lib/ViewportMetrics.js');
+  var getEventModifierState = $__require('npm:react@15.3.1/lib/getEventModifierState.js');
   var MouseEventInterface = {
     screenX: null,
     screenY: null,
@@ -16432,7 +16432,7 @@ System.registerDynamic('npm:react@15.3.1/lib/SyntheticWheelEvent.js', ['npm:reac
   var define,
       global = this || self,
       GLOBAL = global;
-  var SyntheticMouseEvent = $__require('./SyntheticMouseEvent');
+  var SyntheticMouseEvent = $__require('npm:react@15.3.1/lib/SyntheticMouseEvent.js');
   var WheelEventInterface = {
     deltaX: function (event) {
       return 'deltaX' in event ? event.deltaX : 'wheelDeltaX' in event ? -event.wheelDeltaX : 0;
@@ -16514,26 +16514,26 @@ System.registerDynamic('npm:react@15.3.1/lib/SimpleEventPlugin.js', ['npm:react@
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant');
-    var EventConstants = $__require('./EventConstants');
-    var EventListener = $__require('fbjs/lib/EventListener');
-    var EventPropagators = $__require('./EventPropagators');
-    var ReactDOMComponentTree = $__require('./ReactDOMComponentTree');
-    var SyntheticAnimationEvent = $__require('./SyntheticAnimationEvent');
-    var SyntheticClipboardEvent = $__require('./SyntheticClipboardEvent');
-    var SyntheticEvent = $__require('./SyntheticEvent');
-    var SyntheticFocusEvent = $__require('./SyntheticFocusEvent');
-    var SyntheticKeyboardEvent = $__require('./SyntheticKeyboardEvent');
-    var SyntheticMouseEvent = $__require('./SyntheticMouseEvent');
-    var SyntheticDragEvent = $__require('./SyntheticDragEvent');
-    var SyntheticTouchEvent = $__require('./SyntheticTouchEvent');
-    var SyntheticTransitionEvent = $__require('./SyntheticTransitionEvent');
-    var SyntheticUIEvent = $__require('./SyntheticUIEvent');
-    var SyntheticWheelEvent = $__require('./SyntheticWheelEvent');
-    var emptyFunction = $__require('fbjs/lib/emptyFunction');
-    var getEventCharCode = $__require('./getEventCharCode');
-    var invariant = $__require('fbjs/lib/invariant');
-    var keyOf = $__require('fbjs/lib/keyOf');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js');
+    var EventConstants = $__require('npm:react@15.3.1/lib/EventConstants.js');
+    var EventListener = $__require('npm:fbjs@0.8.4/lib/EventListener.js');
+    var EventPropagators = $__require('npm:react@15.3.1/lib/EventPropagators.js');
+    var ReactDOMComponentTree = $__require('npm:react@15.3.1/lib/ReactDOMComponentTree.js');
+    var SyntheticAnimationEvent = $__require('npm:react@15.3.1/lib/SyntheticAnimationEvent.js');
+    var SyntheticClipboardEvent = $__require('npm:react@15.3.1/lib/SyntheticClipboardEvent.js');
+    var SyntheticEvent = $__require('npm:react@15.3.1/lib/SyntheticEvent.js');
+    var SyntheticFocusEvent = $__require('npm:react@15.3.1/lib/SyntheticFocusEvent.js');
+    var SyntheticKeyboardEvent = $__require('npm:react@15.3.1/lib/SyntheticKeyboardEvent.js');
+    var SyntheticMouseEvent = $__require('npm:react@15.3.1/lib/SyntheticMouseEvent.js');
+    var SyntheticDragEvent = $__require('npm:react@15.3.1/lib/SyntheticDragEvent.js');
+    var SyntheticTouchEvent = $__require('npm:react@15.3.1/lib/SyntheticTouchEvent.js');
+    var SyntheticTransitionEvent = $__require('npm:react@15.3.1/lib/SyntheticTransitionEvent.js');
+    var SyntheticUIEvent = $__require('npm:react@15.3.1/lib/SyntheticUIEvent.js');
+    var SyntheticWheelEvent = $__require('npm:react@15.3.1/lib/SyntheticWheelEvent.js');
+    var emptyFunction = $__require('npm:fbjs@0.8.4/lib/emptyFunction.js');
+    var getEventCharCode = $__require('npm:react@15.3.1/lib/getEventCharCode.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
+    var keyOf = $__require('npm:fbjs@0.8.4/lib/keyOf.js');
     var topLevelTypes = EventConstants.topLevelTypes;
     var eventTypes = {
       abort: { phasedRegistrationNames: {
@@ -16980,7 +16980,7 @@ System.registerDynamic('npm:react@15.3.1/lib/SimpleEventPlugin.js', ['npm:react@
       }
     };
     module.exports = SimpleEventPlugin;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactDefaultInjection.js', ['npm:react@15.3.1/lib/BeforeInputEventPlugin.js', 'npm:react@15.3.1/lib/ChangeEventPlugin.js', 'npm:react@15.3.1/lib/DefaultEventPluginOrder.js', 'npm:react@15.3.1/lib/EnterLeaveEventPlugin.js', 'npm:react@15.3.1/lib/HTMLDOMPropertyConfig.js', 'npm:react@15.3.1/lib/ReactComponentBrowserEnvironment.js', 'npm:react@15.3.1/lib/ReactDOMComponent.js', 'npm:react@15.3.1/lib/ReactDOMComponentTree.js', 'npm:react@15.3.1/lib/ReactDOMEmptyComponent.js', 'npm:react@15.3.1/lib/ReactDOMTreeTraversal.js', 'npm:react@15.3.1/lib/ReactDOMTextComponent.js', 'npm:react@15.3.1/lib/ReactDefaultBatchingStrategy.js', 'npm:react@15.3.1/lib/ReactEventListener.js', 'npm:react@15.3.1/lib/ReactInjection.js', 'npm:react@15.3.1/lib/ReactReconcileTransaction.js', 'npm:react@15.3.1/lib/SVGDOMPropertyConfig.js', 'npm:react@15.3.1/lib/SelectEventPlugin.js', 'npm:react@15.3.1/lib/SimpleEventPlugin.js'], true, function ($__require, exports, module) {
@@ -16990,24 +16990,24 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDefaultInjection.js', ['npm:re
   var define,
       global = this || self,
       GLOBAL = global;
-  var BeforeInputEventPlugin = $__require('./BeforeInputEventPlugin');
-  var ChangeEventPlugin = $__require('./ChangeEventPlugin');
-  var DefaultEventPluginOrder = $__require('./DefaultEventPluginOrder');
-  var EnterLeaveEventPlugin = $__require('./EnterLeaveEventPlugin');
-  var HTMLDOMPropertyConfig = $__require('./HTMLDOMPropertyConfig');
-  var ReactComponentBrowserEnvironment = $__require('./ReactComponentBrowserEnvironment');
-  var ReactDOMComponent = $__require('./ReactDOMComponent');
-  var ReactDOMComponentTree = $__require('./ReactDOMComponentTree');
-  var ReactDOMEmptyComponent = $__require('./ReactDOMEmptyComponent');
-  var ReactDOMTreeTraversal = $__require('./ReactDOMTreeTraversal');
-  var ReactDOMTextComponent = $__require('./ReactDOMTextComponent');
-  var ReactDefaultBatchingStrategy = $__require('./ReactDefaultBatchingStrategy');
-  var ReactEventListener = $__require('./ReactEventListener');
-  var ReactInjection = $__require('./ReactInjection');
-  var ReactReconcileTransaction = $__require('./ReactReconcileTransaction');
-  var SVGDOMPropertyConfig = $__require('./SVGDOMPropertyConfig');
-  var SelectEventPlugin = $__require('./SelectEventPlugin');
-  var SimpleEventPlugin = $__require('./SimpleEventPlugin');
+  var BeforeInputEventPlugin = $__require('npm:react@15.3.1/lib/BeforeInputEventPlugin.js');
+  var ChangeEventPlugin = $__require('npm:react@15.3.1/lib/ChangeEventPlugin.js');
+  var DefaultEventPluginOrder = $__require('npm:react@15.3.1/lib/DefaultEventPluginOrder.js');
+  var EnterLeaveEventPlugin = $__require('npm:react@15.3.1/lib/EnterLeaveEventPlugin.js');
+  var HTMLDOMPropertyConfig = $__require('npm:react@15.3.1/lib/HTMLDOMPropertyConfig.js');
+  var ReactComponentBrowserEnvironment = $__require('npm:react@15.3.1/lib/ReactComponentBrowserEnvironment.js');
+  var ReactDOMComponent = $__require('npm:react@15.3.1/lib/ReactDOMComponent.js');
+  var ReactDOMComponentTree = $__require('npm:react@15.3.1/lib/ReactDOMComponentTree.js');
+  var ReactDOMEmptyComponent = $__require('npm:react@15.3.1/lib/ReactDOMEmptyComponent.js');
+  var ReactDOMTreeTraversal = $__require('npm:react@15.3.1/lib/ReactDOMTreeTraversal.js');
+  var ReactDOMTextComponent = $__require('npm:react@15.3.1/lib/ReactDOMTextComponent.js');
+  var ReactDefaultBatchingStrategy = $__require('npm:react@15.3.1/lib/ReactDefaultBatchingStrategy.js');
+  var ReactEventListener = $__require('npm:react@15.3.1/lib/ReactEventListener.js');
+  var ReactInjection = $__require('npm:react@15.3.1/lib/ReactInjection.js');
+  var ReactReconcileTransaction = $__require('npm:react@15.3.1/lib/ReactReconcileTransaction.js');
+  var SVGDOMPropertyConfig = $__require('npm:react@15.3.1/lib/SVGDOMPropertyConfig.js');
+  var SelectEventPlugin = $__require('npm:react@15.3.1/lib/SelectEventPlugin.js');
+  var SimpleEventPlugin = $__require('npm:react@15.3.1/lib/SimpleEventPlugin.js');
   var alreadyInjected = false;
   function inject() {
     if (alreadyInjected) {
@@ -17047,13 +17047,13 @@ System.registerDynamic('npm:react@15.3.1/lib/findDOMNode.js', ['npm:react@15.3.1
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant');
-    var ReactCurrentOwner = $__require('./ReactCurrentOwner');
-    var ReactDOMComponentTree = $__require('./ReactDOMComponentTree');
-    var ReactInstanceMap = $__require('./ReactInstanceMap');
-    var getHostComponentFromComposite = $__require('./getHostComponentFromComposite');
-    var invariant = $__require('fbjs/lib/invariant');
-    var warning = $__require('fbjs/lib/warning');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js');
+    var ReactCurrentOwner = $__require('npm:react@15.3.1/lib/ReactCurrentOwner.js');
+    var ReactDOMComponentTree = $__require('npm:react@15.3.1/lib/ReactDOMComponentTree.js');
+    var ReactInstanceMap = $__require('npm:react@15.3.1/lib/ReactInstanceMap.js');
+    var getHostComponentFromComposite = $__require('npm:react@15.3.1/lib/getHostComponentFromComposite.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     function findDOMNode(componentOrElement) {
       if ('production' !== 'production') {
         var owner = ReactCurrentOwner.current;
@@ -17080,7 +17080,7 @@ System.registerDynamic('npm:react@15.3.1/lib/findDOMNode.js', ['npm:react@15.3.1
       }
     }
     module.exports = findDOMNode;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/getHostComponentFromComposite.js', ['npm:react@15.3.1/lib/ReactNodeTypes.js'], true, function ($__require, exports, module) {
@@ -17090,7 +17090,7 @@ System.registerDynamic('npm:react@15.3.1/lib/getHostComponentFromComposite.js', 
   var define,
       global = this || self,
       GLOBAL = global;
-  var ReactNodeTypes = $__require('./ReactNodeTypes');
+  var ReactNodeTypes = $__require('npm:react@15.3.1/lib/ReactNodeTypes.js');
   function getHostComponentFromComposite(inst) {
     var type;
     while ((type = inst._renderedNodeType) === ReactNodeTypes.COMPOSITE) {
@@ -17241,9 +17241,9 @@ System.registerDynamic('npm:react@15.3.1/lib/setTextContent.js', ['npm:fbjs@0.8.
   var define,
       global = this || self,
       GLOBAL = global;
-  var ExecutionEnvironment = $__require('fbjs/lib/ExecutionEnvironment');
-  var escapeTextContentForBrowser = $__require('./escapeTextContentForBrowser');
-  var setInnerHTML = $__require('./setInnerHTML');
+  var ExecutionEnvironment = $__require('npm:fbjs@0.8.4/lib/ExecutionEnvironment.js');
+  var escapeTextContentForBrowser = $__require('npm:react@15.3.1/lib/escapeTextContentForBrowser.js');
+  var setInnerHTML = $__require('npm:react@15.3.1/lib/setInnerHTML.js');
   var setTextContent = function (node, text) {
     if (text) {
       var firstChild = node.firstChild;
@@ -17271,10 +17271,10 @@ System.registerDynamic('npm:react@15.3.1/lib/DOMLazyTree.js', ['npm:react@15.3.1
   var define,
       global = this || self,
       GLOBAL = global;
-  var DOMNamespaces = $__require('./DOMNamespaces');
-  var setInnerHTML = $__require('./setInnerHTML');
-  var createMicrosoftUnsafeLocalFunction = $__require('./createMicrosoftUnsafeLocalFunction');
-  var setTextContent = $__require('./setTextContent');
+  var DOMNamespaces = $__require('npm:react@15.3.1/lib/DOMNamespaces.js');
+  var setInnerHTML = $__require('npm:react@15.3.1/lib/setInnerHTML.js');
+  var createMicrosoftUnsafeLocalFunction = $__require('npm:react@15.3.1/lib/createMicrosoftUnsafeLocalFunction.js');
+  var setTextContent = $__require('npm:react@15.3.1/lib/setTextContent.js');
   var ELEMENT_NODE_TYPE = 1;
   var DOCUMENT_FRAGMENT_NODE_TYPE = 11;
   var enableLazy = typeof document !== 'undefined' && typeof document.documentMode === 'number' || typeof navigator !== 'undefined' && typeof navigator.userAgent === 'string' && /\bEdge\/\d/.test(navigator.userAgent);
@@ -17365,7 +17365,7 @@ System.registerDynamic('npm:react@15.3.1/lib/EventConstants.js', ['npm:fbjs@0.8.
   var define,
       global = this || self,
       GLOBAL = global;
-  var keyMirror = $__require('fbjs/lib/keyMirror');
+  var keyMirror = $__require('npm:fbjs@0.8.4/lib/keyMirror.js');
 
   var PropagationPhases = keyMirror({ bubbled: null, captured: null });
 
@@ -17459,11 +17459,11 @@ System.registerDynamic('npm:react@15.3.1/lib/EventPluginUtils.js', ['npm:react@1
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant');
-    var EventConstants = $__require('./EventConstants');
-    var ReactErrorUtils = $__require('./ReactErrorUtils');
-    var invariant = $__require('fbjs/lib/invariant');
-    var warning = $__require('fbjs/lib/warning');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js');
+    var EventConstants = $__require('npm:react@15.3.1/lib/EventConstants.js');
+    var ReactErrorUtils = $__require('npm:react@15.3.1/lib/ReactErrorUtils.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     var ComponentTree;
     var TreeTraversal;
     var injection = {
@@ -17608,7 +17608,7 @@ System.registerDynamic('npm:react@15.3.1/lib/EventPluginUtils.js', ['npm:react@1
       injection: injection
     };
     module.exports = EventPluginUtils;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/accumulateInto.js', ['npm:react@15.3.1/lib/reactProdInvariant.js', 'npm:fbjs@0.8.4/lib/invariant.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -17619,8 +17619,8 @@ System.registerDynamic('npm:react@15.3.1/lib/accumulateInto.js', ['npm:react@15.
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant');
-    var invariant = $__require('fbjs/lib/invariant');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
     function accumulateInto(current, next) {
       !(next != null) ? 'production' !== 'production' ? invariant(false, 'accumulateInto(...): Accumulated items must not be null or undefined.') : _prodInvariant('30') : void 0;
       if (current == null) {
@@ -17640,7 +17640,7 @@ System.registerDynamic('npm:react@15.3.1/lib/accumulateInto.js', ['npm:react@15.
       return [current, next];
     }
     module.exports = accumulateInto;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/forEachAccumulated.js', [], true, function ($__require, exports, module) {
@@ -17688,13 +17688,13 @@ System.registerDynamic('npm:react@15.3.1/lib/EventPluginHub.js', ['npm:react@15.
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant');
-    var EventPluginRegistry = $__require('./EventPluginRegistry');
-    var EventPluginUtils = $__require('./EventPluginUtils');
-    var ReactErrorUtils = $__require('./ReactErrorUtils');
-    var accumulateInto = $__require('./accumulateInto');
-    var forEachAccumulated = $__require('./forEachAccumulated');
-    var invariant = $__require('fbjs/lib/invariant');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js');
+    var EventPluginRegistry = $__require('npm:react@15.3.1/lib/EventPluginRegistry.js');
+    var EventPluginUtils = $__require('npm:react@15.3.1/lib/EventPluginUtils.js');
+    var ReactErrorUtils = $__require('npm:react@15.3.1/lib/ReactErrorUtils.js');
+    var accumulateInto = $__require('npm:react@15.3.1/lib/accumulateInto.js');
+    var forEachAccumulated = $__require('npm:react@15.3.1/lib/forEachAccumulated.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
     var listenerBank = {};
     var eventQueue = null;
     var executeDispatchesAndRelease = function (event, simulated) {
@@ -17799,7 +17799,7 @@ System.registerDynamic('npm:react@15.3.1/lib/EventPluginHub.js', ['npm:react@15.
       }
     };
     module.exports = EventPluginHub;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactEventEmitterMixin.js', ['npm:react@15.3.1/lib/EventPluginHub.js'], true, function ($__require, exports, module) {
@@ -17809,7 +17809,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactEventEmitterMixin.js', ['npm:r
   var define,
       global = this || self,
       GLOBAL = global;
-  var EventPluginHub = $__require('./EventPluginHub');
+  var EventPluginHub = $__require('npm:react@15.3.1/lib/EventPluginHub.js');
   function runEventQueueInBatch(events) {
     EventPluginHub.enqueueEvents(events);
     EventPluginHub.processEventQueue(false);
@@ -17871,7 +17871,7 @@ System.registerDynamic('npm:react@15.3.1/lib/getVendorPrefixedEventName.js', ['n
   var define,
       global = this || self,
       GLOBAL = global;
-  var ExecutionEnvironment = $__require('fbjs/lib/ExecutionEnvironment');
+  var ExecutionEnvironment = $__require('npm:fbjs@0.8.4/lib/ExecutionEnvironment.js');
 
   /**
    * Generate a mapping of standard vendor prefixes using the defined style property and event name.
@@ -17978,7 +17978,7 @@ System.registerDynamic('npm:react@15.3.1/lib/isEventSupported.js', ['npm:fbjs@0.
   var define,
       global = this || self,
       GLOBAL = global;
-  var ExecutionEnvironment = $__require('fbjs/lib/ExecutionEnvironment');
+  var ExecutionEnvironment = $__require('npm:fbjs@0.8.4/lib/ExecutionEnvironment.js');
 
   var useHasFeature;
   if (ExecutionEnvironment.canUseDOM) {
@@ -18035,13 +18035,13 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactBrowserEventEmitter.js', ['npm
   (function (process) {
     'use strict';
 
-    var _assign = $__require('object-assign');
-    var EventConstants = $__require('./EventConstants');
-    var EventPluginRegistry = $__require('./EventPluginRegistry');
-    var ReactEventEmitterMixin = $__require('./ReactEventEmitterMixin');
-    var ViewportMetrics = $__require('./ViewportMetrics');
-    var getVendorPrefixedEventName = $__require('./getVendorPrefixedEventName');
-    var isEventSupported = $__require('./isEventSupported');
+    var _assign = $__require('npm:object-assign@4.1.0.js');
+    var EventConstants = $__require('npm:react@15.3.1/lib/EventConstants.js');
+    var EventPluginRegistry = $__require('npm:react@15.3.1/lib/EventPluginRegistry.js');
+    var ReactEventEmitterMixin = $__require('npm:react@15.3.1/lib/ReactEventEmitterMixin.js');
+    var ViewportMetrics = $__require('npm:react@15.3.1/lib/ViewportMetrics.js');
+    var getVendorPrefixedEventName = $__require('npm:react@15.3.1/lib/getVendorPrefixedEventName.js');
+    var isEventSupported = $__require('npm:react@15.3.1/lib/isEventSupported.js');
     var hasEventPageXY;
     var alreadyListeningTo = {};
     var isMonitoringScrollValue = false;
@@ -18191,7 +18191,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactBrowserEventEmitter.js', ['npm
       }
     });
     module.exports = ReactBrowserEventEmitter;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactDOMComponentFlags.js', [], true, function ($__require, exports, module) {
@@ -18226,10 +18226,10 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDOMComponentTree.js', ['npm:re
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant');
-    var DOMProperty = $__require('./DOMProperty');
-    var ReactDOMComponentFlags = $__require('./ReactDOMComponentFlags');
-    var invariant = $__require('fbjs/lib/invariant');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js');
+    var DOMProperty = $__require('npm:react@15.3.1/lib/DOMProperty.js');
+    var ReactDOMComponentFlags = $__require('npm:react@15.3.1/lib/ReactDOMComponentFlags.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
     var ATTR_NAME = DOMProperty.ID_ATTRIBUTE_NAME;
     var Flags = ReactDOMComponentFlags;
     var internalInstanceKey = '__reactInternalInstance$' + Math.random().toString(36).slice(2);
@@ -18333,7 +18333,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDOMComponentTree.js', ['npm:re
       uncacheNode: uncacheNode
     };
     module.exports = ReactDOMComponentTree;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/validateDOMNesting.js', ['npm:object-assign@4.1.0.js', 'npm:fbjs@0.8.4/lib/emptyFunction.js', 'npm:fbjs@0.8.4/lib/warning.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -18344,9 +18344,9 @@ System.registerDynamic('npm:react@15.3.1/lib/validateDOMNesting.js', ['npm:objec
   (function (process) {
     'use strict';
 
-    var _assign = $__require('object-assign');
-    var emptyFunction = $__require('fbjs/lib/emptyFunction');
-    var warning = $__require('fbjs/lib/warning');
+    var _assign = $__require('npm:object-assign@4.1.0.js');
+    var emptyFunction = $__require('npm:fbjs@0.8.4/lib/emptyFunction.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     var validateDOMNesting = emptyFunction;
     if ('production' !== 'production') {
       var specialTags = ['address', 'applet', 'area', 'article', 'aside', 'base', 'basefont', 'bgsound', 'blockquote', 'body', 'br', 'button', 'caption', 'center', 'col', 'colgroup', 'dd', 'details', 'dir', 'div', 'dl', 'dt', 'embed', 'fieldset', 'figcaption', 'figure', 'footer', 'form', 'frame', 'frameset', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'head', 'header', 'hgroup', 'hr', 'html', 'iframe', 'img', 'input', 'isindex', 'li', 'link', 'listing', 'main', 'marquee', 'menu', 'menuitem', 'meta', 'nav', 'noembed', 'noframes', 'noscript', 'object', 'ol', 'p', 'param', 'plaintext', 'pre', 'script', 'section', 'select', 'source', 'style', 'summary', 'table', 'tbody', 'td', 'template', 'textarea', 'tfoot', 'th', 'thead', 'title', 'tr', 'track', 'ul', 'wbr', 'xmp'];
@@ -18585,7 +18585,7 @@ System.registerDynamic('npm:react@15.3.1/lib/validateDOMNesting.js', ['npm:objec
       };
     }
     module.exports = validateDOMNesting;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactDOMContainerInfo.js', ['npm:react@15.3.1/lib/validateDOMNesting.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -18596,7 +18596,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDOMContainerInfo.js', ['npm:re
   (function (process) {
     'use strict';
 
-    var validateDOMNesting = $__require('./validateDOMNesting');
+    var validateDOMNesting = $__require('npm:react@15.3.1/lib/validateDOMNesting.js');
     var DOC_NODE_TYPE = 9;
     function ReactDOMContainerInfo(topLevelWrapper, node) {
       var info = {
@@ -18613,7 +18613,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDOMContainerInfo.js', ['npm:re
       return info;
     }
     module.exports = ReactDOMContainerInfo;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactDOMFeatureFlags.js', [], true, function ($__require, exports, module) {
@@ -18697,7 +18697,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactMarkupChecksum.js', ['npm:reac
   var define,
       global = this || self,
       GLOBAL = global;
-  var adler32 = $__require('./adler32');
+  var adler32 = $__require('npm:react@15.3.1/lib/adler32.js');
   var TAG_END = /\/?>/;
   var COMMENT_START = /^<\!\-\-/;
   var ReactMarkupChecksum = {
@@ -18728,13 +18728,13 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactUpdateQueue.js', ['npm:react@1
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant');
-    var ReactCurrentOwner = $__require('./ReactCurrentOwner');
-    var ReactInstanceMap = $__require('./ReactInstanceMap');
-    var ReactInstrumentation = $__require('./ReactInstrumentation');
-    var ReactUpdates = $__require('./ReactUpdates');
-    var invariant = $__require('fbjs/lib/invariant');
-    var warning = $__require('fbjs/lib/warning');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js');
+    var ReactCurrentOwner = $__require('npm:react@15.3.1/lib/ReactCurrentOwner.js');
+    var ReactInstanceMap = $__require('npm:react@15.3.1/lib/ReactInstanceMap.js');
+    var ReactInstrumentation = $__require('npm:react@15.3.1/lib/ReactInstrumentation.js');
+    var ReactUpdates = $__require('npm:react@15.3.1/lib/ReactUpdates.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     function enqueueUpdate(internalInstance) {
       ReactUpdates.enqueueUpdate(internalInstance);
     }
@@ -18841,7 +18841,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactUpdateQueue.js', ['npm:react@1
       }
     };
     module.exports = ReactUpdateQueue;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/CallbackQueue.js', ['npm:react@15.3.1/lib/reactProdInvariant.js', 'npm:object-assign@4.1.0.js', 'npm:react@15.3.1/lib/PooledClass.js', 'npm:fbjs@0.8.4/lib/invariant.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -18852,10 +18852,10 @@ System.registerDynamic('npm:react@15.3.1/lib/CallbackQueue.js', ['npm:react@15.3
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant'),
-        _assign = $__require('object-assign');
-    var PooledClass = $__require('./PooledClass');
-    var invariant = $__require('fbjs/lib/invariant');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js'),
+        _assign = $__require('npm:object-assign@4.1.0.js');
+    var PooledClass = $__require('npm:react@15.3.1/lib/PooledClass.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
     function CallbackQueue() {
       this._callbacks = null;
       this._contexts = null;
@@ -18900,7 +18900,7 @@ System.registerDynamic('npm:react@15.3.1/lib/CallbackQueue.js', ['npm:react@15.3
     });
     PooledClass.addPoolingTo(CallbackQueue);
     module.exports = CallbackQueue;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactFeatureFlags.js', [], true, function ($__require, exports, module) {
@@ -18939,8 +18939,8 @@ System.registerDynamic('npm:react@15.3.1/lib/Transaction.js', ['npm:react@15.3.1
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant');
-    var invariant = $__require('fbjs/lib/invariant');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
     var Mixin = {
       reinitializeTransaction: function () {
         this.transactionWrappers = this.getTransactionWrappers();
@@ -19026,7 +19026,7 @@ System.registerDynamic('npm:react@15.3.1/lib/Transaction.js', ['npm:react@15.3.1
       OBSERVED_ERROR: {}
     };
     module.exports = Transaction;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactUpdates.js', ['npm:react@15.3.1/lib/reactProdInvariant.js', 'npm:object-assign@4.1.0.js', 'npm:react@15.3.1/lib/CallbackQueue.js', 'npm:react@15.3.1/lib/PooledClass.js', 'npm:react@15.3.1/lib/ReactFeatureFlags.js', 'npm:react@15.3.1/lib/ReactReconciler.js', 'npm:react@15.3.1/lib/Transaction.js', 'npm:fbjs@0.8.4/lib/invariant.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -19037,14 +19037,14 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactUpdates.js', ['npm:react@15.3.
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant'),
-        _assign = $__require('object-assign');
-    var CallbackQueue = $__require('./CallbackQueue');
-    var PooledClass = $__require('./PooledClass');
-    var ReactFeatureFlags = $__require('./ReactFeatureFlags');
-    var ReactReconciler = $__require('./ReactReconciler');
-    var Transaction = $__require('./Transaction');
-    var invariant = $__require('fbjs/lib/invariant');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js'),
+        _assign = $__require('npm:object-assign@4.1.0.js');
+    var CallbackQueue = $__require('npm:react@15.3.1/lib/CallbackQueue.js');
+    var PooledClass = $__require('npm:react@15.3.1/lib/PooledClass.js');
+    var ReactFeatureFlags = $__require('npm:react@15.3.1/lib/ReactFeatureFlags.js');
+    var ReactReconciler = $__require('npm:react@15.3.1/lib/ReactReconciler.js');
+    var Transaction = $__require('npm:react@15.3.1/lib/Transaction.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
     var dirtyComponents = [];
     var updateBatchNumber = 0;
     var asapCallbackQueue = CallbackQueue.getPooled();
@@ -19186,7 +19186,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactUpdates.js', ['npm:react@15.3.
       asap: asap
     };
     module.exports = ReactUpdates;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactComponentEnvironment.js', ['npm:react@15.3.1/lib/reactProdInvariant.js', 'npm:fbjs@0.8.4/lib/invariant.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -19197,8 +19197,8 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactComponentEnvironment.js', ['np
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant');
-    var invariant = $__require('fbjs/lib/invariant');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
     var injected = false;
     var ReactComponentEnvironment = {
       replaceNodeWithMarkup: null,
@@ -19211,7 +19211,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactComponentEnvironment.js', ['np
         } }
     };
     module.exports = ReactComponentEnvironment;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactErrorUtils.js', ['github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -19259,7 +19259,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactErrorUtils.js', ['github:jspm/
       }
     }
     module.exports = ReactErrorUtils;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactInstanceMap.js', [], true, function ($__require, exports, module) {
@@ -19324,9 +19324,9 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactNodeTypes.js', ['npm:react@15.
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant');
-    var ReactElement = $__require('./ReactElement');
-    var invariant = $__require('fbjs/lib/invariant');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js');
+    var ReactElement = $__require('npm:react@15.3.1/lib/ReactElement.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
     var ReactNodeTypes = {
       HOST: 0,
       COMPOSITE: 1,
@@ -19345,7 +19345,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactNodeTypes.js', ['npm:react@15.
       }
     };
     module.exports = ReactNodeTypes;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactOwner.js', ['npm:react@15.3.1/lib/reactProdInvariant.js', 'npm:fbjs@0.8.4/lib/invariant.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -19356,8 +19356,8 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactOwner.js', ['npm:react@15.3.1/
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant');
-    var invariant = $__require('fbjs/lib/invariant');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
     var ReactOwner = {
       isValidOwner: function (object) {
         return !!(object && typeof object.attachRef === 'function' && typeof object.detachRef === 'function');
@@ -19375,7 +19375,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactOwner.js', ['npm:react@15.3.1/
       }
     };
     module.exports = ReactOwner;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactRef.js', ['npm:react@15.3.1/lib/ReactOwner.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -19386,7 +19386,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactRef.js', ['npm:react@15.3.1/li
   (function (process) {
     'use strict';
 
-    var ReactOwner = $__require('./ReactOwner');
+    var ReactOwner = $__require('npm:react@15.3.1/lib/ReactOwner.js');
     var ReactRef = {};
     function attachRef(ref, component, owner) {
       if (typeof ref === 'function') {
@@ -19426,7 +19426,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactRef.js', ['npm:react@15.3.1/li
       }
     };
     module.exports = ReactRef;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactReconciler.js', ['npm:react@15.3.1/lib/ReactRef.js', 'npm:react@15.3.1/lib/ReactInstrumentation.js', 'npm:fbjs@0.8.4/lib/warning.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -19437,9 +19437,9 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactReconciler.js', ['npm:react@15
   (function (process) {
     'use strict';
 
-    var ReactRef = $__require('./ReactRef');
-    var ReactInstrumentation = $__require('./ReactInstrumentation');
-    var warning = $__require('fbjs/lib/warning');
+    var ReactRef = $__require('npm:react@15.3.1/lib/ReactRef.js');
+    var ReactInstrumentation = $__require('npm:react@15.3.1/lib/ReactInstrumentation.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     function attachRefs() {
       ReactRef.attachRefs(this, this._currentElement);
     }
@@ -19521,7 +19521,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactReconciler.js', ['npm:react@15
       }
     };
     module.exports = ReactReconciler;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:fbjs@0.8.4/lib/shallowEqual.js', [], true, function ($__require, exports, module) {
@@ -19604,23 +19604,23 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactCompositeComponent.js', ['npm:
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant'),
-        _assign = $__require('object-assign');
-    var ReactComponentEnvironment = $__require('./ReactComponentEnvironment');
-    var ReactCurrentOwner = $__require('./ReactCurrentOwner');
-    var ReactElement = $__require('./ReactElement');
-    var ReactErrorUtils = $__require('./ReactErrorUtils');
-    var ReactInstanceMap = $__require('./ReactInstanceMap');
-    var ReactInstrumentation = $__require('./ReactInstrumentation');
-    var ReactNodeTypes = $__require('./ReactNodeTypes');
-    var ReactPropTypeLocations = $__require('./ReactPropTypeLocations');
-    var ReactReconciler = $__require('./ReactReconciler');
-    var checkReactTypeSpec = $__require('./checkReactTypeSpec');
-    var emptyObject = $__require('fbjs/lib/emptyObject');
-    var invariant = $__require('fbjs/lib/invariant');
-    var shallowEqual = $__require('fbjs/lib/shallowEqual');
-    var shouldUpdateReactComponent = $__require('./shouldUpdateReactComponent');
-    var warning = $__require('fbjs/lib/warning');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js'),
+        _assign = $__require('npm:object-assign@4.1.0.js');
+    var ReactComponentEnvironment = $__require('npm:react@15.3.1/lib/ReactComponentEnvironment.js');
+    var ReactCurrentOwner = $__require('npm:react@15.3.1/lib/ReactCurrentOwner.js');
+    var ReactElement = $__require('npm:react@15.3.1/lib/ReactElement.js');
+    var ReactErrorUtils = $__require('npm:react@15.3.1/lib/ReactErrorUtils.js');
+    var ReactInstanceMap = $__require('npm:react@15.3.1/lib/ReactInstanceMap.js');
+    var ReactInstrumentation = $__require('npm:react@15.3.1/lib/ReactInstrumentation.js');
+    var ReactNodeTypes = $__require('npm:react@15.3.1/lib/ReactNodeTypes.js');
+    var ReactPropTypeLocations = $__require('npm:react@15.3.1/lib/ReactPropTypeLocations.js');
+    var ReactReconciler = $__require('npm:react@15.3.1/lib/ReactReconciler.js');
+    var checkReactTypeSpec = $__require('npm:react@15.3.1/lib/checkReactTypeSpec.js');
+    var emptyObject = $__require('npm:fbjs@0.8.4/lib/emptyObject.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
+    var shallowEqual = $__require('npm:fbjs@0.8.4/lib/shallowEqual.js');
+    var shouldUpdateReactComponent = $__require('npm:react@15.3.1/lib/shouldUpdateReactComponent.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     var CompositeTypes = {
       ImpureClass: 0,
       PureClass: 1,
@@ -20185,7 +20185,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactCompositeComponent.js', ['npm:
     };
     var ReactCompositeComponent = { Mixin: ReactCompositeComponentMixin };
     module.exports = ReactCompositeComponent;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactEmptyComponent.js', [], true, function ($__require, exports, module) {
@@ -20232,9 +20232,9 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactHostComponent.js', ['npm:react
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant'),
-        _assign = $__require('object-assign');
-    var invariant = $__require('fbjs/lib/invariant');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js'),
+        _assign = $__require('npm:object-assign@4.1.0.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
     var genericComponentClass = null;
     var tagToComponentClass = {};
     var textComponentClass = null;
@@ -20266,7 +20266,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactHostComponent.js', ['npm:react
       injection: ReactHostComponentInjection
     };
     module.exports = ReactHostComponent;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/instantiateReactComponent.js', ['npm:react@15.3.1/lib/reactProdInvariant.js', 'npm:object-assign@4.1.0.js', 'npm:react@15.3.1/lib/ReactCompositeComponent.js', 'npm:react@15.3.1/lib/ReactEmptyComponent.js', 'npm:react@15.3.1/lib/ReactHostComponent.js', 'npm:fbjs@0.8.4/lib/invariant.js', 'npm:fbjs@0.8.4/lib/warning.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -20277,13 +20277,13 @@ System.registerDynamic('npm:react@15.3.1/lib/instantiateReactComponent.js', ['np
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant'),
-        _assign = $__require('object-assign');
-    var ReactCompositeComponent = $__require('./ReactCompositeComponent');
-    var ReactEmptyComponent = $__require('./ReactEmptyComponent');
-    var ReactHostComponent = $__require('./ReactHostComponent');
-    var invariant = $__require('fbjs/lib/invariant');
-    var warning = $__require('fbjs/lib/warning');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js'),
+        _assign = $__require('npm:object-assign@4.1.0.js');
+    var ReactCompositeComponent = $__require('npm:react@15.3.1/lib/ReactCompositeComponent.js');
+    var ReactEmptyComponent = $__require('npm:react@15.3.1/lib/ReactEmptyComponent.js');
+    var ReactHostComponent = $__require('npm:react@15.3.1/lib/ReactHostComponent.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     var ReactCompositeComponentWrapper = function (element) {
       this.construct(element);
     };
@@ -20339,7 +20339,7 @@ System.registerDynamic('npm:react@15.3.1/lib/instantiateReactComponent.js', ['np
       return instance;
     }
     module.exports = instantiateReactComponent;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/DOMNamespaces.js', [], true, function ($__require, exports, module) {
@@ -20414,11 +20414,11 @@ System.registerDynamic('npm:react@15.3.1/lib/setInnerHTML.js', ['npm:fbjs@0.8.4/
   (function (process) {
     'use strict';
 
-    var ExecutionEnvironment = $__require('fbjs/lib/ExecutionEnvironment');
-    var DOMNamespaces = $__require('./DOMNamespaces');
+    var ExecutionEnvironment = $__require('npm:fbjs@0.8.4/lib/ExecutionEnvironment.js');
+    var DOMNamespaces = $__require('npm:react@15.3.1/lib/DOMNamespaces.js');
     var WHITESPACE_TEST = /^[ \r\n\t\f]/;
     var NONVISIBLE_TEST = /<(!--|link|noscript|meta|script|style)[ \r\n\t\f\/>]/;
-    var createMicrosoftUnsafeLocalFunction = $__require('./createMicrosoftUnsafeLocalFunction');
+    var createMicrosoftUnsafeLocalFunction = $__require('npm:react@15.3.1/lib/createMicrosoftUnsafeLocalFunction.js');
     var reusableSVGContainer;
     var setInnerHTML = createMicrosoftUnsafeLocalFunction(function (node, html) {
       if (node.namespaceURI === DOMNamespaces.svg && !('innerHTML' in node)) {
@@ -20456,7 +20456,7 @@ System.registerDynamic('npm:react@15.3.1/lib/setInnerHTML.js', ['npm:fbjs@0.8.4/
       testElement = null;
     }
     module.exports = setInnerHTML;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/shouldUpdateReactComponent.js', [], true, function ($__require, exports, module) {
@@ -20515,28 +20515,28 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactMount.js', ['npm:react@15.3.1/
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant');
-    var DOMLazyTree = $__require('./DOMLazyTree');
-    var DOMProperty = $__require('./DOMProperty');
-    var ReactBrowserEventEmitter = $__require('./ReactBrowserEventEmitter');
-    var ReactCurrentOwner = $__require('./ReactCurrentOwner');
-    var ReactDOMComponentTree = $__require('./ReactDOMComponentTree');
-    var ReactDOMContainerInfo = $__require('./ReactDOMContainerInfo');
-    var ReactDOMFeatureFlags = $__require('./ReactDOMFeatureFlags');
-    var ReactElement = $__require('./ReactElement');
-    var ReactFeatureFlags = $__require('./ReactFeatureFlags');
-    var ReactInstanceMap = $__require('./ReactInstanceMap');
-    var ReactInstrumentation = $__require('./ReactInstrumentation');
-    var ReactMarkupChecksum = $__require('./ReactMarkupChecksum');
-    var ReactReconciler = $__require('./ReactReconciler');
-    var ReactUpdateQueue = $__require('./ReactUpdateQueue');
-    var ReactUpdates = $__require('./ReactUpdates');
-    var emptyObject = $__require('fbjs/lib/emptyObject');
-    var instantiateReactComponent = $__require('./instantiateReactComponent');
-    var invariant = $__require('fbjs/lib/invariant');
-    var setInnerHTML = $__require('./setInnerHTML');
-    var shouldUpdateReactComponent = $__require('./shouldUpdateReactComponent');
-    var warning = $__require('fbjs/lib/warning');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js');
+    var DOMLazyTree = $__require('npm:react@15.3.1/lib/DOMLazyTree.js');
+    var DOMProperty = $__require('npm:react@15.3.1/lib/DOMProperty.js');
+    var ReactBrowserEventEmitter = $__require('npm:react@15.3.1/lib/ReactBrowserEventEmitter.js');
+    var ReactCurrentOwner = $__require('npm:react@15.3.1/lib/ReactCurrentOwner.js');
+    var ReactDOMComponentTree = $__require('npm:react@15.3.1/lib/ReactDOMComponentTree.js');
+    var ReactDOMContainerInfo = $__require('npm:react@15.3.1/lib/ReactDOMContainerInfo.js');
+    var ReactDOMFeatureFlags = $__require('npm:react@15.3.1/lib/ReactDOMFeatureFlags.js');
+    var ReactElement = $__require('npm:react@15.3.1/lib/ReactElement.js');
+    var ReactFeatureFlags = $__require('npm:react@15.3.1/lib/ReactFeatureFlags.js');
+    var ReactInstanceMap = $__require('npm:react@15.3.1/lib/ReactInstanceMap.js');
+    var ReactInstrumentation = $__require('npm:react@15.3.1/lib/ReactInstrumentation.js');
+    var ReactMarkupChecksum = $__require('npm:react@15.3.1/lib/ReactMarkupChecksum.js');
+    var ReactReconciler = $__require('npm:react@15.3.1/lib/ReactReconciler.js');
+    var ReactUpdateQueue = $__require('npm:react@15.3.1/lib/ReactUpdateQueue.js');
+    var ReactUpdates = $__require('npm:react@15.3.1/lib/ReactUpdates.js');
+    var emptyObject = $__require('npm:fbjs@0.8.4/lib/emptyObject.js');
+    var instantiateReactComponent = $__require('npm:react@15.3.1/lib/instantiateReactComponent.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
+    var setInnerHTML = $__require('npm:react@15.3.1/lib/setInnerHTML.js');
+    var shouldUpdateReactComponent = $__require('npm:react@15.3.1/lib/shouldUpdateReactComponent.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     var ATTR_NAME = DOMProperty.ID_ATTRIBUTE_NAME;
     var ROOT_ATTR_NAME = DOMProperty.ROOT_ATTRIBUTE_NAME;
     var ELEMENT_NODE_TYPE = 1;
@@ -20792,7 +20792,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactMount.js', ['npm:react@15.3.1/
       }
     };
     module.exports = ReactMount;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/renderSubtreeIntoContainer.js', ['npm:react@15.3.1/lib/ReactMount.js'], true, function ($__require, exports, module) {
@@ -20802,7 +20802,7 @@ System.registerDynamic('npm:react@15.3.1/lib/renderSubtreeIntoContainer.js', ['n
   var define,
       global = this || self,
       GLOBAL = global;
-  var ReactMount = $__require('./ReactMount');
+  var ReactMount = $__require('npm:react@15.3.1/lib/ReactMount.js');
   module.exports = ReactMount.renderSubtreeIntoContainer;
   return module.exports;
 });
@@ -20814,7 +20814,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactInvalidSetStateWarningHook.js'
   (function (process) {
     'use strict';
 
-    var warning = $__require('fbjs/lib/warning');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     if ('production' !== 'production') {
       var processingChildContext = false;
       var warnInvalidSetState = function () {
@@ -20833,7 +20833,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactInvalidSetStateWarningHook.js'
       }
     };
     module.exports = ReactInvalidSetStateWarningHook;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactHostOperationHistoryHook.js', [], true, function ($__require, exports, module) {
@@ -20887,8 +20887,8 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactChildrenMutationWarningHook.js
   (function (process) {
     'use strict';
 
-    var ReactComponentTreeHook = $__require('./ReactComponentTreeHook');
-    var warning = $__require('fbjs/lib/warning');
+    var ReactComponentTreeHook = $__require('npm:react@15.3.1/lib/ReactComponentTreeHook.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     function handleElement(debugID, element) {
       if (element == null) {
         return;
@@ -20924,7 +20924,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactChildrenMutationWarningHook.js
       }
     };
     module.exports = ReactChildrenMutationWarningHook;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:fbjs@0.8.4/lib/ExecutionEnvironment.js', [], true, function ($__require, exports, module) {
@@ -20975,7 +20975,7 @@ System.registerDynamic('npm:fbjs@0.8.4/lib/performance.js', ['npm:fbjs@0.8.4/lib
   var define,
       global = this || self,
       GLOBAL = global;
-  var ExecutionEnvironment = $__require('./ExecutionEnvironment');
+  var ExecutionEnvironment = $__require('npm:fbjs@0.8.4/lib/ExecutionEnvironment.js');
   var performance;
   if (ExecutionEnvironment.canUseDOM) {
     performance = window.performance || window.msPerformance || window.webkitPerformance;
@@ -20990,7 +20990,7 @@ System.registerDynamic('npm:fbjs@0.8.4/lib/performanceNow.js', ['npm:fbjs@0.8.4/
   var define,
       global = this || self,
       GLOBAL = global;
-  var performance = $__require('./performance');
+  var performance = $__require('npm:fbjs@0.8.4/lib/performance.js');
   var performanceNow;
   if (performance.now) {
     performanceNow = function performanceNow() {
@@ -21012,13 +21012,13 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDebugTool.js', ['npm:react@15.
   (function (process) {
     'use strict';
 
-    var ReactInvalidSetStateWarningHook = $__require('./ReactInvalidSetStateWarningHook');
-    var ReactHostOperationHistoryHook = $__require('./ReactHostOperationHistoryHook');
-    var ReactComponentTreeHook = $__require('./ReactComponentTreeHook');
-    var ReactChildrenMutationWarningHook = $__require('./ReactChildrenMutationWarningHook');
-    var ExecutionEnvironment = $__require('fbjs/lib/ExecutionEnvironment');
-    var performanceNow = $__require('fbjs/lib/performanceNow');
-    var warning = $__require('fbjs/lib/warning');
+    var ReactInvalidSetStateWarningHook = $__require('npm:react@15.3.1/lib/ReactInvalidSetStateWarningHook.js');
+    var ReactHostOperationHistoryHook = $__require('npm:react@15.3.1/lib/ReactHostOperationHistoryHook.js');
+    var ReactComponentTreeHook = $__require('npm:react@15.3.1/lib/ReactComponentTreeHook.js');
+    var ReactChildrenMutationWarningHook = $__require('npm:react@15.3.1/lib/ReactChildrenMutationWarningHook.js');
+    var ExecutionEnvironment = $__require('npm:fbjs@0.8.4/lib/ExecutionEnvironment.js');
+    var performanceNow = $__require('npm:fbjs@0.8.4/lib/performanceNow.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     var hooks = [];
     var didHookThrowForEvent = {};
     function callHook(event, fn, context, arg1, arg2, arg3, arg4, arg5) {
@@ -21278,7 +21278,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDebugTool.js', ['npm:react@15.
       ReactDebugTool.beginProfiling();
     }
     module.exports = ReactDebugTool;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactInstrumentation.js', ['npm:react@15.3.1/lib/ReactDebugTool.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -21291,11 +21291,11 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactInstrumentation.js', ['npm:rea
 
     var debugTool = null;
     if ('production' !== 'production') {
-      var ReactDebugTool = $__require('./ReactDebugTool');
+      var ReactDebugTool = $__require('npm:react@15.3.1/lib/ReactDebugTool.js');
       debugTool = ReactDebugTool;
     }
     module.exports = { debugTool: debugTool };
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/DOMProperty.js', ['npm:react@15.3.1/lib/reactProdInvariant.js', 'npm:fbjs@0.8.4/lib/invariant.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -21306,8 +21306,8 @@ System.registerDynamic('npm:react@15.3.1/lib/DOMProperty.js', ['npm:react@15.3.1
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant');
-    var invariant = $__require('fbjs/lib/invariant');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
     function checkMask(value, bitmask) {
       return (value & bitmask) === bitmask;
     }
@@ -21387,7 +21387,7 @@ System.registerDynamic('npm:react@15.3.1/lib/DOMProperty.js', ['npm:react@15.3.1
       injection: DOMPropertyInjection
     };
     module.exports = DOMProperty;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/EventPluginRegistry.js', ['npm:react@15.3.1/lib/reactProdInvariant.js', 'npm:fbjs@0.8.4/lib/invariant.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -21398,8 +21398,8 @@ System.registerDynamic('npm:react@15.3.1/lib/EventPluginRegistry.js', ['npm:reac
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant');
-    var invariant = $__require('fbjs/lib/invariant');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
     var EventPluginOrder = null;
     var namesToPlugins = {};
     function recomputePluginOrdering() {
@@ -21526,7 +21526,7 @@ System.registerDynamic('npm:react@15.3.1/lib/EventPluginRegistry.js', ['npm:reac
       }
     };
     module.exports = EventPluginRegistry;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactDOMUnknownPropertyHook.js', ['npm:react@15.3.1/lib/DOMProperty.js', 'npm:react@15.3.1/lib/EventPluginRegistry.js', 'npm:react@15.3.1/lib/ReactComponentTreeHook.js', 'npm:fbjs@0.8.4/lib/warning.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -21537,10 +21537,10 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDOMUnknownPropertyHook.js', ['
   (function (process) {
     'use strict';
 
-    var DOMProperty = $__require('./DOMProperty');
-    var EventPluginRegistry = $__require('./EventPluginRegistry');
-    var ReactComponentTreeHook = $__require('./ReactComponentTreeHook');
-    var warning = $__require('fbjs/lib/warning');
+    var DOMProperty = $__require('npm:react@15.3.1/lib/DOMProperty.js');
+    var EventPluginRegistry = $__require('npm:react@15.3.1/lib/EventPluginRegistry.js');
+    var ReactComponentTreeHook = $__require('npm:react@15.3.1/lib/ReactComponentTreeHook.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     if ('production' !== 'production') {
       var reactProps = {
         children: true,
@@ -21618,7 +21618,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDOMUnknownPropertyHook.js', ['
       }
     };
     module.exports = ReactDOMUnknownPropertyHook;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactDOMNullInputValuePropHook.js', ['npm:react@15.3.1/lib/ReactComponentTreeHook.js', 'npm:fbjs@0.8.4/lib/warning.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -21629,8 +21629,8 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDOMNullInputValuePropHook.js',
   (function (process) {
     'use strict';
 
-    var ReactComponentTreeHook = $__require('./ReactComponentTreeHook');
-    var warning = $__require('fbjs/lib/warning');
+    var ReactComponentTreeHook = $__require('npm:react@15.3.1/lib/ReactComponentTreeHook.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     var didWarnValueNull = false;
     function handleElement(debugID, element) {
       if (element == null) {
@@ -21653,7 +21653,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDOMNullInputValuePropHook.js',
       }
     };
     module.exports = ReactDOMNullInputValuePropHook;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactDOM.js', ['npm:react@15.3.1/lib/ReactDOMComponentTree.js', 'npm:react@15.3.1/lib/ReactDefaultInjection.js', 'npm:react@15.3.1/lib/ReactMount.js', 'npm:react@15.3.1/lib/ReactReconciler.js', 'npm:react@15.3.1/lib/ReactUpdates.js', 'npm:react@15.3.1/lib/ReactVersion.js', 'npm:react@15.3.1/lib/findDOMNode.js', 'npm:react@15.3.1/lib/getHostComponentFromComposite.js', 'npm:react@15.3.1/lib/renderSubtreeIntoContainer.js', 'npm:fbjs@0.8.4/lib/warning.js', 'npm:fbjs@0.8.4/lib/ExecutionEnvironment.js', 'npm:react@15.3.1/lib/ReactInstrumentation.js', 'npm:react@15.3.1/lib/ReactDOMUnknownPropertyHook.js', 'npm:react@15.3.1/lib/ReactDOMNullInputValuePropHook.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -21664,16 +21664,16 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDOM.js', ['npm:react@15.3.1/li
   (function (process) {
     'use strict';
 
-    var ReactDOMComponentTree = $__require('./ReactDOMComponentTree');
-    var ReactDefaultInjection = $__require('./ReactDefaultInjection');
-    var ReactMount = $__require('./ReactMount');
-    var ReactReconciler = $__require('./ReactReconciler');
-    var ReactUpdates = $__require('./ReactUpdates');
-    var ReactVersion = $__require('./ReactVersion');
-    var findDOMNode = $__require('./findDOMNode');
-    var getHostComponentFromComposite = $__require('./getHostComponentFromComposite');
-    var renderSubtreeIntoContainer = $__require('./renderSubtreeIntoContainer');
-    var warning = $__require('fbjs/lib/warning');
+    var ReactDOMComponentTree = $__require('npm:react@15.3.1/lib/ReactDOMComponentTree.js');
+    var ReactDefaultInjection = $__require('npm:react@15.3.1/lib/ReactDefaultInjection.js');
+    var ReactMount = $__require('npm:react@15.3.1/lib/ReactMount.js');
+    var ReactReconciler = $__require('npm:react@15.3.1/lib/ReactReconciler.js');
+    var ReactUpdates = $__require('npm:react@15.3.1/lib/ReactUpdates.js');
+    var ReactVersion = $__require('npm:react@15.3.1/lib/ReactVersion.js');
+    var findDOMNode = $__require('npm:react@15.3.1/lib/findDOMNode.js');
+    var getHostComponentFromComposite = $__require('npm:react@15.3.1/lib/getHostComponentFromComposite.js');
+    var renderSubtreeIntoContainer = $__require('npm:react@15.3.1/lib/renderSubtreeIntoContainer.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     ReactDefaultInjection.inject();
     var ReactDOM = {
       findDOMNode: findDOMNode,
@@ -21703,7 +21703,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDOM.js', ['npm:react@15.3.1/li
       });
     }
     if ('production' !== 'production') {
-      var ExecutionEnvironment = $__require('fbjs/lib/ExecutionEnvironment');
+      var ExecutionEnvironment = $__require('npm:fbjs@0.8.4/lib/ExecutionEnvironment.js');
       if (ExecutionEnvironment.canUseDOM && window.top === window.self) {
         if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined') {
           if (navigator.userAgent.indexOf('Chrome') > -1 && navigator.userAgent.indexOf('Edge') === -1 || navigator.userAgent.indexOf('Firefox') > -1) {
@@ -21725,14 +21725,14 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDOM.js', ['npm:react@15.3.1/li
       }
     }
     if ('production' !== 'production') {
-      var ReactInstrumentation = $__require('./ReactInstrumentation');
-      var ReactDOMUnknownPropertyHook = $__require('./ReactDOMUnknownPropertyHook');
-      var ReactDOMNullInputValuePropHook = $__require('./ReactDOMNullInputValuePropHook');
+      var ReactInstrumentation = $__require('npm:react@15.3.1/lib/ReactInstrumentation.js');
+      var ReactDOMUnknownPropertyHook = $__require('npm:react@15.3.1/lib/ReactDOMUnknownPropertyHook.js');
+      var ReactDOMNullInputValuePropHook = $__require('npm:react@15.3.1/lib/ReactDOMNullInputValuePropHook.js');
       ReactInstrumentation.debugTool.addHook(ReactDOMUnknownPropertyHook);
       ReactInstrumentation.debugTool.addHook(ReactDOMNullInputValuePropHook);
     }
     module.exports = ReactDOM;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react-dom@15.3.1/index.js', ['npm:react@15.3.1/lib/ReactDOM.js'], true, function ($__require, exports, module) {
@@ -21742,7 +21742,7 @@ System.registerDynamic('npm:react-dom@15.3.1/index.js', ['npm:react@15.3.1/lib/R
   var define,
       global = this || self,
       GLOBAL = global;
-  module.exports = $__require('react/lib/ReactDOM');
+  module.exports = $__require('npm:react@15.3.1/lib/ReactDOM.js');
   return module.exports;
 });
 System.registerDynamic("npm:react-dom@15.3.1.js", ["npm:react-dom@15.3.1/index.js"], true, function ($__require, exports, module) {
@@ -21761,7 +21761,7 @@ System.registerDynamic('npm:react-prop-types@0.4.0/lib/all.js', ['npm:react-prop
       GLOBAL = global;
   exports.__esModule = true;
   exports.default = all;
-  var _createChainableTypeChecker = $__require('./utils/createChainableTypeChecker');
+  var _createChainableTypeChecker = $__require('npm:react-prop-types@0.4.0/lib/utils/createChainableTypeChecker.js');
   var _createChainableTypeChecker2 = _interopRequireDefault(_createChainableTypeChecker);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { default: obj };
@@ -21827,7 +21827,7 @@ System.registerDynamic('npm:warning@3.0.0/browser.js', ['github:jspm/nodelibs-pr
       };
     }
     module.exports = warning;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic("npm:warning@3.0.0.js", ["npm:warning@3.0.0/browser.js"], true, function ($__require, exports, module) {
@@ -21846,32 +21846,32 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Nav.js', ['npm:babel-runt
     'use strict';
 
     exports.__esModule = true;
-    var _extends3 = $__require('babel-runtime/helpers/extends');
+    var _extends3 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
     var _extends4 = _interopRequireDefault(_extends3);
-    var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+    var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
     var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-    var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+    var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
     var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-    var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+    var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
     var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-    var _inherits2 = $__require('babel-runtime/helpers/inherits');
+    var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
     var _inherits3 = _interopRequireDefault(_inherits2);
-    var _classnames = $__require('classnames');
+    var _classnames = $__require('npm:classnames@2.2.5.js');
     var _classnames2 = _interopRequireDefault(_classnames);
-    var _keycode = $__require('keycode');
+    var _keycode = $__require('npm:keycode@2.1.4.js');
     var _keycode2 = _interopRequireDefault(_keycode);
-    var _react = $__require('react');
+    var _react = $__require('npm:react@15.3.1.js');
     var _react2 = _interopRequireDefault(_react);
-    var _reactDom = $__require('react-dom');
+    var _reactDom = $__require('npm:react-dom@15.3.1.js');
     var _reactDom2 = _interopRequireDefault(_reactDom);
-    var _all = $__require('react-prop-types/lib/all');
+    var _all = $__require('npm:react-prop-types@0.4.0/lib/all.js');
     var _all2 = _interopRequireDefault(_all);
-    var _warning = $__require('warning');
+    var _warning = $__require('npm:warning@3.0.0.js');
     var _warning2 = _interopRequireDefault(_warning);
-    var _bootstrapUtils = $__require('./utils/bootstrapUtils');
-    var _createChainedFunction = $__require('./utils/createChainedFunction');
+    var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
+    var _createChainedFunction = $__require('npm:react-bootstrap@0.30.3/lib/utils/createChainedFunction.js');
     var _createChainedFunction2 = _interopRequireDefault(_createChainedFunction);
-    var _ValidComponentChildren = $__require('./utils/ValidComponentChildren');
+    var _ValidComponentChildren = $__require('npm:react-bootstrap@0.30.3/lib/utils/ValidComponentChildren.js');
     var _ValidComponentChildren2 = _interopRequireDefault(_ValidComponentChildren);
     function _interopRequireDefault(obj) {
       return obj && obj.__esModule ? obj : { 'default': obj };
@@ -22086,7 +22086,7 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Nav.js', ['npm:babel-runt
     Nav.contextTypes = contextTypes;
     exports['default'] = (0, _bootstrapUtils.bsClass)('nav', (0, _bootstrapUtils.bsStyles)(['tabs', 'pills'], Nav));
     module.exports = exports['default'];
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react-bootstrap@0.30.3/lib/NavItem.js', ['npm:babel-runtime@6.11.6/helpers/extends.js', 'npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js', 'npm:babel-runtime@6.11.6/helpers/classCallCheck.js', 'npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js', 'npm:babel-runtime@6.11.6/helpers/inherits.js', 'npm:classnames@2.2.5.js', 'npm:react@15.3.1.js', 'npm:react-bootstrap@0.30.3/lib/SafeAnchor.js', 'npm:react-bootstrap@0.30.3/lib/utils/createChainedFunction.js'], true, function ($__require, exports, module) {
@@ -22097,23 +22097,23 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/NavItem.js', ['npm:babel-
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _SafeAnchor = $__require('./SafeAnchor');
+  var _SafeAnchor = $__require('npm:react-bootstrap@0.30.3/lib/SafeAnchor.js');
   var _SafeAnchor2 = _interopRequireDefault(_SafeAnchor);
-  var _createChainedFunction = $__require('./utils/createChainedFunction');
+  var _createChainedFunction = $__require('npm:react-bootstrap@0.30.3/lib/utils/createChainedFunction.js');
   var _createChainedFunction2 = _interopRequireDefault(_createChainedFunction);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
@@ -22206,9 +22206,9 @@ System.registerDynamic('npm:uncontrollable@4.0.3/utils.js', ['npm:react@15.3.1.j
     exports.each = each;
     exports.has = has;
     exports.isReactComponent = isReactComponent;
-    var _react = $__require('react');
+    var _react = $__require('npm:react@15.3.1.js');
     var _react2 = _interopRequireDefault(_react);
-    var _invariant = $__require('invariant');
+    var _invariant = $__require('npm:invariant@2.2.1.js');
     var _invariant2 = _interopRequireDefault(_invariant);
     function _interopRequireDefault(obj) {
       return obj && obj.__esModule ? obj : { default: obj };
@@ -22276,7 +22276,7 @@ System.registerDynamic('npm:uncontrollable@4.0.3/utils.js', ['npm:react@15.3.1.j
     function isReactComponent(component) {
       return !!(component && component.prototype && component.prototype.isReactComponent);
     }
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:uncontrollable@4.0.3/createUncontrollable.js', ['npm:react@15.3.1.js', 'npm:invariant@2.2.1.js', 'npm:uncontrollable@4.0.3/utils.js'], true, function ($__require, exports, module) {
@@ -22299,11 +22299,11 @@ System.registerDynamic('npm:uncontrollable@4.0.3/createUncontrollable.js', ['npm
     return target;
   };
   exports.default = createUncontrollable;
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _invariant = $__require('invariant');
+  var _invariant = $__require('npm:invariant@2.2.1.js');
   var _invariant2 = _interopRequireDefault(_invariant);
-  var _utils = $__require('./utils');
+  var _utils = $__require('npm:uncontrollable@4.0.3/utils.js');
   var utils = _interopRequireWildcard(_utils);
   function _interopRequireWildcard(obj) {
     if (obj && obj.__esModule) {
@@ -22423,7 +22423,7 @@ System.registerDynamic('npm:uncontrollable@4.0.3/index.js', ['npm:uncontrollable
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _createUncontrollable = $__require('./createUncontrollable');
+  var _createUncontrollable = $__require('npm:uncontrollable@4.0.3/createUncontrollable.js');
   var _createUncontrollable2 = _interopRequireDefault(_createUncontrollable);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { default: obj };
@@ -22460,27 +22460,27 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/TabContainer.js', ['npm:b
       GLOBAL = global;
   exports.__esModule = true;
 
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
 
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
 
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
 
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
 
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
 
   var _inherits3 = _interopRequireDefault(_inherits2);
 
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _uncontrollable = $__require('uncontrollable');
+  var _uncontrollable = $__require('npm:uncontrollable@4.0.3.js');
 
   var _uncontrollable2 = _interopRequireDefault(_uncontrollable);
 
@@ -22616,23 +22616,23 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/TabContent.js', ['npm:bab
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _elementType = $__require('react-prop-types/lib/elementType');
+  var _elementType = $__require('npm:react-prop-types@0.4.0/lib/elementType.js');
   var _elementType2 = _interopRequireDefault(_elementType);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -22759,32 +22759,32 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Tabs.js', ['npm:babel-run
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _isRequiredForA11y = $__require('react-prop-types/lib/isRequiredForA11y');
+  var _isRequiredForA11y = $__require('npm:react-prop-types@0.4.0/lib/isRequiredForA11y.js');
   var _isRequiredForA11y2 = _interopRequireDefault(_isRequiredForA11y);
-  var _uncontrollable = $__require('uncontrollable');
+  var _uncontrollable = $__require('npm:uncontrollable@4.0.3.js');
   var _uncontrollable2 = _interopRequireDefault(_uncontrollable);
-  var _Nav = $__require('./Nav');
+  var _Nav = $__require('npm:react-bootstrap@0.30.3/lib/Nav.js');
   var _Nav2 = _interopRequireDefault(_Nav);
-  var _NavItem = $__require('./NavItem');
+  var _NavItem = $__require('npm:react-bootstrap@0.30.3/lib/NavItem.js');
   var _NavItem2 = _interopRequireDefault(_NavItem);
-  var _TabContainer = $__require('./TabContainer');
+  var _TabContainer = $__require('npm:react-bootstrap@0.30.3/lib/TabContainer.js');
   var _TabContainer2 = _interopRequireDefault(_TabContainer);
-  var _TabContent = $__require('./TabContent');
+  var _TabContent = $__require('npm:react-bootstrap@0.30.3/lib/TabContent.js');
   var _TabContent2 = _interopRequireDefault(_TabContent);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
-  var _ValidComponentChildren = $__require('./utils/ValidComponentChildren');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
+  var _ValidComponentChildren = $__require('npm:react-bootstrap@0.30.3/lib/utils/ValidComponentChildren.js');
   var _ValidComponentChildren2 = _interopRequireDefault(_ValidComponentChildren);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
@@ -22927,9 +22927,9 @@ System.registerDynamic("npm:react-prop-types@0.4.0/lib/elementType.js", ["npm:re
   } : function (obj) {
     return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj;
   };
-  var _react = $__require("react");
+  var _react = $__require("npm:react@15.3.1.js");
   var _react2 = _interopRequireDefault(_react);
-  var _createChainableTypeChecker = $__require("./utils/createChainableTypeChecker");
+  var _createChainableTypeChecker = $__require("npm:react-prop-types@0.4.0/lib/utils/createChainableTypeChecker.js");
   var _createChainableTypeChecker2 = _interopRequireDefault(_createChainableTypeChecker);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { default: obj };
@@ -22957,31 +22957,31 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/SafeAnchor.js', ['npm:bab
       GLOBAL = global;
   exports.__esModule = true;
 
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
 
   var _extends3 = _interopRequireDefault(_extends2);
 
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
 
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
 
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
 
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
 
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
 
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
 
   var _inherits3 = _interopRequireDefault(_inherits2);
 
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _elementType = $__require('react-prop-types/lib/elementType');
+  var _elementType = $__require('npm:react-prop-types@0.4.0/lib/elementType.js');
 
   var _elementType2 = _interopRequireDefault(_elementType);
 
@@ -23090,23 +23090,23 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Thumbnail.js', ['npm:babe
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _SafeAnchor = $__require('./SafeAnchor');
+  var _SafeAnchor = $__require('npm:react-bootstrap@0.30.3/lib/SafeAnchor.js');
   var _SafeAnchor2 = _interopRequireDefault(_SafeAnchor);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -23180,23 +23180,23 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Tooltip.js', ['npm:babel-
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends3 = $__require('babel-runtime/helpers/extends');
+  var _extends3 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends4 = _interopRequireDefault(_extends3);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _isRequiredForA11y = $__require('react-prop-types/lib/isRequiredForA11y');
+  var _isRequiredForA11y = $__require('npm:react-prop-types@0.4.0/lib/isRequiredForA11y.js');
   var _isRequiredForA11y2 = _interopRequireDefault(_isRequiredForA11y);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -23302,7 +23302,7 @@ System.registerDynamic("npm:babel-runtime@6.11.6/helpers/possibleConstructorRetu
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _typeof2 = $__require("./typeof");
+  var _typeof2 = $__require("npm:babel-runtime@6.11.6/helpers/typeof.js");
   var _typeof3 = _interopRequireDefault(_typeof2);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { default: obj };
@@ -23320,8 +23320,8 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_set-proto.js', ['npm:
       global = this || self,
       GLOBAL = global;
   /* */
-  var isObject = $__require('./_is-object'),
-      anObject = $__require('./_an-object');
+  var isObject = $__require('npm:core-js@2.4.1/library/modules/_is-object.js'),
+      anObject = $__require('npm:core-js@2.4.1/library/modules/_an-object.js');
   var check = function (O, proto) {
     anObject(O);
     if (!isObject(proto) && proto !== null) throw TypeError(proto + ": can't set as prototype!");
@@ -23329,7 +23329,7 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_set-proto.js', ['npm:
   module.exports = {
     set: Object.setPrototypeOf || ('__proto__' in {} ? function (test, buggy, set) {
       try {
-        set = $__require('./_ctx')(Function.call, $__require('./_object-gopd').f(Object.prototype, '__proto__').set, 2);
+        set = $__require('npm:core-js@2.4.1/library/modules/_ctx.js')(Function.call, $__require('npm:core-js@2.4.1/library/modules/_object-gopd.js').f(Object.prototype, '__proto__').set, 2);
         set(test, []);
         buggy = !(test instanceof Array);
       } catch (e) {
@@ -23350,8 +23350,8 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/es6.object.set-prototy
       global = this || self,
       GLOBAL = global;
   /* */
-  var $export = $__require('./_export');
-  $export($export.S, 'Object', { setPrototypeOf: $__require('./_set-proto').set });
+  var $export = $__require('npm:core-js@2.4.1/library/modules/_export.js');
+  $export($export.S, 'Object', { setPrototypeOf: $__require('npm:core-js@2.4.1/library/modules/_set-proto.js').set });
   return module.exports;
 });
 System.registerDynamic('npm:core-js@2.4.1/library/fn/object/set-prototype-of.js', ['npm:core-js@2.4.1/library/modules/es6.object.set-prototype-of.js', 'npm:core-js@2.4.1/library/modules/_core.js'], true, function ($__require, exports, module) {
@@ -23359,8 +23359,8 @@ System.registerDynamic('npm:core-js@2.4.1/library/fn/object/set-prototype-of.js'
       global = this || self,
       GLOBAL = global;
   /* */
-  $__require('../../modules/es6.object.set-prototype-of');
-  module.exports = $__require('../../modules/_core').Object.setPrototypeOf;
+  $__require('npm:core-js@2.4.1/library/modules/es6.object.set-prototype-of.js');
+  module.exports = $__require('npm:core-js@2.4.1/library/modules/_core.js').Object.setPrototypeOf;
   return module.exports;
 });
 System.registerDynamic("npm:babel-runtime@6.11.6/core-js/object/set-prototype-of.js", ["npm:core-js@2.4.1/library/fn/object/set-prototype-of.js"], true, function ($__require, exports, module) {
@@ -23368,7 +23368,7 @@ System.registerDynamic("npm:babel-runtime@6.11.6/core-js/object/set-prototype-of
       global = this || self,
       GLOBAL = global;
   /* */
-  module.exports = { "default": $__require("core-js/library/fn/object/set-prototype-of"), __esModule: true };
+  module.exports = { "default": $__require("npm:core-js@2.4.1/library/fn/object/set-prototype-of.js"), __esModule: true };
   return module.exports;
 });
 System.registerDynamic('npm:core-js@2.4.1/library/modules/es6.object.create.js', ['npm:core-js@2.4.1/library/modules/_export.js', 'npm:core-js@2.4.1/library/modules/_object-create.js'], true, function ($__require, exports, module) {
@@ -23376,8 +23376,8 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/es6.object.create.js',
       global = this || self,
       GLOBAL = global;
   /* */
-  var $export = $__require('./_export');
-  $export($export.S, 'Object', { create: $__require('./_object-create') });
+  var $export = $__require('npm:core-js@2.4.1/library/modules/_export.js');
+  $export($export.S, 'Object', { create: $__require('npm:core-js@2.4.1/library/modules/_object-create.js') });
   return module.exports;
 });
 System.registerDynamic('npm:core-js@2.4.1/library/fn/object/create.js', ['npm:core-js@2.4.1/library/modules/es6.object.create.js', 'npm:core-js@2.4.1/library/modules/_core.js'], true, function ($__require, exports, module) {
@@ -23385,8 +23385,8 @@ System.registerDynamic('npm:core-js@2.4.1/library/fn/object/create.js', ['npm:co
       global = this || self,
       GLOBAL = global;
   /* */
-  $__require('../../modules/es6.object.create');
-  var $Object = $__require('../../modules/_core').Object;
+  $__require('npm:core-js@2.4.1/library/modules/es6.object.create.js');
+  var $Object = $__require('npm:core-js@2.4.1/library/modules/_core.js').Object;
   module.exports = function create(P, D) {
     return $Object.create(P, D);
   };
@@ -23397,7 +23397,7 @@ System.registerDynamic("npm:babel-runtime@6.11.6/core-js/object/create.js", ["np
       global = this || self,
       GLOBAL = global;
   /* */
-  module.exports = { "default": $__require("core-js/library/fn/object/create"), __esModule: true };
+  module.exports = { "default": $__require("npm:core-js@2.4.1/library/fn/object/create.js"), __esModule: true };
   return module.exports;
 });
 System.registerDynamic('npm:core-js@2.4.1/library/modules/_string-at.js', ['npm:core-js@2.4.1/library/modules/_to-integer.js', 'npm:core-js@2.4.1/library/modules/_defined.js'], true, function ($__require, exports, module) {
@@ -23405,8 +23405,8 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_string-at.js', ['npm:
       global = this || self,
       GLOBAL = global;
   /* */
-  var toInteger = $__require('./_to-integer'),
-      defined = $__require('./_defined');
+  var toInteger = $__require('npm:core-js@2.4.1/library/modules/_to-integer.js'),
+      defined = $__require('npm:core-js@2.4.1/library/modules/_defined.js');
   module.exports = function (TO_STRING) {
     return function (that, pos) {
       var s = String(defined(that)),
@@ -23428,8 +23428,8 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/es6.string.iterator.js
   var define,
       global = this || self,
       GLOBAL = global;
-  var $at = $__require('./_string-at')(true);
-  $__require('./_iter-define')(String, 'String', function (iterated) {
+  var $at = $__require('npm:core-js@2.4.1/library/modules/_string-at.js')(true);
+  $__require('npm:core-js@2.4.1/library/modules/_iter-define.js')(String, 'String', function (iterated) {
     this._t = String(iterated);
     this._i = 0;
   }, function () {
@@ -23474,11 +23474,11 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_iter-create.js', ['np
   var define,
       global = this || self,
       GLOBAL = global;
-  var create = $__require('./_object-create'),
-      descriptor = $__require('./_property-desc'),
-      setToStringTag = $__require('./_set-to-string-tag'),
+  var create = $__require('npm:core-js@2.4.1/library/modules/_object-create.js'),
+      descriptor = $__require('npm:core-js@2.4.1/library/modules/_property-desc.js'),
+      setToStringTag = $__require('npm:core-js@2.4.1/library/modules/_set-to-string-tag.js'),
       IteratorPrototype = {};
-  $__require('./_hide')(IteratorPrototype, $__require('./_wks')('iterator'), function () {
+  $__require('npm:core-js@2.4.1/library/modules/_hide.js')(IteratorPrototype, $__require('npm:core-js@2.4.1/library/modules/_wks.js')('iterator'), function () {
     return this;
   });
   module.exports = function (Constructor, NAME, next) {
@@ -23492,9 +23492,9 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_object-gpo.js', ['npm
       global = this || self,
       GLOBAL = global;
   /* */
-  var has = $__require('./_has'),
-      toObject = $__require('./_to-object'),
-      IE_PROTO = $__require('./_shared-key')('IE_PROTO'),
+  var has = $__require('npm:core-js@2.4.1/library/modules/_has.js'),
+      toObject = $__require('npm:core-js@2.4.1/library/modules/_to-object.js'),
+      IE_PROTO = $__require('npm:core-js@2.4.1/library/modules/_shared-key.js')('IE_PROTO'),
       ObjectProto = Object.prototype;
   module.exports = Object.getPrototypeOf || function (O) {
     O = toObject(O);
@@ -23513,16 +23513,16 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_iter-define.js', ['np
   var define,
       global = this || self,
       GLOBAL = global;
-  var LIBRARY = $__require('./_library'),
-      $export = $__require('./_export'),
-      redefine = $__require('./_redefine'),
-      hide = $__require('./_hide'),
-      has = $__require('./_has'),
-      Iterators = $__require('./_iterators'),
-      $iterCreate = $__require('./_iter-create'),
-      setToStringTag = $__require('./_set-to-string-tag'),
-      getPrototypeOf = $__require('./_object-gpo'),
-      ITERATOR = $__require('./_wks')('iterator'),
+  var LIBRARY = $__require('npm:core-js@2.4.1/library/modules/_library.js'),
+      $export = $__require('npm:core-js@2.4.1/library/modules/_export.js'),
+      redefine = $__require('npm:core-js@2.4.1/library/modules/_redefine.js'),
+      hide = $__require('npm:core-js@2.4.1/library/modules/_hide.js'),
+      has = $__require('npm:core-js@2.4.1/library/modules/_has.js'),
+      Iterators = $__require('npm:core-js@2.4.1/library/modules/_iterators.js'),
+      $iterCreate = $__require('npm:core-js@2.4.1/library/modules/_iter-create.js'),
+      setToStringTag = $__require('npm:core-js@2.4.1/library/modules/_set-to-string-tag.js'),
+      getPrototypeOf = $__require('npm:core-js@2.4.1/library/modules/_object-gpo.js'),
+      ITERATOR = $__require('npm:core-js@2.4.1/library/modules/_wks.js')('iterator'),
       BUGGY = !([].keys && 'next' in [].keys()),
       FF_ITERATOR = '@@iterator',
       KEYS = 'keys',
@@ -23598,11 +23598,11 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/es6.array.iterator.js'
   var define,
       global = this || self,
       GLOBAL = global;
-  var addToUnscopables = $__require('./_add-to-unscopables'),
-      step = $__require('./_iter-step'),
-      Iterators = $__require('./_iterators'),
-      toIObject = $__require('./_to-iobject');
-  module.exports = $__require('./_iter-define')(Array, 'Array', function (iterated, kind) {
+  var addToUnscopables = $__require('npm:core-js@2.4.1/library/modules/_add-to-unscopables.js'),
+      step = $__require('npm:core-js@2.4.1/library/modules/_iter-step.js'),
+      Iterators = $__require('npm:core-js@2.4.1/library/modules/_iterators.js'),
+      toIObject = $__require('npm:core-js@2.4.1/library/modules/_to-iobject.js');
+  module.exports = $__require('npm:core-js@2.4.1/library/modules/_iter-define.js')(Array, 'Array', function (iterated, kind) {
     this._t = toIObject(iterated);
     this._i = 0;
     this._k = kind;
@@ -23637,11 +23637,11 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/web.dom.iterable.js', 
         global = this || self,
         GLOBAL = global;
     /* */
-    $__require('./es6.array.iterator');
-    var global = $__require('./_global'),
-        hide = $__require('./_hide'),
-        Iterators = $__require('./_iterators'),
-        TO_STRING_TAG = $__require('./_wks')('toStringTag');
+    $__require('npm:core-js@2.4.1/library/modules/es6.array.iterator.js');
+    var global = $__require('npm:core-js@2.4.1/library/modules/_global.js'),
+        hide = $__require('npm:core-js@2.4.1/library/modules/_hide.js'),
+        Iterators = $__require('npm:core-js@2.4.1/library/modules/_iterators.js'),
+        TO_STRING_TAG = $__require('npm:core-js@2.4.1/library/modules/_wks.js')('toStringTag');
     for (var collections = ['NodeList', 'DOMTokenList', 'MediaList', 'StyleSheetList', 'CSSRuleList'], i = 0; i < 5; i++) {
         var NAME = collections[i],
             Collection = global[NAME],
@@ -23656,9 +23656,9 @@ System.registerDynamic('npm:core-js@2.4.1/library/fn/symbol/iterator.js', ['npm:
       global = this || self,
       GLOBAL = global;
   /* */
-  $__require('../../modules/es6.string.iterator');
-  $__require('../../modules/web.dom.iterable');
-  module.exports = $__require('../../modules/_wks-ext').f('iterator');
+  $__require('npm:core-js@2.4.1/library/modules/es6.string.iterator.js');
+  $__require('npm:core-js@2.4.1/library/modules/web.dom.iterable.js');
+  module.exports = $__require('npm:core-js@2.4.1/library/modules/_wks-ext.js').f('iterator');
   return module.exports;
 });
 System.registerDynamic("npm:babel-runtime@6.11.6/core-js/symbol/iterator.js", ["npm:core-js@2.4.1/library/fn/symbol/iterator.js"], true, function ($__require, exports, module) {
@@ -23666,7 +23666,7 @@ System.registerDynamic("npm:babel-runtime@6.11.6/core-js/symbol/iterator.js", ["
       global = this || self,
       GLOBAL = global;
   /* */
-  module.exports = { "default": $__require("core-js/library/fn/symbol/iterator"), __esModule: true };
+  module.exports = { "default": $__require("npm:core-js@2.4.1/library/fn/symbol/iterator.js"), __esModule: true };
   return module.exports;
 });
 System.registerDynamic('npm:core-js@2.4.1/library/modules/_redefine.js', ['npm:core-js@2.4.1/library/modules/_hide.js'], true, function ($__require, exports, module) {
@@ -23674,7 +23674,7 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_redefine.js', ['npm:c
       global = this || self,
       GLOBAL = global;
   /* */
-  module.exports = $__require('./_hide');
+  module.exports = $__require('npm:core-js@2.4.1/library/modules/_hide.js');
   return module.exports;
 });
 System.registerDynamic('npm:core-js@2.4.1/library/modules/_meta.js', ['npm:core-js@2.4.1/library/modules/_uid.js', 'npm:core-js@2.4.1/library/modules/_is-object.js', 'npm:core-js@2.4.1/library/modules/_has.js', 'npm:core-js@2.4.1/library/modules/_object-dp.js', 'npm:core-js@2.4.1/library/modules/_fails.js'], true, function ($__require, exports, module) {
@@ -23682,15 +23682,15 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_meta.js', ['npm:core-
       global = this || self,
       GLOBAL = global;
   /* */
-  var META = $__require('./_uid')('meta'),
-      isObject = $__require('./_is-object'),
-      has = $__require('./_has'),
-      setDesc = $__require('./_object-dp').f,
+  var META = $__require('npm:core-js@2.4.1/library/modules/_uid.js')('meta'),
+      isObject = $__require('npm:core-js@2.4.1/library/modules/_is-object.js'),
+      has = $__require('npm:core-js@2.4.1/library/modules/_has.js'),
+      setDesc = $__require('npm:core-js@2.4.1/library/modules/_object-dp.js').f,
       id = 0;
   var isExtensible = Object.isExtensible || function () {
     return true;
   };
-  var FREEZE = !$__require('./_fails')(function () {
+  var FREEZE = !$__require('npm:core-js@2.4.1/library/modules/_fails.js')(function () {
     return isExtensible(Object.preventExtensions({}));
   });
   var setMeta = function (it) {
@@ -23734,9 +23734,9 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_set-to-string-tag.js'
       global = this || self,
       GLOBAL = global;
   /* */
-  var def = $__require('./_object-dp').f,
-      has = $__require('./_has'),
-      TAG = $__require('./_wks')('toStringTag');
+  var def = $__require('npm:core-js@2.4.1/library/modules/_object-dp.js').f,
+      has = $__require('npm:core-js@2.4.1/library/modules/_has.js'),
+      TAG = $__require('npm:core-js@2.4.1/library/modules/_wks.js')('toStringTag');
   module.exports = function (it, tag, stat) {
     if (it && !has(it = stat ? it : it.prototype, TAG)) def(it, TAG, {
       configurable: true,
@@ -23750,8 +23750,8 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_keyof.js', ['npm:core
         global = this || self,
         GLOBAL = global;
     /* */
-    var getKeys = $__require('./_object-keys'),
-        toIObject = $__require('./_to-iobject');
+    var getKeys = $__require('npm:core-js@2.4.1/library/modules/_object-keys.js'),
+        toIObject = $__require('npm:core-js@2.4.1/library/modules/_to-iobject.js');
     module.exports = function (object, el) {
         var O = toIObject(object),
             keys = getKeys(O),
@@ -23767,9 +23767,9 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_enum-keys.js', ['npm:
         global = this || self,
         GLOBAL = global;
     /* */
-    var getKeys = $__require('./_object-keys'),
-        gOPS = $__require('./_object-gops'),
-        pIE = $__require('./_object-pie');
+    var getKeys = $__require('npm:core-js@2.4.1/library/modules/_object-keys.js'),
+        gOPS = $__require('npm:core-js@2.4.1/library/modules/_object-gops.js'),
+        pIE = $__require('npm:core-js@2.4.1/library/modules/_object-pie.js');
     module.exports = function (it) {
         var result = getKeys(it),
             getSymbols = gOPS.f;
@@ -23789,7 +23789,7 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_is-array.js', ['npm:c
       global = this || self,
       GLOBAL = global;
   /* */
-  var cof = $__require('./_cof');
+  var cof = $__require('npm:core-js@2.4.1/library/modules/_cof.js');
   module.exports = Array.isArray || function isArray(arg) {
     return cof(arg) == 'Array';
   };
@@ -23800,10 +23800,10 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_object-dps.js', ['npm
         global = this || self,
         GLOBAL = global;
     /* */
-    var dP = $__require('./_object-dp'),
-        anObject = $__require('./_an-object'),
-        getKeys = $__require('./_object-keys');
-    module.exports = $__require('./_descriptors') ? Object.defineProperties : function defineProperties(O, Properties) {
+    var dP = $__require('npm:core-js@2.4.1/library/modules/_object-dp.js'),
+        anObject = $__require('npm:core-js@2.4.1/library/modules/_an-object.js'),
+        getKeys = $__require('npm:core-js@2.4.1/library/modules/_object-keys.js');
+    module.exports = $__require('npm:core-js@2.4.1/library/modules/_descriptors.js') ? Object.defineProperties : function defineProperties(O, Properties) {
         anObject(O);
         var keys = getKeys(Properties),
             length = keys.length,
@@ -23819,7 +23819,7 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_html.js', ['npm:core-
       global = this || self,
       GLOBAL = global;
   /* */
-  module.exports = $__require('./_global').document && document.documentElement;
+  module.exports = $__require('npm:core-js@2.4.1/library/modules/_global.js').document && document.documentElement;
   return module.exports;
 });
 System.registerDynamic('npm:core-js@2.4.1/library/modules/_object-create.js', ['npm:core-js@2.4.1/library/modules/_an-object.js', 'npm:core-js@2.4.1/library/modules/_object-dps.js', 'npm:core-js@2.4.1/library/modules/_enum-bug-keys.js', 'npm:core-js@2.4.1/library/modules/_shared-key.js', 'npm:core-js@2.4.1/library/modules/_dom-create.js', 'npm:core-js@2.4.1/library/modules/_html.js'], true, function ($__require, exports, module) {
@@ -23827,20 +23827,20 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_object-create.js', ['
       global = this || self,
       GLOBAL = global;
   /* */
-  var anObject = $__require('./_an-object'),
-      dPs = $__require('./_object-dps'),
-      enumBugKeys = $__require('./_enum-bug-keys'),
-      IE_PROTO = $__require('./_shared-key')('IE_PROTO'),
+  var anObject = $__require('npm:core-js@2.4.1/library/modules/_an-object.js'),
+      dPs = $__require('npm:core-js@2.4.1/library/modules/_object-dps.js'),
+      enumBugKeys = $__require('npm:core-js@2.4.1/library/modules/_enum-bug-keys.js'),
+      IE_PROTO = $__require('npm:core-js@2.4.1/library/modules/_shared-key.js')('IE_PROTO'),
       Empty = function () {},
       PROTOTYPE = 'prototype';
   var createDict = function () {
-    var iframe = $__require('./_dom-create')('iframe'),
+    var iframe = $__require('npm:core-js@2.4.1/library/modules/_dom-create.js')('iframe'),
         i = enumBugKeys.length,
         lt = '<',
         gt = '>',
         iframeDocument;
     iframe.style.display = 'none';
-    $__require('./_html').appendChild(iframe);
+    $__require('npm:core-js@2.4.1/library/modules/_html.js').appendChild(iframe);
     iframe.src = 'javascript:';
     iframeDocument = iframe.contentWindow.document;
     iframeDocument.open();
@@ -23867,8 +23867,8 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_object-gopn-ext.js', 
       global = this || self,
       GLOBAL = global;
   /* */
-  var toIObject = $__require('./_to-iobject'),
-      gOPN = $__require('./_object-gopn').f,
+  var toIObject = $__require('npm:core-js@2.4.1/library/modules/_to-iobject.js'),
+      gOPN = $__require('npm:core-js@2.4.1/library/modules/_object-gopn.js').f,
       toString = {}.toString;
   var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames ? Object.getOwnPropertyNames(window) : [];
   var getWindowNames = function (it) {
@@ -23888,14 +23888,14 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_object-gopd.js', ['np
       global = this || self,
       GLOBAL = global;
   /* */
-  var pIE = $__require('./_object-pie'),
-      createDesc = $__require('./_property-desc'),
-      toIObject = $__require('./_to-iobject'),
-      toPrimitive = $__require('./_to-primitive'),
-      has = $__require('./_has'),
-      IE8_DOM_DEFINE = $__require('./_ie8-dom-define'),
+  var pIE = $__require('npm:core-js@2.4.1/library/modules/_object-pie.js'),
+      createDesc = $__require('npm:core-js@2.4.1/library/modules/_property-desc.js'),
+      toIObject = $__require('npm:core-js@2.4.1/library/modules/_to-iobject.js'),
+      toPrimitive = $__require('npm:core-js@2.4.1/library/modules/_to-primitive.js'),
+      has = $__require('npm:core-js@2.4.1/library/modules/_has.js'),
+      IE8_DOM_DEFINE = $__require('npm:core-js@2.4.1/library/modules/_ie8-dom-define.js'),
       gOPD = Object.getOwnPropertyDescriptor;
-  exports.f = $__require('./_descriptors') ? gOPD : function getOwnPropertyDescriptor(O, P) {
+  exports.f = $__require('npm:core-js@2.4.1/library/modules/_descriptors.js') ? gOPD : function getOwnPropertyDescriptor(O, P) {
     O = toIObject(O);
     P = toPrimitive(P, true);
     if (IE8_DOM_DEFINE) try {
@@ -23910,8 +23910,8 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_object-gopn.js', ['np
       global = this || self,
       GLOBAL = global;
   /* */
-  var $keys = $__require('./_object-keys-internal'),
-      hiddenKeys = $__require('./_enum-bug-keys').concat('length', 'prototype');
+  var $keys = $__require('npm:core-js@2.4.1/library/modules/_object-keys-internal.js'),
+      hiddenKeys = $__require('npm:core-js@2.4.1/library/modules/_enum-bug-keys.js').concat('length', 'prototype');
   exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
     return $keys(O, hiddenKeys);
   };
@@ -23924,31 +23924,31 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/es6.symbol.js', ['npm:
   var define,
       global = this || self,
       GLOBAL = global;
-  var global = $__require('./_global'),
-      has = $__require('./_has'),
-      DESCRIPTORS = $__require('./_descriptors'),
-      $export = $__require('./_export'),
-      redefine = $__require('./_redefine'),
-      META = $__require('./_meta').KEY,
-      $fails = $__require('./_fails'),
-      shared = $__require('./_shared'),
-      setToStringTag = $__require('./_set-to-string-tag'),
-      uid = $__require('./_uid'),
-      wks = $__require('./_wks'),
-      wksExt = $__require('./_wks-ext'),
-      wksDefine = $__require('./_wks-define'),
-      keyOf = $__require('./_keyof'),
-      enumKeys = $__require('./_enum-keys'),
-      isArray = $__require('./_is-array'),
-      anObject = $__require('./_an-object'),
-      toIObject = $__require('./_to-iobject'),
-      toPrimitive = $__require('./_to-primitive'),
-      createDesc = $__require('./_property-desc'),
-      _create = $__require('./_object-create'),
-      gOPNExt = $__require('./_object-gopn-ext'),
-      $GOPD = $__require('./_object-gopd'),
-      $DP = $__require('./_object-dp'),
-      $keys = $__require('./_object-keys'),
+  var global = $__require('npm:core-js@2.4.1/library/modules/_global.js'),
+      has = $__require('npm:core-js@2.4.1/library/modules/_has.js'),
+      DESCRIPTORS = $__require('npm:core-js@2.4.1/library/modules/_descriptors.js'),
+      $export = $__require('npm:core-js@2.4.1/library/modules/_export.js'),
+      redefine = $__require('npm:core-js@2.4.1/library/modules/_redefine.js'),
+      META = $__require('npm:core-js@2.4.1/library/modules/_meta.js').KEY,
+      $fails = $__require('npm:core-js@2.4.1/library/modules/_fails.js'),
+      shared = $__require('npm:core-js@2.4.1/library/modules/_shared.js'),
+      setToStringTag = $__require('npm:core-js@2.4.1/library/modules/_set-to-string-tag.js'),
+      uid = $__require('npm:core-js@2.4.1/library/modules/_uid.js'),
+      wks = $__require('npm:core-js@2.4.1/library/modules/_wks.js'),
+      wksExt = $__require('npm:core-js@2.4.1/library/modules/_wks-ext.js'),
+      wksDefine = $__require('npm:core-js@2.4.1/library/modules/_wks-define.js'),
+      keyOf = $__require('npm:core-js@2.4.1/library/modules/_keyof.js'),
+      enumKeys = $__require('npm:core-js@2.4.1/library/modules/_enum-keys.js'),
+      isArray = $__require('npm:core-js@2.4.1/library/modules/_is-array.js'),
+      anObject = $__require('npm:core-js@2.4.1/library/modules/_an-object.js'),
+      toIObject = $__require('npm:core-js@2.4.1/library/modules/_to-iobject.js'),
+      toPrimitive = $__require('npm:core-js@2.4.1/library/modules/_to-primitive.js'),
+      createDesc = $__require('npm:core-js@2.4.1/library/modules/_property-desc.js'),
+      _create = $__require('npm:core-js@2.4.1/library/modules/_object-create.js'),
+      gOPNExt = $__require('npm:core-js@2.4.1/library/modules/_object-gopn-ext.js'),
+      $GOPD = $__require('npm:core-js@2.4.1/library/modules/_object-gopd.js'),
+      $DP = $__require('npm:core-js@2.4.1/library/modules/_object-dp.js'),
+      $keys = $__require('npm:core-js@2.4.1/library/modules/_object-keys.js'),
       gOPD = $GOPD.f,
       dP = $DP.f,
       gOPN = gOPNExt.f,
@@ -24069,10 +24069,10 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/es6.symbol.js', ['npm:
     });
     $GOPD.f = $getOwnPropertyDescriptor;
     $DP.f = $defineProperty;
-    $__require('./_object-gopn').f = gOPNExt.f = $getOwnPropertyNames;
-    $__require('./_object-pie').f = $propertyIsEnumerable;
-    $__require('./_object-gops').f = $getOwnPropertySymbols;
-    if (DESCRIPTORS && !$__require('./_library')) {
+    $__require('npm:core-js@2.4.1/library/modules/_object-gopn.js').f = gOPNExt.f = $getOwnPropertyNames;
+    $__require('npm:core-js@2.4.1/library/modules/_object-pie.js').f = $propertyIsEnumerable;
+    $__require('npm:core-js@2.4.1/library/modules/_object-gops.js').f = $getOwnPropertySymbols;
+    if (DESCRIPTORS && !$__require('npm:core-js@2.4.1/library/modules/_library.js')) {
       redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
     }
     wksExt.f = function (name) {
@@ -24124,7 +24124,7 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/es6.symbol.js', ['npm:
       args[1] = replacer;
       return _stringify.apply($JSON, args);
     } });
-  $Symbol[PROTOTYPE][TO_PRIMITIVE] || $__require('./_hide')($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
+  $Symbol[PROTOTYPE][TO_PRIMITIVE] || $__require('npm:core-js@2.4.1/library/modules/_hide.js')($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
   setToStringTag($Symbol, 'Symbol');
   setToStringTag(Math, 'Math', true);
   setToStringTag(global.JSON, 'JSON', true);
@@ -24144,7 +24144,7 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/es7.symbol.async-itera
       global = this || self,
       GLOBAL = global;
   /* */
-  $__require('./_wks-define')('asyncIterator');
+  $__require('npm:core-js@2.4.1/library/modules/_wks-define.js')('asyncIterator');
   return module.exports;
 });
 System.registerDynamic("npm:core-js@2.4.1/library/modules/_library.js", [], true, function ($__require, exports, module) {
@@ -24160,9 +24160,9 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_wks.js', ['npm:core-j
         global = this || self,
         GLOBAL = global;
     /* */
-    var store = $__require('./_shared')('wks'),
-        uid = $__require('./_uid'),
-        Symbol = $__require('./_global').Symbol,
+    var store = $__require('npm:core-js@2.4.1/library/modules/_shared.js')('wks'),
+        uid = $__require('npm:core-js@2.4.1/library/modules/_uid.js'),
+        Symbol = $__require('npm:core-js@2.4.1/library/modules/_global.js').Symbol,
         USE_SYMBOL = typeof Symbol == 'function';
     var $exports = module.exports = function (name) {
         return store[name] || (store[name] = USE_SYMBOL && Symbol[name] || (USE_SYMBOL ? Symbol : uid)('Symbol.' + name));
@@ -24175,7 +24175,7 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_wks-ext.js', ['npm:co
       global = this || self,
       GLOBAL = global;
   /* */
-  exports.f = $__require('./_wks');
+  exports.f = $__require('npm:core-js@2.4.1/library/modules/_wks.js');
   return module.exports;
 });
 System.registerDynamic('npm:core-js@2.4.1/library/modules/_wks-define.js', ['npm:core-js@2.4.1/library/modules/_global.js', 'npm:core-js@2.4.1/library/modules/_core.js', 'npm:core-js@2.4.1/library/modules/_library.js', 'npm:core-js@2.4.1/library/modules/_wks-ext.js', 'npm:core-js@2.4.1/library/modules/_object-dp.js'], true, function ($__require, exports, module) {
@@ -24183,11 +24183,11 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_wks-define.js', ['npm
         global = this || self,
         GLOBAL = global;
     /* */
-    var global = $__require('./_global'),
-        core = $__require('./_core'),
-        LIBRARY = $__require('./_library'),
-        wksExt = $__require('./_wks-ext'),
-        defineProperty = $__require('./_object-dp').f;
+    var global = $__require('npm:core-js@2.4.1/library/modules/_global.js'),
+        core = $__require('npm:core-js@2.4.1/library/modules/_core.js'),
+        LIBRARY = $__require('npm:core-js@2.4.1/library/modules/_library.js'),
+        wksExt = $__require('npm:core-js@2.4.1/library/modules/_wks-ext.js'),
+        defineProperty = $__require('npm:core-js@2.4.1/library/modules/_object-dp.js').f;
     module.exports = function (name) {
         var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
         if (name.charAt(0) != '_' && !(name in $Symbol)) defineProperty($Symbol, name, { value: wksExt.f(name) });
@@ -24199,7 +24199,7 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/es7.symbol.observable.
       global = this || self,
       GLOBAL = global;
   /* */
-  $__require('./_wks-define')('observable');
+  $__require('npm:core-js@2.4.1/library/modules/_wks-define.js')('observable');
   return module.exports;
 });
 System.registerDynamic('npm:core-js@2.4.1/library/fn/symbol/index.js', ['npm:core-js@2.4.1/library/modules/es6.symbol.js', 'npm:core-js@2.4.1/library/modules/es6.object.to-string.js', 'npm:core-js@2.4.1/library/modules/es7.symbol.async-iterator.js', 'npm:core-js@2.4.1/library/modules/es7.symbol.observable.js', 'npm:core-js@2.4.1/library/modules/_core.js'], true, function ($__require, exports, module) {
@@ -24207,11 +24207,11 @@ System.registerDynamic('npm:core-js@2.4.1/library/fn/symbol/index.js', ['npm:cor
       global = this || self,
       GLOBAL = global;
   /* */
-  $__require('../../modules/es6.symbol');
-  $__require('../../modules/es6.object.to-string');
-  $__require('../../modules/es7.symbol.async-iterator');
-  $__require('../../modules/es7.symbol.observable');
-  module.exports = $__require('../../modules/_core').Symbol;
+  $__require('npm:core-js@2.4.1/library/modules/es6.symbol.js');
+  $__require('npm:core-js@2.4.1/library/modules/es6.object.to-string.js');
+  $__require('npm:core-js@2.4.1/library/modules/es7.symbol.async-iterator.js');
+  $__require('npm:core-js@2.4.1/library/modules/es7.symbol.observable.js');
+  module.exports = $__require('npm:core-js@2.4.1/library/modules/_core.js').Symbol;
   return module.exports;
 });
 System.registerDynamic('npm:core-js@2.4.1/library/fn/symbol.js', ['npm:core-js@2.4.1/library/fn/symbol/index.js'], true, function ($__require, exports, module) {
@@ -24219,7 +24219,7 @@ System.registerDynamic('npm:core-js@2.4.1/library/fn/symbol.js', ['npm:core-js@2
       global = this || self,
       GLOBAL = global;
   /* */
-  module.exports = $__require('./symbol/index');
+  module.exports = $__require('npm:core-js@2.4.1/library/fn/symbol/index.js');
   return module.exports;
 });
 System.registerDynamic("npm:babel-runtime@6.11.6/core-js/symbol.js", ["npm:core-js@2.4.1/library/fn/symbol.js"], true, function ($__require, exports, module) {
@@ -24227,7 +24227,7 @@ System.registerDynamic("npm:babel-runtime@6.11.6/core-js/symbol.js", ["npm:core-
       global = this || self,
       GLOBAL = global;
   /* */
-  module.exports = { "default": $__require("core-js/library/fn/symbol"), __esModule: true };
+  module.exports = { "default": $__require("npm:core-js@2.4.1/library/fn/symbol.js"), __esModule: true };
   return module.exports;
 });
 System.registerDynamic('npm:babel-runtime@6.11.6/helpers/typeof.js', ['npm:babel-runtime@6.11.6/core-js/symbol/iterator.js', 'npm:babel-runtime@6.11.6/core-js/symbol.js'], true, function ($__require, exports, module) {
@@ -24238,9 +24238,9 @@ System.registerDynamic('npm:babel-runtime@6.11.6/helpers/typeof.js', ['npm:babel
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _iterator = $__require('../core-js/symbol/iterator');
+  var _iterator = $__require('npm:babel-runtime@6.11.6/core-js/symbol/iterator.js');
   var _iterator2 = _interopRequireDefault(_iterator);
-  var _symbol = $__require('../core-js/symbol');
+  var _symbol = $__require('npm:babel-runtime@6.11.6/core-js/symbol.js');
   var _symbol2 = _interopRequireDefault(_symbol);
   var _typeof = typeof _symbol2.default === "function" && typeof _iterator2.default === "symbol" ? function (obj) {
     return typeof obj;
@@ -24265,11 +24265,11 @@ System.registerDynamic('npm:babel-runtime@6.11.6/helpers/inherits.js', ['npm:bab
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _setPrototypeOf = $__require('../core-js/object/set-prototype-of');
+  var _setPrototypeOf = $__require('npm:babel-runtime@6.11.6/core-js/object/set-prototype-of.js');
   var _setPrototypeOf2 = _interopRequireDefault(_setPrototypeOf);
-  var _create = $__require('../core-js/object/create');
+  var _create = $__require('npm:babel-runtime@6.11.6/core-js/object/create.js');
   var _create2 = _interopRequireDefault(_create);
-  var _typeof2 = $__require('./typeof');
+  var _typeof2 = $__require('npm:babel-runtime@6.11.6/helpers/typeof.js');
   var _typeof3 = _interopRequireDefault(_typeof2);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { default: obj };
@@ -24359,22 +24359,22 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/Well.js', ['npm:babel-run
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _extends2 = $__require('babel-runtime/helpers/extends');
+  var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
   var _extends3 = _interopRequireDefault(_extends2);
-  var _objectWithoutProperties2 = $__require('babel-runtime/helpers/objectWithoutProperties');
+  var _objectWithoutProperties2 = $__require('npm:babel-runtime@6.11.6/helpers/objectWithoutProperties.js');
   var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
-  var _classCallCheck2 = $__require('babel-runtime/helpers/classCallCheck');
+  var _classCallCheck2 = $__require('npm:babel-runtime@6.11.6/helpers/classCallCheck.js');
   var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  var _possibleConstructorReturn2 = $__require('babel-runtime/helpers/possibleConstructorReturn');
+  var _possibleConstructorReturn2 = $__require('npm:babel-runtime@6.11.6/helpers/possibleConstructorReturn.js');
   var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  var _inherits2 = $__require('babel-runtime/helpers/inherits');
+  var _inherits2 = $__require('npm:babel-runtime@6.11.6/helpers/inherits.js');
   var _inherits3 = _interopRequireDefault(_inherits2);
-  var _classnames = $__require('classnames');
+  var _classnames = $__require('npm:classnames@2.2.5.js');
   var _classnames2 = _interopRequireDefault(_classnames);
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
   var _react2 = _interopRequireDefault(_react);
-  var _bootstrapUtils = $__require('./utils/bootstrapUtils');
-  var _StyleConfig = $__require('./utils/StyleConfig');
+  var _bootstrapUtils = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
+  var _StyleConfig = $__require('npm:react-bootstrap@0.30.3/lib/utils/StyleConfig.js');
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
   }
@@ -24405,9 +24405,9 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_object-to-array.js', 
       global = this || self,
       GLOBAL = global;
   /* */
-  var getKeys = $__require('./_object-keys'),
-      toIObject = $__require('./_to-iobject'),
-      isEnum = $__require('./_object-pie').f;
+  var getKeys = $__require('npm:core-js@2.4.1/library/modules/_object-keys.js'),
+      toIObject = $__require('npm:core-js@2.4.1/library/modules/_to-iobject.js'),
+      isEnum = $__require('npm:core-js@2.4.1/library/modules/_object-pie.js').f;
   module.exports = function (isEntries) {
     return function (it) {
       var O = toIObject(it),
@@ -24429,8 +24429,8 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/es7.object.entries.js'
         global = this || self,
         GLOBAL = global;
     /* */
-    var $export = $__require('./_export'),
-        $entries = $__require('./_object-to-array')(true);
+    var $export = $__require('npm:core-js@2.4.1/library/modules/_export.js'),
+        $entries = $__require('npm:core-js@2.4.1/library/modules/_object-to-array.js')(true);
     $export($export.S, 'Object', { entries: function entries(it) {
             return $entries(it);
         } });
@@ -24441,8 +24441,8 @@ System.registerDynamic('npm:core-js@2.4.1/library/fn/object/entries.js', ['npm:c
       global = this || self,
       GLOBAL = global;
   /* */
-  $__require('../../modules/es7.object.entries');
-  module.exports = $__require('../../modules/_core').Object.entries;
+  $__require('npm:core-js@2.4.1/library/modules/es7.object.entries.js');
+  module.exports = $__require('npm:core-js@2.4.1/library/modules/_core.js').Object.entries;
   return module.exports;
 });
 System.registerDynamic("npm:babel-runtime@6.11.6/core-js/object/entries.js", ["npm:core-js@2.4.1/library/fn/object/entries.js"], true, function ($__require, exports, module) {
@@ -24450,7 +24450,7 @@ System.registerDynamic("npm:babel-runtime@6.11.6/core-js/object/entries.js", ["n
       global = this || self,
       GLOBAL = global;
   /* */
-  module.exports = { "default": $__require("core-js/library/fn/object/entries"), __esModule: true };
+  module.exports = { "default": $__require("npm:core-js@2.4.1/library/fn/object/entries.js"), __esModule: true };
   return module.exports;
 });
 System.registerDynamic('npm:core-js@2.4.1/library/modules/_a-function.js', [], true, function ($__require, exports, module) {
@@ -24469,7 +24469,7 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_ctx.js', ['npm:core-j
       global = this || self,
       GLOBAL = global;
   /* */
-  var aFunction = $__require('./_a-function');
+  var aFunction = $__require('npm:core-js@2.4.1/library/modules/_a-function.js');
   module.exports = function (fn, that, length) {
     aFunction(fn);
     if (that === undefined) return fn;
@@ -24498,7 +24498,7 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_an-object.js', ['npm:
       global = this || self,
       GLOBAL = global;
   /* */
-  var isObject = $__require('./_is-object');
+  var isObject = $__require('npm:core-js@2.4.1/library/modules/_is-object.js');
   module.exports = function (it) {
     if (!isObject(it)) throw TypeError(it + ' is not an object!');
     return it;
@@ -24510,8 +24510,8 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_dom-create.js', ['npm
         global = this || self,
         GLOBAL = global;
     /* */
-    var isObject = $__require('./_is-object'),
-        document = $__require('./_global').document,
+    var isObject = $__require('npm:core-js@2.4.1/library/modules/_is-object.js'),
+        document = $__require('npm:core-js@2.4.1/library/modules/_global.js').document,
         is = isObject(document) && isObject(document.createElement);
     module.exports = function (it) {
         return is ? document.createElement(it) : {};
@@ -24523,8 +24523,8 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_ie8-dom-define.js', [
       global = this || self,
       GLOBAL = global;
   /* */
-  module.exports = !$__require('./_descriptors') && !$__require('./_fails')(function () {
-    return Object.defineProperty($__require('./_dom-create')('div'), 'a', { get: function () {
+  module.exports = !$__require('npm:core-js@2.4.1/library/modules/_descriptors.js') && !$__require('npm:core-js@2.4.1/library/modules/_fails.js')(function () {
+    return Object.defineProperty($__require('npm:core-js@2.4.1/library/modules/_dom-create.js')('div'), 'a', { get: function () {
         return 7;
       } }).a != 7;
   });
@@ -24545,7 +24545,7 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_to-primitive.js', ['n
       global = this || self,
       GLOBAL = global;
   /* */
-  var isObject = $__require('./_is-object');
+  var isObject = $__require('npm:core-js@2.4.1/library/modules/_is-object.js');
   module.exports = function (it, S) {
     if (!isObject(it)) return it;
     var fn, val;
@@ -24561,11 +24561,11 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_object-dp.js', ['npm:
       global = this || self,
       GLOBAL = global;
   /* */
-  var anObject = $__require('./_an-object'),
-      IE8_DOM_DEFINE = $__require('./_ie8-dom-define'),
-      toPrimitive = $__require('./_to-primitive'),
+  var anObject = $__require('npm:core-js@2.4.1/library/modules/_an-object.js'),
+      IE8_DOM_DEFINE = $__require('npm:core-js@2.4.1/library/modules/_ie8-dom-define.js'),
+      toPrimitive = $__require('npm:core-js@2.4.1/library/modules/_to-primitive.js'),
       dP = Object.defineProperty;
-  exports.f = $__require('./_descriptors') ? Object.defineProperty : function defineProperty(O, P, Attributes) {
+  exports.f = $__require('npm:core-js@2.4.1/library/modules/_descriptors.js') ? Object.defineProperty : function defineProperty(O, P, Attributes) {
     anObject(O);
     P = toPrimitive(P, true);
     anObject(Attributes);
@@ -24598,7 +24598,7 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_descriptors.js', ['np
       global = this || self,
       GLOBAL = global;
   /* */
-  module.exports = !$__require('./_fails')(function () {
+  module.exports = !$__require('npm:core-js@2.4.1/library/modules/_fails.js')(function () {
     return Object.defineProperty({}, 'a', { get: function () {
         return 7;
       } }).a != 7;
@@ -24610,9 +24610,9 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_hide.js', ['npm:core-
       global = this || self,
       GLOBAL = global;
   /* */
-  var dP = $__require('./_object-dp'),
-      createDesc = $__require('./_property-desc');
-  module.exports = $__require('./_descriptors') ? function (object, key, value) {
+  var dP = $__require('npm:core-js@2.4.1/library/modules/_object-dp.js'),
+      createDesc = $__require('npm:core-js@2.4.1/library/modules/_property-desc.js');
+  module.exports = $__require('npm:core-js@2.4.1/library/modules/_descriptors.js') ? function (object, key, value) {
     return dP.f(object, key, createDesc(1, value));
   } : function (object, key, value) {
     object[key] = value;
@@ -24625,10 +24625,10 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_export.js', ['npm:cor
       global = this || self,
       GLOBAL = global;
   /* */
-  var global = $__require('./_global'),
-      core = $__require('./_core'),
-      ctx = $__require('./_ctx'),
-      hide = $__require('./_hide'),
+  var global = $__require('npm:core-js@2.4.1/library/modules/_global.js'),
+      core = $__require('npm:core-js@2.4.1/library/modules/_core.js'),
+      ctx = $__require('npm:core-js@2.4.1/library/modules/_ctx.js'),
+      hide = $__require('npm:core-js@2.4.1/library/modules/_hide.js'),
       PROTOTYPE = 'prototype';
   var $export = function (type, name, source) {
     var IS_FORCED = type & $export.F,
@@ -24699,8 +24699,8 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_to-iobject.js', ['npm
       global = this || self,
       GLOBAL = global;
   /* */
-  var IObject = $__require('./_iobject'),
-      defined = $__require('./_defined');
+  var IObject = $__require('npm:core-js@2.4.1/library/modules/_iobject.js'),
+      defined = $__require('npm:core-js@2.4.1/library/modules/_defined.js');
   module.exports = function (it) {
     return IObject(defined(it));
   };
@@ -24711,7 +24711,7 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_to-length.js', ['npm:
       global = this || self,
       GLOBAL = global;
   /* */
-  var toInteger = $__require('./_to-integer'),
+  var toInteger = $__require('npm:core-js@2.4.1/library/modules/_to-integer.js'),
       min = Math.min;
   module.exports = function (it) {
     return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0;
@@ -24735,7 +24735,7 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_to-index.js', ['npm:c
       global = this || self,
       GLOBAL = global;
   /* */
-  var toInteger = $__require('./_to-integer'),
+  var toInteger = $__require('npm:core-js@2.4.1/library/modules/_to-integer.js'),
       max = Math.max,
       min = Math.min;
   module.exports = function (index, length) {
@@ -24749,9 +24749,9 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_array-includes.js', [
       global = this || self,
       GLOBAL = global;
   /* */
-  var toIObject = $__require('./_to-iobject'),
-      toLength = $__require('./_to-length'),
-      toIndex = $__require('./_to-index');
+  var toIObject = $__require('npm:core-js@2.4.1/library/modules/_to-iobject.js'),
+      toLength = $__require('npm:core-js@2.4.1/library/modules/_to-length.js'),
+      toIndex = $__require('npm:core-js@2.4.1/library/modules/_to-index.js');
   module.exports = function (IS_INCLUDES) {
     return function ($this, el, fromIndex) {
       var O = toIObject($this),
@@ -24784,7 +24784,7 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_shared.js', ['npm:cor
         global = this || self,
         GLOBAL = global;
     /* */
-    var global = $__require('./_global'),
+    var global = $__require('npm:core-js@2.4.1/library/modules/_global.js'),
         SHARED = '__core-js_shared__',
         store = global[SHARED] || (global[SHARED] = {});
     module.exports = function (key) {
@@ -24809,8 +24809,8 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_shared-key.js', ['npm
       global = this || self,
       GLOBAL = global;
   /* */
-  var shared = $__require('./_shared')('keys'),
-      uid = $__require('./_uid');
+  var shared = $__require('npm:core-js@2.4.1/library/modules/_shared.js')('keys'),
+      uid = $__require('npm:core-js@2.4.1/library/modules/_uid.js');
   module.exports = function (key) {
     return shared[key] || (shared[key] = uid(key));
   };
@@ -24821,10 +24821,10 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_object-keys-internal.
       global = this || self,
       GLOBAL = global;
   /* */
-  var has = $__require('./_has'),
-      toIObject = $__require('./_to-iobject'),
-      arrayIndexOf = $__require('./_array-includes')(false),
-      IE_PROTO = $__require('./_shared-key')('IE_PROTO');
+  var has = $__require('npm:core-js@2.4.1/library/modules/_has.js'),
+      toIObject = $__require('npm:core-js@2.4.1/library/modules/_to-iobject.js'),
+      arrayIndexOf = $__require('npm:core-js@2.4.1/library/modules/_array-includes.js')(false),
+      IE_PROTO = $__require('npm:core-js@2.4.1/library/modules/_shared-key.js')('IE_PROTO');
   module.exports = function (object, names) {
     var O = toIObject(object),
         i = 0,
@@ -24851,8 +24851,8 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_object-keys.js', ['np
       global = this || self,
       GLOBAL = global;
   /* */
-  var $keys = $__require('./_object-keys-internal'),
-      enumBugKeys = $__require('./_enum-bug-keys');
+  var $keys = $__require('npm:core-js@2.4.1/library/modules/_object-keys-internal.js'),
+      enumBugKeys = $__require('npm:core-js@2.4.1/library/modules/_enum-bug-keys.js');
   module.exports = Object.keys || function keys(O) {
     return $keys(O, enumBugKeys);
   };
@@ -24890,7 +24890,7 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_to-object.js', ['npm:
       global = this || self,
       GLOBAL = global;
   /* */
-  var defined = $__require('./_defined');
+  var defined = $__require('npm:core-js@2.4.1/library/modules/_defined.js');
   module.exports = function (it) {
     return Object(defined(it));
   };
@@ -24913,7 +24913,7 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_iobject.js', ['npm:co
       global = this || self,
       GLOBAL = global;
   /* */
-  var cof = $__require('./_cof');
+  var cof = $__require('npm:core-js@2.4.1/library/modules/_cof.js');
   module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
     return cof(it) == 'String' ? it.split('') : Object(it);
   };
@@ -24940,13 +24940,13 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/_object-assign.js', ['
   var define,
       global = this || self,
       GLOBAL = global;
-  var getKeys = $__require('./_object-keys'),
-      gOPS = $__require('./_object-gops'),
-      pIE = $__require('./_object-pie'),
-      toObject = $__require('./_to-object'),
-      IObject = $__require('./_iobject'),
+  var getKeys = $__require('npm:core-js@2.4.1/library/modules/_object-keys.js'),
+      gOPS = $__require('npm:core-js@2.4.1/library/modules/_object-gops.js'),
+      pIE = $__require('npm:core-js@2.4.1/library/modules/_object-pie.js'),
+      toObject = $__require('npm:core-js@2.4.1/library/modules/_to-object.js'),
+      IObject = $__require('npm:core-js@2.4.1/library/modules/_iobject.js'),
       $assign = Object.assign;
-  module.exports = !$assign || $__require('./_fails')(function () {
+  module.exports = !$assign || $__require('npm:core-js@2.4.1/library/modules/_fails.js')(function () {
     var A = {},
         B = {},
         S = Symbol(),
@@ -24979,8 +24979,8 @@ System.registerDynamic('npm:core-js@2.4.1/library/modules/es6.object.assign.js',
       global = this || self,
       GLOBAL = global;
   /* */
-  var $export = $__require('./_export');
-  $export($export.S + $export.F, 'Object', { assign: $__require('./_object-assign') });
+  var $export = $__require('npm:core-js@2.4.1/library/modules/_export.js');
+  $export($export.S + $export.F, 'Object', { assign: $__require('npm:core-js@2.4.1/library/modules/_object-assign.js') });
   return module.exports;
 });
 System.registerDynamic('npm:core-js@2.4.1/library/modules/_core.js', [], true, function ($__require, exports, module) {
@@ -24998,8 +24998,8 @@ System.registerDynamic('npm:core-js@2.4.1/library/fn/object/assign.js', ['npm:co
       global = this || self,
       GLOBAL = global;
   /* */
-  $__require('../../modules/es6.object.assign');
-  module.exports = $__require('../../modules/_core').Object.assign;
+  $__require('npm:core-js@2.4.1/library/modules/es6.object.assign.js');
+  module.exports = $__require('npm:core-js@2.4.1/library/modules/_core.js').Object.assign;
   return module.exports;
 });
 System.registerDynamic("npm:babel-runtime@6.11.6/core-js/object/assign.js", ["npm:core-js@2.4.1/library/fn/object/assign.js"], true, function ($__require, exports, module) {
@@ -25007,7 +25007,7 @@ System.registerDynamic("npm:babel-runtime@6.11.6/core-js/object/assign.js", ["np
       global = this || self,
       GLOBAL = global;
   /* */
-  module.exports = { "default": $__require("core-js/library/fn/object/assign"), __esModule: true };
+  module.exports = { "default": $__require("npm:core-js@2.4.1/library/fn/object/assign.js"), __esModule: true };
   return module.exports;
 });
 System.registerDynamic("npm:babel-runtime@6.11.6/helpers/extends.js", ["npm:babel-runtime@6.11.6/core-js/object/assign.js"], true, function ($__require, exports, module) {
@@ -25018,7 +25018,7 @@ System.registerDynamic("npm:babel-runtime@6.11.6/helpers/extends.js", ["npm:babe
       global = this || self,
       GLOBAL = global;
   exports.__esModule = true;
-  var _assign = $__require("../core-js/object/assign");
+  var _assign = $__require("npm:babel-runtime@6.11.6/core-js/object/assign.js");
   var _assign2 = _interopRequireDefault(_assign);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { default: obj };
@@ -25067,7 +25067,7 @@ System.registerDynamic('npm:invariant@2.2.1/browser.js', ['github:jspm/nodelibs-
       }
     };
     module.exports = invariant;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic("npm:invariant@2.2.1.js", ["npm:invariant@2.2.1/browser.js"], true, function ($__require, exports, module) {
@@ -25129,19 +25129,19 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js',
 
     exports.__esModule = true;
     exports._curry = exports.bsSizes = exports.bsStyles = exports.bsClass = undefined;
-    var _entries = $__require('babel-runtime/core-js/object/entries');
+    var _entries = $__require('npm:babel-runtime@6.11.6/core-js/object/entries.js');
     var _entries2 = _interopRequireDefault(_entries);
-    var _extends2 = $__require('babel-runtime/helpers/extends');
+    var _extends2 = $__require('npm:babel-runtime@6.11.6/helpers/extends.js');
     var _extends3 = _interopRequireDefault(_extends2);
     exports.prefix = prefix;
     exports.getClassSet = getClassSet;
     exports.splitBsProps = splitBsProps;
     exports.splitBsPropsAndOmit = splitBsPropsAndOmit;
     exports.addStyle = addStyle;
-    var _invariant = $__require('invariant');
+    var _invariant = $__require('npm:invariant@2.2.1.js');
     var _invariant2 = _interopRequireDefault(_invariant);
-    var _react = $__require('react');
-    var _StyleConfig = $__require('./StyleConfig');
+    var _react = $__require('npm:react@15.3.1.js');
+    var _StyleConfig = $__require('npm:react-bootstrap@0.30.3/lib/utils/StyleConfig.js');
     function _interopRequireDefault(obj) {
       return obj && obj.__esModule ? obj : { 'default': obj };
     }
@@ -25279,7 +25279,7 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js',
       bsStyles(styleVariant, Component);
     }
     var _curry = exports._curry = curry;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react-bootstrap@0.30.3/lib/utils/createChainedFunction.js', [], true, function ($__require, exports, module) {
@@ -25339,7 +25339,7 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/utils/ValidComponentChild
       GLOBAL = global;
   exports.__esModule = true;
 
-  var _react = $__require('react');
+  var _react = $__require('npm:react@15.3.1.js');
 
   var _react2 = _interopRequireDefault(_react);
 
@@ -25540,11 +25540,11 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/utils/index.js', ['npm:re
       GLOBAL = global;
   exports.__esModule = true;
   exports.ValidComponentChildren = exports.createChainedFunction = exports.bootstrapUtils = undefined;
-  var _bootstrapUtils2 = $__require('./bootstrapUtils');
+  var _bootstrapUtils2 = $__require('npm:react-bootstrap@0.30.3/lib/utils/bootstrapUtils.js');
   var _bootstrapUtils = _interopRequireWildcard(_bootstrapUtils2);
-  var _createChainedFunction2 = $__require('./createChainedFunction');
+  var _createChainedFunction2 = $__require('npm:react-bootstrap@0.30.3/lib/utils/createChainedFunction.js');
   var _createChainedFunction3 = _interopRequireDefault(_createChainedFunction2);
-  var _ValidComponentChildren2 = $__require('./ValidComponentChildren');
+  var _ValidComponentChildren2 = $__require('npm:react-bootstrap@0.30.3/lib/utils/ValidComponentChildren.js');
   var _ValidComponentChildren3 = _interopRequireDefault(_ValidComponentChildren2);
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : { 'default': obj };
@@ -25577,139 +25577,139 @@ System.registerDynamic('npm:react-bootstrap@0.30.3/lib/index.js', ['npm:react-bo
       GLOBAL = global;
   exports.__esModule = true;
   exports.utils = exports.Well = exports.Tooltip = exports.Thumbnail = exports.Tabs = exports.TabPane = exports.Table = exports.TabContent = exports.TabContainer = exports.Tab = exports.SplitButton = exports.SafeAnchor = exports.Row = exports.ResponsiveEmbed = exports.Radio = exports.ProgressBar = exports.Popover = exports.PanelGroup = exports.Panel = exports.Pagination = exports.Pager = exports.PageItem = exports.PageHeader = exports.OverlayTrigger = exports.Overlay = exports.NavItem = exports.NavDropdown = exports.NavbarBrand = exports.Navbar = exports.Nav = exports.ModalTitle = exports.ModalHeader = exports.ModalFooter = exports.ModalBody = exports.Modal = exports.MenuItem = exports.Media = exports.ListGroupItem = exports.ListGroup = exports.Label = exports.Jumbotron = exports.InputGroup = exports.Image = exports.HelpBlock = exports.Grid = exports.Glyphicon = exports.FormGroup = exports.FormControl = exports.Form = exports.Fade = exports.DropdownButton = exports.Dropdown = exports.Collapse = exports.Col = exports.ControlLabel = exports.Clearfix = exports.Checkbox = exports.CarouselItem = exports.Carousel = exports.ButtonToolbar = exports.ButtonGroup = exports.Button = exports.BreadcrumbItem = exports.Breadcrumb = exports.Badge = exports.Alert = exports.Accordion = undefined;
-  var _Accordion2 = $__require('./Accordion');
+  var _Accordion2 = $__require('npm:react-bootstrap@0.30.3/lib/Accordion.js');
   var _Accordion3 = _interopRequireDefault(_Accordion2);
-  var _Alert2 = $__require('./Alert');
+  var _Alert2 = $__require('npm:react-bootstrap@0.30.3/lib/Alert.js');
   var _Alert3 = _interopRequireDefault(_Alert2);
-  var _Badge2 = $__require('./Badge');
+  var _Badge2 = $__require('npm:react-bootstrap@0.30.3/lib/Badge.js');
   var _Badge3 = _interopRequireDefault(_Badge2);
-  var _Breadcrumb2 = $__require('./Breadcrumb');
+  var _Breadcrumb2 = $__require('npm:react-bootstrap@0.30.3/lib/Breadcrumb.js');
   var _Breadcrumb3 = _interopRequireDefault(_Breadcrumb2);
-  var _BreadcrumbItem2 = $__require('./BreadcrumbItem');
+  var _BreadcrumbItem2 = $__require('npm:react-bootstrap@0.30.3/lib/BreadcrumbItem.js');
   var _BreadcrumbItem3 = _interopRequireDefault(_BreadcrumbItem2);
-  var _Button2 = $__require('./Button');
+  var _Button2 = $__require('npm:react-bootstrap@0.30.3/lib/Button.js');
   var _Button3 = _interopRequireDefault(_Button2);
-  var _ButtonGroup2 = $__require('./ButtonGroup');
+  var _ButtonGroup2 = $__require('npm:react-bootstrap@0.30.3/lib/ButtonGroup.js');
   var _ButtonGroup3 = _interopRequireDefault(_ButtonGroup2);
-  var _ButtonToolbar2 = $__require('./ButtonToolbar');
+  var _ButtonToolbar2 = $__require('npm:react-bootstrap@0.30.3/lib/ButtonToolbar.js');
   var _ButtonToolbar3 = _interopRequireDefault(_ButtonToolbar2);
-  var _Carousel2 = $__require('./Carousel');
+  var _Carousel2 = $__require('npm:react-bootstrap@0.30.3/lib/Carousel.js');
   var _Carousel3 = _interopRequireDefault(_Carousel2);
-  var _CarouselItem2 = $__require('./CarouselItem');
+  var _CarouselItem2 = $__require('npm:react-bootstrap@0.30.3/lib/CarouselItem.js');
   var _CarouselItem3 = _interopRequireDefault(_CarouselItem2);
-  var _Checkbox2 = $__require('./Checkbox');
+  var _Checkbox2 = $__require('npm:react-bootstrap@0.30.3/lib/Checkbox.js');
   var _Checkbox3 = _interopRequireDefault(_Checkbox2);
-  var _Clearfix2 = $__require('./Clearfix');
+  var _Clearfix2 = $__require('npm:react-bootstrap@0.30.3/lib/Clearfix.js');
   var _Clearfix3 = _interopRequireDefault(_Clearfix2);
-  var _ControlLabel2 = $__require('./ControlLabel');
+  var _ControlLabel2 = $__require('npm:react-bootstrap@0.30.3/lib/ControlLabel.js');
   var _ControlLabel3 = _interopRequireDefault(_ControlLabel2);
-  var _Col2 = $__require('./Col');
+  var _Col2 = $__require('npm:react-bootstrap@0.30.3/lib/Col.js');
   var _Col3 = _interopRequireDefault(_Col2);
-  var _Collapse2 = $__require('./Collapse');
+  var _Collapse2 = $__require('npm:react-bootstrap@0.30.3/lib/Collapse.js');
   var _Collapse3 = _interopRequireDefault(_Collapse2);
-  var _Dropdown2 = $__require('./Dropdown');
+  var _Dropdown2 = $__require('npm:react-bootstrap@0.30.3/lib/Dropdown.js');
   var _Dropdown3 = _interopRequireDefault(_Dropdown2);
-  var _DropdownButton2 = $__require('./DropdownButton');
+  var _DropdownButton2 = $__require('npm:react-bootstrap@0.30.3/lib/DropdownButton.js');
   var _DropdownButton3 = _interopRequireDefault(_DropdownButton2);
-  var _Fade2 = $__require('./Fade');
+  var _Fade2 = $__require('npm:react-bootstrap@0.30.3/lib/Fade.js');
   var _Fade3 = _interopRequireDefault(_Fade2);
-  var _Form2 = $__require('./Form');
+  var _Form2 = $__require('npm:react-bootstrap@0.30.3/lib/Form.js');
   var _Form3 = _interopRequireDefault(_Form2);
-  var _FormControl2 = $__require('./FormControl');
+  var _FormControl2 = $__require('npm:react-bootstrap@0.30.3/lib/FormControl.js');
   var _FormControl3 = _interopRequireDefault(_FormControl2);
-  var _FormGroup2 = $__require('./FormGroup');
+  var _FormGroup2 = $__require('npm:react-bootstrap@0.30.3/lib/FormGroup.js');
   var _FormGroup3 = _interopRequireDefault(_FormGroup2);
-  var _Glyphicon2 = $__require('./Glyphicon');
+  var _Glyphicon2 = $__require('npm:react-bootstrap@0.30.3/lib/Glyphicon.js');
   var _Glyphicon3 = _interopRequireDefault(_Glyphicon2);
-  var _Grid2 = $__require('./Grid');
+  var _Grid2 = $__require('npm:react-bootstrap@0.30.3/lib/Grid.js');
   var _Grid3 = _interopRequireDefault(_Grid2);
-  var _HelpBlock2 = $__require('./HelpBlock');
+  var _HelpBlock2 = $__require('npm:react-bootstrap@0.30.3/lib/HelpBlock.js');
   var _HelpBlock3 = _interopRequireDefault(_HelpBlock2);
-  var _Image2 = $__require('./Image');
+  var _Image2 = $__require('npm:react-bootstrap@0.30.3/lib/Image.js');
   var _Image3 = _interopRequireDefault(_Image2);
-  var _InputGroup2 = $__require('./InputGroup');
+  var _InputGroup2 = $__require('npm:react-bootstrap@0.30.3/lib/InputGroup.js');
   var _InputGroup3 = _interopRequireDefault(_InputGroup2);
-  var _Jumbotron2 = $__require('./Jumbotron');
+  var _Jumbotron2 = $__require('npm:react-bootstrap@0.30.3/lib/Jumbotron.js');
   var _Jumbotron3 = _interopRequireDefault(_Jumbotron2);
-  var _Label2 = $__require('./Label');
+  var _Label2 = $__require('npm:react-bootstrap@0.30.3/lib/Label.js');
   var _Label3 = _interopRequireDefault(_Label2);
-  var _ListGroup2 = $__require('./ListGroup');
+  var _ListGroup2 = $__require('npm:react-bootstrap@0.30.3/lib/ListGroup.js');
   var _ListGroup3 = _interopRequireDefault(_ListGroup2);
-  var _ListGroupItem2 = $__require('./ListGroupItem');
+  var _ListGroupItem2 = $__require('npm:react-bootstrap@0.30.3/lib/ListGroupItem.js');
   var _ListGroupItem3 = _interopRequireDefault(_ListGroupItem2);
-  var _Media2 = $__require('./Media');
+  var _Media2 = $__require('npm:react-bootstrap@0.30.3/lib/Media.js');
   var _Media3 = _interopRequireDefault(_Media2);
-  var _MenuItem2 = $__require('./MenuItem');
+  var _MenuItem2 = $__require('npm:react-bootstrap@0.30.3/lib/MenuItem.js');
   var _MenuItem3 = _interopRequireDefault(_MenuItem2);
-  var _Modal2 = $__require('./Modal');
+  var _Modal2 = $__require('npm:react-bootstrap@0.30.3/lib/Modal.js');
   var _Modal3 = _interopRequireDefault(_Modal2);
-  var _ModalBody2 = $__require('./ModalBody');
+  var _ModalBody2 = $__require('npm:react-bootstrap@0.30.3/lib/ModalBody.js');
   var _ModalBody3 = _interopRequireDefault(_ModalBody2);
-  var _ModalFooter2 = $__require('./ModalFooter');
+  var _ModalFooter2 = $__require('npm:react-bootstrap@0.30.3/lib/ModalFooter.js');
   var _ModalFooter3 = _interopRequireDefault(_ModalFooter2);
-  var _ModalHeader2 = $__require('./ModalHeader');
+  var _ModalHeader2 = $__require('npm:react-bootstrap@0.30.3/lib/ModalHeader.js');
   var _ModalHeader3 = _interopRequireDefault(_ModalHeader2);
-  var _ModalTitle2 = $__require('./ModalTitle');
+  var _ModalTitle2 = $__require('npm:react-bootstrap@0.30.3/lib/ModalTitle.js');
   var _ModalTitle3 = _interopRequireDefault(_ModalTitle2);
-  var _Nav2 = $__require('./Nav');
+  var _Nav2 = $__require('npm:react-bootstrap@0.30.3/lib/Nav.js');
   var _Nav3 = _interopRequireDefault(_Nav2);
-  var _Navbar2 = $__require('./Navbar');
+  var _Navbar2 = $__require('npm:react-bootstrap@0.30.3/lib/Navbar.js');
   var _Navbar3 = _interopRequireDefault(_Navbar2);
-  var _NavbarBrand2 = $__require('./NavbarBrand');
+  var _NavbarBrand2 = $__require('npm:react-bootstrap@0.30.3/lib/NavbarBrand.js');
   var _NavbarBrand3 = _interopRequireDefault(_NavbarBrand2);
-  var _NavDropdown2 = $__require('./NavDropdown');
+  var _NavDropdown2 = $__require('npm:react-bootstrap@0.30.3/lib/NavDropdown.js');
   var _NavDropdown3 = _interopRequireDefault(_NavDropdown2);
-  var _NavItem2 = $__require('./NavItem');
+  var _NavItem2 = $__require('npm:react-bootstrap@0.30.3/lib/NavItem.js');
   var _NavItem3 = _interopRequireDefault(_NavItem2);
-  var _Overlay2 = $__require('./Overlay');
+  var _Overlay2 = $__require('npm:react-bootstrap@0.30.3/lib/Overlay.js');
   var _Overlay3 = _interopRequireDefault(_Overlay2);
-  var _OverlayTrigger2 = $__require('./OverlayTrigger');
+  var _OverlayTrigger2 = $__require('npm:react-bootstrap@0.30.3/lib/OverlayTrigger.js');
   var _OverlayTrigger3 = _interopRequireDefault(_OverlayTrigger2);
-  var _PageHeader2 = $__require('./PageHeader');
+  var _PageHeader2 = $__require('npm:react-bootstrap@0.30.3/lib/PageHeader.js');
   var _PageHeader3 = _interopRequireDefault(_PageHeader2);
-  var _PageItem2 = $__require('./PageItem');
+  var _PageItem2 = $__require('npm:react-bootstrap@0.30.3/lib/PageItem.js');
   var _PageItem3 = _interopRequireDefault(_PageItem2);
-  var _Pager2 = $__require('./Pager');
+  var _Pager2 = $__require('npm:react-bootstrap@0.30.3/lib/Pager.js');
   var _Pager3 = _interopRequireDefault(_Pager2);
-  var _Pagination2 = $__require('./Pagination');
+  var _Pagination2 = $__require('npm:react-bootstrap@0.30.3/lib/Pagination.js');
   var _Pagination3 = _interopRequireDefault(_Pagination2);
-  var _Panel2 = $__require('./Panel');
+  var _Panel2 = $__require('npm:react-bootstrap@0.30.3/lib/Panel.js');
   var _Panel3 = _interopRequireDefault(_Panel2);
-  var _PanelGroup2 = $__require('./PanelGroup');
+  var _PanelGroup2 = $__require('npm:react-bootstrap@0.30.3/lib/PanelGroup.js');
   var _PanelGroup3 = _interopRequireDefault(_PanelGroup2);
-  var _Popover2 = $__require('./Popover');
+  var _Popover2 = $__require('npm:react-bootstrap@0.30.3/lib/Popover.js');
   var _Popover3 = _interopRequireDefault(_Popover2);
-  var _ProgressBar2 = $__require('./ProgressBar');
+  var _ProgressBar2 = $__require('npm:react-bootstrap@0.30.3/lib/ProgressBar.js');
   var _ProgressBar3 = _interopRequireDefault(_ProgressBar2);
-  var _Radio2 = $__require('./Radio');
+  var _Radio2 = $__require('npm:react-bootstrap@0.30.3/lib/Radio.js');
   var _Radio3 = _interopRequireDefault(_Radio2);
-  var _ResponsiveEmbed2 = $__require('./ResponsiveEmbed');
+  var _ResponsiveEmbed2 = $__require('npm:react-bootstrap@0.30.3/lib/ResponsiveEmbed.js');
   var _ResponsiveEmbed3 = _interopRequireDefault(_ResponsiveEmbed2);
-  var _Row2 = $__require('./Row');
+  var _Row2 = $__require('npm:react-bootstrap@0.30.3/lib/Row.js');
   var _Row3 = _interopRequireDefault(_Row2);
-  var _SafeAnchor2 = $__require('./SafeAnchor');
+  var _SafeAnchor2 = $__require('npm:react-bootstrap@0.30.3/lib/SafeAnchor.js');
   var _SafeAnchor3 = _interopRequireDefault(_SafeAnchor2);
-  var _SplitButton2 = $__require('./SplitButton');
+  var _SplitButton2 = $__require('npm:react-bootstrap@0.30.3/lib/SplitButton.js');
   var _SplitButton3 = _interopRequireDefault(_SplitButton2);
-  var _Tab2 = $__require('./Tab');
+  var _Tab2 = $__require('npm:react-bootstrap@0.30.3/lib/Tab.js');
   var _Tab3 = _interopRequireDefault(_Tab2);
-  var _TabContainer2 = $__require('./TabContainer');
+  var _TabContainer2 = $__require('npm:react-bootstrap@0.30.3/lib/TabContainer.js');
   var _TabContainer3 = _interopRequireDefault(_TabContainer2);
-  var _TabContent2 = $__require('./TabContent');
+  var _TabContent2 = $__require('npm:react-bootstrap@0.30.3/lib/TabContent.js');
   var _TabContent3 = _interopRequireDefault(_TabContent2);
-  var _Table2 = $__require('./Table');
+  var _Table2 = $__require('npm:react-bootstrap@0.30.3/lib/Table.js');
   var _Table3 = _interopRequireDefault(_Table2);
-  var _TabPane2 = $__require('./TabPane');
+  var _TabPane2 = $__require('npm:react-bootstrap@0.30.3/lib/TabPane.js');
   var _TabPane3 = _interopRequireDefault(_TabPane2);
-  var _Tabs2 = $__require('./Tabs');
+  var _Tabs2 = $__require('npm:react-bootstrap@0.30.3/lib/Tabs.js');
   var _Tabs3 = _interopRequireDefault(_Tabs2);
-  var _Thumbnail2 = $__require('./Thumbnail');
+  var _Thumbnail2 = $__require('npm:react-bootstrap@0.30.3/lib/Thumbnail.js');
   var _Thumbnail3 = _interopRequireDefault(_Thumbnail2);
-  var _Tooltip2 = $__require('./Tooltip');
+  var _Tooltip2 = $__require('npm:react-bootstrap@0.30.3/lib/Tooltip.js');
   var _Tooltip3 = _interopRequireDefault(_Tooltip2);
-  var _Well2 = $__require('./Well');
+  var _Well2 = $__require('npm:react-bootstrap@0.30.3/lib/Well.js');
   var _Well3 = _interopRequireDefault(_Well2);
-  var _utils2 = $__require('./utils/index');
+  var _utils2 = $__require('npm:react-bootstrap@0.30.3/lib/utils/index.js');
   var _utils = _interopRequireWildcard(_utils2);
   function _interopRequireWildcard(obj) {
     if (obj && obj.__esModule) {
@@ -25812,8 +25812,8 @@ System.registerDynamic('npm:react@15.3.1/lib/PooledClass.js', ['npm:react@15.3.1
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant');
-    var invariant = $__require('fbjs/lib/invariant');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
     var oneArgumentPooler = function (copyFieldsFrom) {
       var Klass = this;
       if (Klass.instancePool.length) {
@@ -25893,7 +25893,7 @@ System.registerDynamic('npm:react@15.3.1/lib/PooledClass.js', ['npm:react@15.3.1
       fiveArgumentPooler: fiveArgumentPooler
     };
     module.exports = PooledClass;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/KeyEscapeUtils.js', [], true, function ($__require, exports, module) {
@@ -25969,13 +25969,13 @@ System.registerDynamic('npm:react@15.3.1/lib/traverseAllChildren.js', ['npm:reac
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant');
-    var ReactCurrentOwner = $__require('./ReactCurrentOwner');
-    var ReactElement = $__require('./ReactElement');
-    var getIteratorFn = $__require('./getIteratorFn');
-    var invariant = $__require('fbjs/lib/invariant');
-    var KeyEscapeUtils = $__require('./KeyEscapeUtils');
-    var warning = $__require('fbjs/lib/warning');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js');
+    var ReactCurrentOwner = $__require('npm:react@15.3.1/lib/ReactCurrentOwner.js');
+    var ReactElement = $__require('npm:react@15.3.1/lib/ReactElement.js');
+    var getIteratorFn = $__require('npm:react@15.3.1/lib/getIteratorFn.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
+    var KeyEscapeUtils = $__require('npm:react@15.3.1/lib/KeyEscapeUtils.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     var SEPARATOR = '.';
     var SUBSEPARATOR = ':';
     var didWarnAboutMaps = false;
@@ -26064,7 +26064,7 @@ System.registerDynamic('npm:react@15.3.1/lib/traverseAllChildren.js', ['npm:reac
       return traverseAllChildrenImpl(children, '', callback, traverseContext);
     }
     module.exports = traverseAllChildren;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactChildren.js', ['npm:react@15.3.1/lib/PooledClass.js', 'npm:react@15.3.1/lib/ReactElement.js', 'npm:fbjs@0.8.4/lib/emptyFunction.js', 'npm:react@15.3.1/lib/traverseAllChildren.js'], true, function ($__require, exports, module) {
@@ -26074,10 +26074,10 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactChildren.js', ['npm:react@15.3
   var define,
       global = this || self,
       GLOBAL = global;
-  var PooledClass = $__require('./PooledClass');
-  var ReactElement = $__require('./ReactElement');
-  var emptyFunction = $__require('fbjs/lib/emptyFunction');
-  var traverseAllChildren = $__require('./traverseAllChildren');
+  var PooledClass = $__require('npm:react@15.3.1/lib/PooledClass.js');
+  var ReactElement = $__require('npm:react@15.3.1/lib/ReactElement.js');
+  var emptyFunction = $__require('npm:fbjs@0.8.4/lib/emptyFunction.js');
+  var traverseAllChildren = $__require('npm:react@15.3.1/lib/traverseAllChildren.js');
   var twoArgumentPooler = PooledClass.twoArgumentPooler;
   var fourArgumentPooler = PooledClass.fourArgumentPooler;
   var userProvidedKeyEscapeRegex = /\/+/g;
@@ -26183,10 +26183,10 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactPureComponent.js', ['npm:objec
   var define,
       global = this || self,
       GLOBAL = global;
-  var _assign = $__require('object-assign');
-  var ReactComponent = $__require('./ReactComponent');
-  var ReactNoopUpdateQueue = $__require('./ReactNoopUpdateQueue');
-  var emptyObject = $__require('fbjs/lib/emptyObject');
+  var _assign = $__require('npm:object-assign@4.1.0.js');
+  var ReactComponent = $__require('npm:react@15.3.1/lib/ReactComponent.js');
+  var ReactNoopUpdateQueue = $__require('npm:react@15.3.1/lib/ReactNoopUpdateQueue.js');
+  var emptyObject = $__require('npm:fbjs@0.8.4/lib/emptyObject.js');
   function ReactPureComponent(props, context, updater) {
     this.props = props;
     this.context = context;
@@ -26210,12 +26210,12 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactComponent.js', ['npm:react@15.
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant');
-    var ReactNoopUpdateQueue = $__require('./ReactNoopUpdateQueue');
-    var canDefineProperty = $__require('./canDefineProperty');
-    var emptyObject = $__require('fbjs/lib/emptyObject');
-    var invariant = $__require('fbjs/lib/invariant');
-    var warning = $__require('fbjs/lib/warning');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js');
+    var ReactNoopUpdateQueue = $__require('npm:react@15.3.1/lib/ReactNoopUpdateQueue.js');
+    var canDefineProperty = $__require('npm:react@15.3.1/lib/canDefineProperty.js');
+    var emptyObject = $__require('npm:fbjs@0.8.4/lib/emptyObject.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     function ReactComponent(props, context, updater) {
       this.props = props;
       this.context = context;
@@ -26256,7 +26256,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactComponent.js', ['npm:react@15.
       }
     }
     module.exports = ReactComponent;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactNoopUpdateQueue.js', ['npm:fbjs@0.8.4/lib/warning.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -26267,7 +26267,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactNoopUpdateQueue.js', ['npm:fbj
   (function (process) {
     'use strict';
 
-    var warning = $__require('fbjs/lib/warning');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     function warnNoop(publicInstance, callerName) {
       if ('production' !== 'production') {
         var constructor = publicInstance.constructor;
@@ -26290,7 +26290,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactNoopUpdateQueue.js', ['npm:fbj
       }
     };
     module.exports = ReactNoopUpdateQueue;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:fbjs@0.8.4/lib/emptyObject.js', ['github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -26306,7 +26306,7 @@ System.registerDynamic('npm:fbjs@0.8.4/lib/emptyObject.js', ['github:jspm/nodeli
       Object.freeze(emptyObject);
     }
     module.exports = emptyObject;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic("npm:fbjs@0.8.4/lib/keyOf.js", [], true, function ($__require, exports, module) {
@@ -26359,18 +26359,18 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactClass.js', ['npm:react@15.3.1/
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant'),
-        _assign = $__require('object-assign');
-    var ReactComponent = $__require('./ReactComponent');
-    var ReactElement = $__require('./ReactElement');
-    var ReactPropTypeLocations = $__require('./ReactPropTypeLocations');
-    var ReactPropTypeLocationNames = $__require('./ReactPropTypeLocationNames');
-    var ReactNoopUpdateQueue = $__require('./ReactNoopUpdateQueue');
-    var emptyObject = $__require('fbjs/lib/emptyObject');
-    var invariant = $__require('fbjs/lib/invariant');
-    var keyMirror = $__require('fbjs/lib/keyMirror');
-    var keyOf = $__require('fbjs/lib/keyOf');
-    var warning = $__require('fbjs/lib/warning');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js'),
+        _assign = $__require('npm:object-assign@4.1.0.js');
+    var ReactComponent = $__require('npm:react@15.3.1/lib/ReactComponent.js');
+    var ReactElement = $__require('npm:react@15.3.1/lib/ReactElement.js');
+    var ReactPropTypeLocations = $__require('npm:react@15.3.1/lib/ReactPropTypeLocations.js');
+    var ReactPropTypeLocationNames = $__require('npm:react@15.3.1/lib/ReactPropTypeLocationNames.js');
+    var ReactNoopUpdateQueue = $__require('npm:react@15.3.1/lib/ReactNoopUpdateQueue.js');
+    var emptyObject = $__require('npm:fbjs@0.8.4/lib/emptyObject.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
+    var keyMirror = $__require('npm:fbjs@0.8.4/lib/keyMirror.js');
+    var keyOf = $__require('npm:fbjs@0.8.4/lib/keyOf.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     var MIXINS_KEY = keyOf({ mixins: null });
     var SpecPolicy = keyMirror({
       DEFINE_ONCE: null,
@@ -26662,7 +26662,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactClass.js', ['npm:react@15.3.1/
         } }
     };
     module.exports = ReactClass;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactDOMFactories.js', ['npm:react@15.3.1/lib/ReactElement.js', 'npm:react@15.3.1/lib/ReactElementValidator.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -26673,10 +26673,10 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDOMFactories.js', ['npm:react@
   (function (process) {
     'use strict';
 
-    var ReactElement = $__require('./ReactElement');
+    var ReactElement = $__require('npm:react@15.3.1/lib/ReactElement.js');
     var createDOMFactory = ReactElement.createFactory;
     if ('production' !== 'production') {
-      var ReactElementValidator = $__require('./ReactElementValidator');
+      var ReactElementValidator = $__require('npm:react@15.3.1/lib/ReactElementValidator.js');
       createDOMFactory = ReactElementValidator.createFactory;
     }
     var ReactDOMFactories = {
@@ -26814,7 +26814,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactDOMFactories.js', ['npm:react@
       tspan: createDOMFactory('tspan')
     };
     module.exports = ReactDOMFactories;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactPropTypes.js', ['npm:react@15.3.1/lib/ReactElement.js', 'npm:react@15.3.1/lib/ReactPropTypeLocationNames.js', 'npm:react@15.3.1/lib/ReactPropTypesSecret.js', 'npm:fbjs@0.8.4/lib/emptyFunction.js', 'npm:react@15.3.1/lib/getIteratorFn.js', 'npm:fbjs@0.8.4/lib/warning.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -26825,12 +26825,12 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactPropTypes.js', ['npm:react@15.
   (function (process) {
     'use strict';
 
-    var ReactElement = $__require('./ReactElement');
-    var ReactPropTypeLocationNames = $__require('./ReactPropTypeLocationNames');
-    var ReactPropTypesSecret = $__require('./ReactPropTypesSecret');
-    var emptyFunction = $__require('fbjs/lib/emptyFunction');
-    var getIteratorFn = $__require('./getIteratorFn');
-    var warning = $__require('fbjs/lib/warning');
+    var ReactElement = $__require('npm:react@15.3.1/lib/ReactElement.js');
+    var ReactPropTypeLocationNames = $__require('npm:react@15.3.1/lib/ReactPropTypeLocationNames.js');
+    var ReactPropTypesSecret = $__require('npm:react@15.3.1/lib/ReactPropTypesSecret.js');
+    var emptyFunction = $__require('npm:fbjs@0.8.4/lib/emptyFunction.js');
+    var getIteratorFn = $__require('npm:react@15.3.1/lib/getIteratorFn.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     var ANONYMOUS = '<<anonymous>>';
     var ReactPropTypes = {
       array: createPrimitiveTypeChecker('array'),
@@ -27129,7 +27129,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactPropTypes.js', ['npm:react@15.
       return propValue.constructor.name;
     }
     module.exports = ReactPropTypes;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactVersion.js', [], true, function ($__require, exports, module) {
@@ -27160,15 +27160,15 @@ System.registerDynamic('npm:react@15.3.1/lib/onlyChild.js', ['npm:react@15.3.1/l
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant');
-    var ReactElement = $__require('./ReactElement');
-    var invariant = $__require('fbjs/lib/invariant');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js');
+    var ReactElement = $__require('npm:react@15.3.1/lib/ReactElement.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
     function onlyChild(children) {
       !ReactElement.isValidElement(children) ? 'production' !== 'production' ? invariant(false, 'React.Children.only expected to receive a single React element child.') : _prodInvariant('143') : void 0;
       return children;
     }
     module.exports = onlyChild;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:object-assign@4.1.0/index.js', [], true, function ($__require, exports, module) {
@@ -27265,7 +27265,7 @@ System.registerDynamic("npm:object-assign@4.1.0.js", ["npm:object-assign@4.1.0/i
   var define,
       global = this || self,
       GLOBAL = global;
-  module.exports = $__require("npm:object-assign@4.1.0/index");
+  module.exports = $__require("npm:object-assign@4.1.0/index.js");
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactElement.js', ['npm:object-assign@4.1.0.js', 'npm:react@15.3.1/lib/ReactCurrentOwner.js', 'npm:fbjs@0.8.4/lib/warning.js', 'npm:react@15.3.1/lib/canDefineProperty.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -27276,10 +27276,10 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactElement.js', ['npm:object-assi
   (function (process) {
     'use strict';
 
-    var _assign = $__require('object-assign');
-    var ReactCurrentOwner = $__require('./ReactCurrentOwner');
-    var warning = $__require('fbjs/lib/warning');
-    var canDefineProperty = $__require('./canDefineProperty');
+    var _assign = $__require('npm:object-assign@4.1.0.js');
+    var ReactCurrentOwner = $__require('npm:react@15.3.1/lib/ReactCurrentOwner.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
+    var canDefineProperty = $__require('npm:react@15.3.1/lib/canDefineProperty.js');
     var hasOwnProperty = Object.prototype.hasOwnProperty;
     var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol['for'] && Symbol['for']('react.element') || 0xeac7;
     var RESERVED_PROPS = {
@@ -27504,7 +27504,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactElement.js', ['npm:object-assi
     };
     ReactElement.REACT_ELEMENT_TYPE = REACT_ELEMENT_TYPE;
     module.exports = ReactElement;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:fbjs@0.8.4/lib/keyMirror.js', ['npm:fbjs@0.8.4/lib/invariant.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -27515,7 +27515,7 @@ System.registerDynamic('npm:fbjs@0.8.4/lib/keyMirror.js', ['npm:fbjs@0.8.4/lib/i
   (function (process) {
     'use strict';
 
-    var invariant = $__require('./invariant');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
     var keyMirror = function keyMirror(obj) {
       var ret = {};
       var key;
@@ -27529,7 +27529,7 @@ System.registerDynamic('npm:fbjs@0.8.4/lib/keyMirror.js', ['npm:fbjs@0.8.4/lib/i
       return ret;
     };
     module.exports = keyMirror;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactPropTypeLocations.js', ['npm:fbjs@0.8.4/lib/keyMirror.js'], true, function ($__require, exports, module) {
@@ -27549,7 +27549,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactPropTypeLocations.js', ['npm:f
   var define,
       global = this || self,
       GLOBAL = global;
-  var keyMirror = $__require('fbjs/lib/keyMirror');
+  var keyMirror = $__require('npm:fbjs@0.8.4/lib/keyMirror.js');
 
   var ReactPropTypeLocations = keyMirror({
     prop: null,
@@ -27577,7 +27577,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactPropTypeLocationNames.js', ['g
       };
     }
     module.exports = ReactPropTypeLocationNames;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactPropTypesSecret.js', [], true, function ($__require, exports, module) {
@@ -27715,7 +27715,7 @@ System.registerDynamic('npm:fbjs@0.8.4/lib/invariant.js', ['github:jspm/nodelibs
       }
     }
     module.exports = invariant;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactComponentTreeHook.js', ['npm:react@15.3.1/lib/reactProdInvariant.js', 'npm:react@15.3.1/lib/ReactCurrentOwner.js', 'npm:fbjs@0.8.4/lib/invariant.js', 'npm:fbjs@0.8.4/lib/warning.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -27726,10 +27726,10 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactComponentTreeHook.js', ['npm:r
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant');
-    var ReactCurrentOwner = $__require('./ReactCurrentOwner');
-    var invariant = $__require('fbjs/lib/invariant');
-    var warning = $__require('fbjs/lib/warning');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js');
+    var ReactCurrentOwner = $__require('npm:react@15.3.1/lib/ReactCurrentOwner.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     function isNative(fn) {
       var funcToString = Function.prototype.toString;
       var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -27992,7 +27992,7 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactComponentTreeHook.js', ['npm:r
       getRootIDs: getRootIDs
     };
     module.exports = ReactComponentTreeHook;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/checkReactTypeSpec.js', ['npm:react@15.3.1/lib/reactProdInvariant.js', 'npm:react@15.3.1/lib/ReactPropTypeLocationNames.js', 'npm:react@15.3.1/lib/ReactPropTypesSecret.js', 'npm:fbjs@0.8.4/lib/invariant.js', 'npm:fbjs@0.8.4/lib/warning.js', 'npm:react@15.3.1/lib/ReactComponentTreeHook.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -28003,14 +28003,14 @@ System.registerDynamic('npm:react@15.3.1/lib/checkReactTypeSpec.js', ['npm:react
   (function (process) {
     'use strict';
 
-    var _prodInvariant = $__require('./reactProdInvariant');
-    var ReactPropTypeLocationNames = $__require('./ReactPropTypeLocationNames');
-    var ReactPropTypesSecret = $__require('./ReactPropTypesSecret');
-    var invariant = $__require('fbjs/lib/invariant');
-    var warning = $__require('fbjs/lib/warning');
+    var _prodInvariant = $__require('npm:react@15.3.1/lib/reactProdInvariant.js');
+    var ReactPropTypeLocationNames = $__require('npm:react@15.3.1/lib/ReactPropTypeLocationNames.js');
+    var ReactPropTypesSecret = $__require('npm:react@15.3.1/lib/ReactPropTypesSecret.js');
+    var invariant = $__require('npm:fbjs@0.8.4/lib/invariant.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     var ReactComponentTreeHook;
     if (typeof process !== 'undefined' && process.env && 'production' === 'test') {
-      ReactComponentTreeHook = $__require('./ReactComponentTreeHook');
+      ReactComponentTreeHook = $__require('npm:react@15.3.1/lib/ReactComponentTreeHook.js');
     }
     var loggedTypeFailures = {};
     function checkReactTypeSpec(typeSpecs, values, location, componentName, element, debugID) {
@@ -28029,7 +28029,7 @@ System.registerDynamic('npm:react@15.3.1/lib/checkReactTypeSpec.js', ['npm:react
             var componentStackInfo = '';
             if ('production' !== 'production') {
               if (!ReactComponentTreeHook) {
-                ReactComponentTreeHook = $__require('./ReactComponentTreeHook');
+                ReactComponentTreeHook = $__require('npm:react@15.3.1/lib/ReactComponentTreeHook.js');
               }
               if (debugID !== null) {
                 componentStackInfo = ReactComponentTreeHook.getStackAddendumByID(debugID);
@@ -28043,7 +28043,7 @@ System.registerDynamic('npm:react@15.3.1/lib/checkReactTypeSpec.js', ['npm:react
       }
     }
     module.exports = checkReactTypeSpec;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/canDefineProperty.js', ['github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -28062,7 +28062,7 @@ System.registerDynamic('npm:react@15.3.1/lib/canDefineProperty.js', ['github:jsp
       } catch (x) {}
     }
     module.exports = canDefineProperty;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/getIteratorFn.js', [], true, function ($__require, exports, module) {
@@ -28165,7 +28165,7 @@ System.registerDynamic('npm:fbjs@0.8.4/lib/warning.js', ['npm:fbjs@0.8.4/lib/emp
   (function (process) {
     'use strict';
 
-    var emptyFunction = $__require('./emptyFunction');
+    var emptyFunction = $__require('npm:fbjs@0.8.4/lib/emptyFunction.js');
     var warning = emptyFunction;
     if ('production' !== 'production') {
       (function () {
@@ -28201,7 +28201,7 @@ System.registerDynamic('npm:fbjs@0.8.4/lib/warning.js', ['npm:fbjs@0.8.4/lib/emp
       })();
     }
     module.exports = warning;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/ReactElementValidator.js', ['npm:react@15.3.1/lib/ReactCurrentOwner.js', 'npm:react@15.3.1/lib/ReactComponentTreeHook.js', 'npm:react@15.3.1/lib/ReactElement.js', 'npm:react@15.3.1/lib/ReactPropTypeLocations.js', 'npm:react@15.3.1/lib/checkReactTypeSpec.js', 'npm:react@15.3.1/lib/canDefineProperty.js', 'npm:react@15.3.1/lib/getIteratorFn.js', 'npm:fbjs@0.8.4/lib/warning.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -28212,14 +28212,14 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactElementValidator.js', ['npm:re
   (function (process) {
     'use strict';
 
-    var ReactCurrentOwner = $__require('./ReactCurrentOwner');
-    var ReactComponentTreeHook = $__require('./ReactComponentTreeHook');
-    var ReactElement = $__require('./ReactElement');
-    var ReactPropTypeLocations = $__require('./ReactPropTypeLocations');
-    var checkReactTypeSpec = $__require('./checkReactTypeSpec');
-    var canDefineProperty = $__require('./canDefineProperty');
-    var getIteratorFn = $__require('./getIteratorFn');
-    var warning = $__require('fbjs/lib/warning');
+    var ReactCurrentOwner = $__require('npm:react@15.3.1/lib/ReactCurrentOwner.js');
+    var ReactComponentTreeHook = $__require('npm:react@15.3.1/lib/ReactComponentTreeHook.js');
+    var ReactElement = $__require('npm:react@15.3.1/lib/ReactElement.js');
+    var ReactPropTypeLocations = $__require('npm:react@15.3.1/lib/ReactPropTypeLocations.js');
+    var checkReactTypeSpec = $__require('npm:react@15.3.1/lib/checkReactTypeSpec.js');
+    var canDefineProperty = $__require('npm:react@15.3.1/lib/canDefineProperty.js');
+    var getIteratorFn = $__require('npm:react@15.3.1/lib/getIteratorFn.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     function getDeclarationErrorAddendum() {
       if (ReactCurrentOwner.current) {
         var name = ReactCurrentOwner.current.getName();
@@ -28345,10 +28345,10 @@ System.registerDynamic('npm:react@15.3.1/lib/ReactElementValidator.js', ['npm:re
       }
     };
     module.exports = ReactElementValidator;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
-System.registerDynamic('npm:process@0.11.8/browser.js', [], true, function ($__require, exports, module) {
+System.registerDynamic('npm:process@0.11.9/browser.js', [], true, function ($__require, exports, module) {
     var define,
         global = this || self,
         GLOBAL = global;
@@ -28363,25 +28363,40 @@ System.registerDynamic('npm:process@0.11.8/browser.js', [], true, function ($__r
     var cachedSetTimeout;
     var cachedClearTimeout;
 
+    function defaultSetTimout() {
+        throw new Error('setTimeout has not been defined');
+    }
+    function defaultClearTimeout() {
+        throw new Error('clearTimeout has not been defined');
+    }
     (function () {
         try {
-            cachedSetTimeout = setTimeout;
+            if (typeof setTimeout === 'function') {
+                cachedSetTimeout = setTimeout;
+            } else {
+                cachedSetTimeout = defaultSetTimout;
+            }
         } catch (e) {
-            cachedSetTimeout = function () {
-                throw new Error('setTimeout is not defined');
-            };
+            cachedSetTimeout = defaultSetTimout;
         }
         try {
-            cachedClearTimeout = clearTimeout;
+            if (typeof clearTimeout === 'function') {
+                cachedClearTimeout = clearTimeout;
+            } else {
+                cachedClearTimeout = defaultClearTimeout;
+            }
         } catch (e) {
-            cachedClearTimeout = function () {
-                throw new Error('clearTimeout is not defined');
-            };
+            cachedClearTimeout = defaultClearTimeout;
         }
     })();
     function runTimeout(fun) {
         if (cachedSetTimeout === setTimeout) {
             //normal enviroments in sane situations
+            return setTimeout(fun, 0);
+        }
+        // if setTimeout wasn't available but was latter defined
+        if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+            cachedSetTimeout = setTimeout;
             return setTimeout(fun, 0);
         }
         try {
@@ -28400,6 +28415,11 @@ System.registerDynamic('npm:process@0.11.8/browser.js', [], true, function ($__r
     function runClearTimeout(marker) {
         if (cachedClearTimeout === clearTimeout) {
             //normal enviroments in sane situations
+            return clearTimeout(marker);
+        }
+        // if clearTimeout wasn't available but was latter defined
+        if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+            cachedClearTimeout = clearTimeout;
             return clearTimeout(marker);
         }
         try {
@@ -28513,25 +28533,25 @@ System.registerDynamic('npm:process@0.11.8/browser.js', [], true, function ($__r
     };
     return module.exports;
 });
-System.registerDynamic("npm:process@0.11.8.js", ["npm:process@0.11.8/browser.js"], true, function ($__require, exports, module) {
+System.registerDynamic("npm:process@0.11.9.js", ["npm:process@0.11.9/browser.js"], true, function ($__require, exports, module) {
   var define,
       global = this || self,
       GLOBAL = global;
-  module.exports = $__require("npm:process@0.11.8/browser.js");
+  module.exports = $__require("npm:process@0.11.9/browser.js");
   return module.exports;
 });
-System.registerDynamic('github:jspm/nodelibs-process@0.1.2/index.js', ['npm:process@0.11.8.js'], true, function ($__require, exports, module) {
+System.registerDynamic('github:jspm/nodelibs-process@0.1.2/index.js', ['npm:process@0.11.9.js'], true, function ($__require, exports, module) {
   var define,
       global = this || self,
       GLOBAL = global;
-  module.exports = System._nodeRequire ? process : $__require('process');
+  module.exports = System._nodeRequire ? process : $__require('npm:process@0.11.9.js');
   return module.exports;
 });
 System.registerDynamic("github:jspm/nodelibs-process@0.1.2.js", ["github:jspm/nodelibs-process@0.1.2/index.js"], true, function ($__require, exports, module) {
   var define,
       global = this || self,
       GLOBAL = global;
-  module.exports = $__require("github:jspm/nodelibs-process@0.1.2/index");
+  module.exports = $__require("github:jspm/nodelibs-process@0.1.2/index.js");
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/lib/React.js', ['npm:object-assign@4.1.0.js', 'npm:react@15.3.1/lib/ReactChildren.js', 'npm:react@15.3.1/lib/ReactComponent.js', 'npm:react@15.3.1/lib/ReactPureComponent.js', 'npm:react@15.3.1/lib/ReactClass.js', 'npm:react@15.3.1/lib/ReactDOMFactories.js', 'npm:react@15.3.1/lib/ReactElement.js', 'npm:react@15.3.1/lib/ReactPropTypes.js', 'npm:react@15.3.1/lib/ReactVersion.js', 'npm:react@15.3.1/lib/onlyChild.js', 'npm:fbjs@0.8.4/lib/warning.js', 'npm:react@15.3.1/lib/ReactElementValidator.js', 'github:jspm/nodelibs-process@0.1.2.js'], true, function ($__require, exports, module) {
@@ -28542,22 +28562,22 @@ System.registerDynamic('npm:react@15.3.1/lib/React.js', ['npm:object-assign@4.1.
   (function (process) {
     'use strict';
 
-    var _assign = $__require('object-assign');
-    var ReactChildren = $__require('./ReactChildren');
-    var ReactComponent = $__require('./ReactComponent');
-    var ReactPureComponent = $__require('./ReactPureComponent');
-    var ReactClass = $__require('./ReactClass');
-    var ReactDOMFactories = $__require('./ReactDOMFactories');
-    var ReactElement = $__require('./ReactElement');
-    var ReactPropTypes = $__require('./ReactPropTypes');
-    var ReactVersion = $__require('./ReactVersion');
-    var onlyChild = $__require('./onlyChild');
-    var warning = $__require('fbjs/lib/warning');
+    var _assign = $__require('npm:object-assign@4.1.0.js');
+    var ReactChildren = $__require('npm:react@15.3.1/lib/ReactChildren.js');
+    var ReactComponent = $__require('npm:react@15.3.1/lib/ReactComponent.js');
+    var ReactPureComponent = $__require('npm:react@15.3.1/lib/ReactPureComponent.js');
+    var ReactClass = $__require('npm:react@15.3.1/lib/ReactClass.js');
+    var ReactDOMFactories = $__require('npm:react@15.3.1/lib/ReactDOMFactories.js');
+    var ReactElement = $__require('npm:react@15.3.1/lib/ReactElement.js');
+    var ReactPropTypes = $__require('npm:react@15.3.1/lib/ReactPropTypes.js');
+    var ReactVersion = $__require('npm:react@15.3.1/lib/ReactVersion.js');
+    var onlyChild = $__require('npm:react@15.3.1/lib/onlyChild.js');
+    var warning = $__require('npm:fbjs@0.8.4/lib/warning.js');
     var createElement = ReactElement.createElement;
     var createFactory = ReactElement.createFactory;
     var cloneElement = ReactElement.cloneElement;
     if ('production' !== 'production') {
-      var ReactElementValidator = $__require('./ReactElementValidator');
+      var ReactElementValidator = $__require('npm:react@15.3.1/lib/ReactElementValidator.js');
       createElement = ReactElementValidator.createElement;
       createFactory = ReactElementValidator.createFactory;
       cloneElement = ReactElementValidator.cloneElement;
@@ -28595,7 +28615,7 @@ System.registerDynamic('npm:react@15.3.1/lib/React.js', ['npm:object-assign@4.1.
       __spread: __spread
     };
     module.exports = React;
-  })($__require('process'));
+  })($__require('github:jspm/nodelibs-process@0.1.2.js'));
   return module.exports;
 });
 System.registerDynamic('npm:react@15.3.1/react.js', ['npm:react@15.3.1/lib/React.js'], true, function ($__require, exports, module) {
@@ -28605,7 +28625,7 @@ System.registerDynamic('npm:react@15.3.1/react.js', ['npm:react@15.3.1/lib/React
   var define,
       global = this || self,
       GLOBAL = global;
-  module.exports = $__require('./lib/React');
+  module.exports = $__require('npm:react@15.3.1/lib/React.js');
   return module.exports;
 });
 System.registerDynamic("npm:react@15.3.1.js", ["npm:react@15.3.1/react.js"], true, function ($__require, exports, module) {

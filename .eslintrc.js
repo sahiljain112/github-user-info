@@ -6,7 +6,10 @@ module.exports = {
         "es6": true,
         "node": true
     },
-    "extends": "eslint:recommended",
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ],
     "parserOptions": {
         "ecmaFeatures": {
             "experimentalObjectRestSpread": true,
@@ -217,6 +220,8 @@ module.exports = {
         "quote-props": "off",
         "quotes": "off",
         "radix": "error",
+        "react/jsx-uses-react": "off",
+        "react/jsx-uses-vars": "error",
         "require-jsdoc": "off",
         "rest-spread-spacing": "error",
         "semi": "off",
@@ -235,7 +240,7 @@ module.exports = {
         "spaced-comment": "error",
         "strict": "error",
         "template-curly-spacing": "error",
-        "no-console": "warn",
+        "no-console": "off",
         "unicode-bom": [
             "error",
             "never"
